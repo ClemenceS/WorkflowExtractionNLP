@@ -1,0 +1,14 @@
+nextNEOpi: a comprehensive pipeline for computational neoantigen prediction
+
+
+	2 The nextNEOpi pipeline
+
+nextNEOpi takes as input raw WES or WGS data from matched tumor-normal samples and, optionally, bulk-tumor RNA-seq data (Fig.  1 andSupplementary Fig. S1). After data preprocessing, nextNEOpi derives germline and phased somatic mutations, copy number variants, tumor purity and ploidy, and selects high-confidence variants through majority voting (Supplementary Methods).
+nextNEOpi infers class-I and -II HLA types from WES/WGS (DNA-seq) and RNA-seq data using OptiType (Szolek et al., 2014) and HLA-HD (Kawaguchi et al., 2017), respectively, and can employ an RNA-seq-informed strategy to correct DNA-seq calls for missing HLA genes or alleles (Supplementary Methods). HLA typing benchmarking using data from the 1000 Genomes Project confirmed the high performance of OptiType and HLA-HD, especially on RNA-seq data (Supplementary Figs S2–S4). DNA-seq calls showed a lower accuracy, a systematic underestimation of zygosity and a higher number of missing calls likely due to the low sequencing depth of WGS data (∼4–29 million reads per sample), which were improved using the RNA-seq-informed approach.
+nextNEOpi uses pVACseq (Hundal et al., 2020) to predict class-I and -II neoepitopes and derive features associated with neoantigen presentation, including peptide-HLA-binding affinity quantified as half-maximal inhibitory concentration (IC50) and percentile rank quantified by NetMHCpan (Jurtz et al., 2017) and MHCflurry (O’Donnell et al., 2020). Class-I and -II fusion neoepitopes are predicted with NeoFuse (Fotakis et al., 2020). 
+nextNEOpi exploits tumor purity information to derive the cancer cell fraction (CCF) and clonality of mutations and resulting neoantigens. Tumor mutational burden (TMB) is computed as the number of somatic mutations over the entire read-covered genome or exome. In addition, clonal TMB is computed by considering only clonal somatic mutations (Litchfield et al., 2021). MiXCR is used to predict B-cell receptor and T-cell receptor (BCR and TCR) repertoires (Bolotin et al., 2015). An overview of nextNEOpi results is provided inSupplementary Tables S2–S4.
+We implemented nextNEOpi in the Nextflow workflow language (Di Tommaso et al., 2017) to assure portability, scalability, and reproducibility. Parallelization is implicitly defined by inputs and outputs of the individual pipeline tasks, enabling transparent scale-up without requiring adaptation to a specific platform architecture. By leveraging conda environment and singularity container capabilities, the installation demands for nextNEOpi are kept on a minimal level facilitating its usage by users with limited bioinformatics expertise.
+
+
+	Supplementary Material
+

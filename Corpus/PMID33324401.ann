@@ -1,0 +1,112 @@
+T1	Data 23 55	KIR Gene and Haplotype Inference
+T2	Data 61 84	Genome Sequencing Reads
+T3	WorkflowName 168 171	KPI
+T4	Data 214 232	25mer gene markers
+T5	Data 284 318	68 full-length haplotype sequences
+T6	Data 671 685	synthetic data
+T7	Data 690 699	GoNL data
+T8	Data 748 766	25mer Gene Markers
+T9	Data 780 798	gene marker 25mers
+T10	Method 808 835	multiple sequence alignment
+T11	Method 837 840	MSA
+T12	Data 859 913	68 publicly deposited full-length haplotypes sequences
+T13	Biblio 915 917	11
+T14	Data 1007 1026	15 120-base markers
+T15	Description 1059 1066	aligned
+T16	Method 1074 1077	MSA
+T17	Data 1093 1131	structural alignment of all haplotypes
+T18	Data 1372 1402	haplotype and gene annotations
+T19	Method 1410 1413	MSA
+T20	Data 1425 1465	list of full-length alleles for 16 genes
+T21	Data 1681 1695	KIR haplotypes
+T22	Data 1808 1824	marker sequences
+T23	File 1832 1857	Supplemental Data Sheet 1
+T24	Database 1881 1887	GitHub
+T25	Biblio 1891 1941	https://github.com/droeatumn/kpi/tree/master/input
+T26	File 1954 1966	fasta format
+T27	Tool 2000 2003	KMC
+T28	Version 2004 2005	3
+T29	ManagementSystem 2037 2045	Nextflow
+T30	Biblio 2047 2049	12
+T31	ManagementSystem 2055 2068	Apache Groovy
+T32	Biblio 2070 2072	13
+T33	Container 2118 2124	Docker
+T34	Database 2154 2169	25mer databases
+T35	Data 2175 2202	sequence or short-read data
+T36	Description 2207 2244	match the markers across the datasets
+T38	Tool 2252 2255	KMC
+T39	Version 2256 2257	3
+T40	Data 2275 2293	list of all 25mers
+T41	Data 2303 2333	short reads of each individual
+T43	Data 3094 3128	16 structural reference haplotypes
+T44	Biblio 3205 3222	Jiang et al. 2012
+T45	Biblio 3224 3225	4
+T46	Data 3253 3263	haplotypes
+T47	Biblio 3285 3297	Jiang et al.
+T48	Data 3397 3410	16 haplotypes
+T49	Data 3432 3442	haplotypes
+T50	Biblio 3450 3469	Jiang et al. report
+T51	Data 3479 3495	GoNL predictions
+T53	Data 3532 3552	family trio patterns
+T54	Method 3577 3579	EM
+T55	Biblio 3646 3663	Vierra-Green 2012
+T56	Biblio 3665 3667	14
+T57	Data 3717 3765	EM-reduced individual haplotype-pair predictions
+T58	Method 3773 3805	haplotype frequency calculations
+T59	WorkflowName 3932 3935	KPI
+T60	Data 3955 3973	synthetic test set
+T61	Data 3985 4019	six reference haplotype structures
+T62	Data 4214 4269	random haplotype sequence from the set of all sequences
+T63	Tool 4316 4322	dwgsim
+T64	Biblio 4324 4326	12
+T65	Data 4478 4523	six diploid whole-region short-read sequences
+T66	Data 4542 4578	fully sequenced haplotype structures
+T67	Data 4629 4638	sequences
+T69	WorkflowName 4726 4729	KPI
+T70	Data 4774 4777	WGS
+T71	Biblio 4834 4836	13
+T72	LibraryPackage 5091 5110	Illumina HiSeq 2000
+T73	Biblio 5189 5191	13
+T74	WorkflowName 5366 5370	KPI’
+T75	Data 5366 5388	KPI’s GoNL predictions
+T76	Tool 5463 5470	KIR*IMP
+T77	Data 5472 5511	Illumina Immunochip microarray SNP data
+T78	Database 5530 5534	GoNL
+T79	Biblio 5536 5538	13
+T80	Data 5545 5549	data
+T81	Tool 5605 5612	KIR*IMP
+T82	Version 5613 5619	v1.2.0
+T83	Data 5705 5721	KIR gene content
+T84	Data 5727 5740	WGS sequences
+T85	Biblio 5742 5744	15
+T86	Biblio 5913 5915	16
+*	Synonym T10 T11
+T87	WorkflowName 2540 2543	KPI
+T88	Method 3581 3605	Expectation-Maximization
+R1	BiblioOf Arg1:T64 Arg2:T63	
+T89	Data 4362 4372	pair reads
+R2	BiblioOf Arg1:T79 Arg2:T78	
+T90	Database 4796 4825	The Genome of the Netherlands
+T91	Database 4827 4831	GoNL
+*	Synonym T91 T90
+R3	BiblioOf Arg1:T71 Arg2:T91	
+T92	Description 4841 4946	genome sequencing project whose goal is to map the genetic variation within the population of Netherlands
+R4	VersionOf Arg1:T82 Arg2:T81	
+R5	VersionOf Arg1:T39 Arg2:T38	
+R6	VersionOf Arg1:T28 Arg2:T27	
+R7	DescriptionOf Arg1:T36 Arg2:T27	
+R8	OutputOf Arg1:T34 Arg2:T27	
+R9	InputOf Arg1:T35 Arg2:T27	
+R10	OutputOf Arg1:T40 Arg2:T38	
+R11	InputOf Arg1:T41 Arg2:T38	
+T37	Description 2343 2447	match the 25mers in the marker databases to report the hit counts of each 25mer marker in the individual
+T42	Parameter 3154 3195	numbers and frequencies of the haplotypes
+R12	BiblioOf Arg1:T44 Arg2:T42	
+T52	Description 201 232	Discover the 25mer gene markers
+T68	Description 323 346	Count the 25mer markers
+T93	Description 438 471	Predict presence/absence per gene
+T94	Tool 522 559	Predict haplotype pairs from the gene
+R13	InputOf Arg1:T12 Arg2:T10	
+R14	BiblioOf Arg1:T13 Arg2:T12	
+R15	BiblioOf Arg1:T50 Arg2:T49	
+R16	ComeFrom Arg1:T48 Arg2:T49	

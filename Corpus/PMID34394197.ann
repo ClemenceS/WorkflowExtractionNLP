@@ -1,0 +1,204 @@
+T1	WorkflowName 0 7	poreCov
+T2	Description 11 86	Easy to Use, Fast, and Robust Workflow for SARS-CoV-2 Genome Reconstruction
+T3	WorkflowName 183 190	poreCov
+T4	Hardware 368 392	various computer systems
+T5	Description 496 538	collect and visualize all relevant results
+T6	File 544 572	comprehensive summary report
+T7	File 590 611	intuitive HTML report
+T8	File 626 637	Excel sheet
+T9	Data 651 670	tab-separated table
+T10	WorkflowName 735 742	poreCov
+T11	Parameter 914 928	default values
+T12	ManagementSystem 996 1004	Nextflow
+T13	Biblio 1006 1029	Di Tommaso et al., 2017
+T14	Description 1036 1052	workflow manager
+T15	WorkflowName 1060 1067	poreCov
+T16	Hardware 1108 1137	computational infrastructures
+T17	Hardware 1145 1151	laptop
+T18	Hardware 1160 1175	compute cluster
+T19	Hardware 1180 1205	cloud computing solutions
+T20	Container 1237 1243	Docker
+T21	Container 1245 1256	Singularity
+T22	Description 1269 1384	comfortable, stable, and install-free execution of the various included tools without software dependency conflicts
+T23	Database 1425 1435	docker hub
+T24	Container 1425 1431	docker
+T25	Biblio 1437 1438	1
+T26	WorkflowName 1472 1479	poreCov
+T27	ManagementSystem 1532 1540	Nextflow
+T28	Container 1552 1558	Docker
+T29	Container 1562 1573	Singularity
+T30	WorkflowName 1626 1633	poreCov
+T31	Tool 1740 1754	included tools
+T33	WorkflowName 1845 1852	poreCov
+T34	Hardware 1863 1889	high-performance computing
+T35	Hardware 1891 1894	HPC
+T36	Hardware 1896 1903	cluster
+T37	Hardware 1907 1921	cloud services
+T38	WorkflowName 2120 2127	poreCov
+T39	WorkflowName 2327 2334	poreCov
+T40	WorkflowName 2498 2505	poreCov
+T41	Data 2744 2768	nanopore sequencing data
+T42	File 2883 2919	directory containing fast5 raw files
+T43	File 2985 3005	fastq sequence files
+T44	File 3078 3095	single fastq file
+T45	File 3101 3111	fastq file
+T46	Method 3250 3271	genome reconstruction
+T47	File 3336 3347	fasta files
+T48	WorkflowName 3390 3397	poreCov
+T49	Description 3413 3465	quickly and conveniently re-analyze previous genomes
+T50	Data 3541 3556	quality metrics
+T51	Data 3563 3577	summary report
+T52	Data 3591 3609	SARS-CoV-2 genomes
+T53	File 3625 3637	sample sheet
+T54	Description 3657 3686	rename barcodes automatically
+T55	Description 3694 3750	simplify data analysis and file management post-analysis
+T56	Data 3838 3855	nanopore raw data
+T58	WorkflowName 3877 3884	poreCov
+T59	LibraryPackage 3943 3948	Guppy
+T61	WorkflowName 4042 4049	poreCov
+T62	Container 4070 4076	Docker
+T63	Container 4080 4091	Singularity
+T64	Hardware 4097 4100	GPU
+T65	LibraryPackage 4175 4180	Guppy
+T66	Data 4261 4277	basecalled reads
+T67	Data 4291 4296	reads
+T68	Description 4301 4325	taxonomically classified
+T69	Tool 4330 4337	Kraken2
+T70	Biblio 4339 4356	Wood et al., 2019
+T71	Data 4368 4389	pre-computed database
+T72	Data 4407 4430	human GRCH38.p13 genome
+T73	Data 4439 4464	GISAID SARS-CoV-2 genomes
+T74	Biblio 4499 4529	doi.org/10.5281/zenodo.4534746
+T75	Tool 4602 4607	Krona
+T76	Biblio 4615 4633	Ondov et al., 2011
+T77	Description 4647 4668	visualize the results
+T78	Data 4670 4675	Reads
+T79	Description 4680 4698	quality-controlled
+T80	Tool 4759 4767	NanoPlot
+T81	Biblio 4769 4791	De Coster et al., 2018
+T82	File 4797 4808	fastq files
+T83	Tool 4812 4818	pycoQC
+T84	Biblio 4820 4844	Leger and Leonardi, 2019
+T85	File 4850 4861	fast5 files
+T86	Data 4867 4872	reads
+T87	Data 4978 4983	reads
+T88	Description 4988 5034	mapped back against the Wuhan reference genome
+T89	Data 5012 5034	Wuhan reference genome
+T90	Tool 5066 5074	minimap2
+T91	Biblio 5076 5084	Li, 2018
+T92	Description 5089 5149	provide visual feedback of amplicon dropouts for each sample
+T93	Data 5290 5295	Reads
+T94	Method 5312 5328	length filtering
+T95	Tool 5377 5391	ARTIC pipeline
+T96	Biblio 5393 5394	2
+T98	Description 5538 5554	General mappings
+T99	Tool 5574 5582	minimap2
+T100	Biblio 5584 5592	Li, 2018
+T101	Description 5599 5632	intermediate file transformations
+T102	Tool 5652 5660	SAMtools
+T103	Tool 5665 5673	BCFtools
+T104	Biblio 5675 5695	Danecek et al., 2021
+T105	Description 5710 5720	genotyping
+T106	Tool 5738 5744	medaka
+T107	Biblio 5745 5746	3
+T108	Tool 5752 5760	Longshot
+T109	Biblio 5762 5783	Edge and Bansal, 2019
+T110	Tool 5810 5820	nanopolish
+T111	Biblio 5821 5822	4
+T113	File 5827 5837	fast5 data
+T114	Method 5963 5984	genome reconstruction
+T115	Tool 5989 5994	ARTIC
+T116	Description 6001 6054	reconstructed and polished genome is further analyzed
+T117	Tool 6059 6067	pangolin
+T118	Method 6069 6090	lineage determination
+T119	Biblio 6091 6092	5
+T120	Tool 6096 6106	nextstrain
+T121	Biblio 6154 6175	Hadfield et al., 2018
+T122	Tool 6182 6191	president
+T123	Biblio 6236 6237	6
+T125	File 6283 6287;6303 6309	HTML report
+T126	File 6289 6292;6303 6309	TSV report
+T127	File 6298 6309	XLSX report
+T128	WorkflowName 6495 6502	poreCov
+T129	Hardware 6519 6592	lightweight computing device with four threads (two CPUs) and 8 GB of RAM
+T132	WorkflowName 6659 6666	poreCov
+T133	Hardware 6690 6709	larger workstations
+T134	Hardware 6713 6717	HPCs
+T135	WorkflowName 6801 6808	poreCov
+T136	Description 6896 6904	analysis
+T137	Parameter 6988 7005	cores option flag
+T138	Method 91 110	Nanopore Sequencing
+R1	BiblioOf Arg1:T13 Arg2:T12	
+T139	Tool 474 492	customized scripts
+R2	DescriptionOf Arg1:T5 Arg2:T139	
+R3	OutputOf Arg1:T6 Arg2:T139	
+R4	IncludeIn Arg1:T7 Arg2:T6	
+R5	IncludeIn Arg1:T8 Arg2:T6	
+R6	IncludeIn Arg1:T9 Arg2:T6	
+T140	Data 791 816	where is the data located
+T141	Data 818 847	what kind of input data is it
+T142	Data 849 871	which primers are used
+R7	InputOf Arg1:T140 Arg2:T10	
+R8	InputOf Arg1:T141 Arg2:T10	
+R9	InputOf Arg1:T142 Arg2:T10	
+R10	DescriptionOf Arg1:T14 Arg2:T12	
+T143	Environment 1211 1235	native container support
+R11	DescriptionOf Arg1:T22 Arg2:T143	
+R12	BiblioOf Arg1:T25 Arg2:T23	
+*	Synonym T35 T34
+T32	Hardware 1938 1942	CPUs
+T144	Hardware 1944 1947	RAM
+T145	File 2052 2070	configuration file
+T146	Method 2091 2115	complete version control
+T147	Method 2420 2441	genome reconstruction
+T148	Method 2446 2454	analysis
+T149	File 2473 2485	final report
+R13	OutputOf Arg1:T149 Arg2:T39	
+T150	Tool 3040 3047	GridION
+T151	Tool 3031 3036	MinIT
+R14	BiblioOf Arg1:T70 Arg2:T69	
+R15	BiblioOf Arg1:T84 Arg2:T83	
+R16	BiblioOf Arg1:T76 Arg2:T75	
+R17	DescriptionOf Arg1:T77 Arg2:T75	
+R18	BiblioOf Arg1:T91 Arg2:T90	
+T152	Biblio 5047 5058	NC_045512.2
+R19	BiblioOf Arg1:T152 Arg2:T89	
+R20	BiblioOf Arg1:T96 Arg2:T95	
+R21	BiblioOf Arg1:T100 Arg2:T99	
+R22	BiblioOf Arg1:T104 Arg2:T103	
+R23	BiblioOf Arg1:T104 Arg2:T102	
+R24	BiblioOf Arg1:T107 Arg2:T106	
+R25	BiblioOf Arg1:T109 Arg2:T108	
+R26	DescriptionOf Arg1:T105 Arg2:T106	
+R27	DescriptionOf Arg1:T105 Arg2:T108	
+R28	DescriptionOf Arg1:T98 Arg2:T99	
+T153	Method 5347 5368	genome reconstruction
+R29	IncludeIn Arg1:T153 Arg2:T95	
+T97	Tool 5400 5414	ARTIC pipeline
+T154	Tool 5425 5449	tools and custom scripts
+T155	Data 5467 5497	viral nanopore sequencing data
+R30	IncludeIn Arg1:T97 Arg2:T154	
+R31	InputOf Arg1:T155 Arg2:T97	
+R32	BiblioOf Arg1:T121 Arg2:T120	
+R33	BiblioOf Arg1:T119 Arg2:T117	
+R34	IncludeIn Arg1:T118 Arg2:T117	
+R35	DescriptionOf Arg1:T116 Arg2:T117	
+R36	IncludeIn Arg1:T114 Arg2:T115	
+R37	BiblioOf Arg1:T123 Arg2:T122	
+R38	InputOf Arg1:T56 Arg2:T58	
+T130	Description 3928 3942	GPU basecaller
+R39	DescriptionOf Arg1:T130 Arg2:T59	
+R40	DescriptionOf Arg1:T68 Arg2:T69	
+R41	InputOf Arg1:T67 Arg2:T69	
+R42	IncludeIn Arg1:T71 Arg2:T72	
+*	Synonym T71 T73
+R43	BiblioOf Arg1:T74 Arg2:T71	
+R44	InputOf Arg1:T71 Arg2:T69	
+R45	DescriptionOf Arg1:T79 Arg2:T80	
+R46	BiblioOf Arg1:T81 Arg2:T80	
+R47	InputOf Arg1:T82 Arg2:T80	
+R48	InputOf Arg1:T85 Arg2:T83	
+R49	DescriptionOf Arg1:T79 Arg2:T83	
+R50	BiblioOf Arg1:T111 Arg2:T110	
+R51	DescriptionOf Arg1:T105 Arg2:T110	
+R52	InputOf Arg1:T113 Arg2:T110	

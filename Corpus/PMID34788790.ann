@@ -1,0 +1,63 @@
+T1	WorkflowName 0 9	nextNEOpi
+T2	Description 11 75	a comprehensive pipeline for computational neoantigen prediction
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T3	WorkflowName 85 94	nextNEOpi
+T4	WorkflowName 105 114	nextNEOpi
+T5	Data 141 149	WGS data
+T6	Data 201 224	bulk-tumor RNA-seq data
+T7	WorkflowName 287 296	nextNEOpi
+T8	WorkflowName 477 486	nextNEOpi
+T9	Tool 566 574	OptiType
+T10	Biblio 576 595	Szolek et al., 2014
+R2	BiblioOf Arg1:T10 Arg2:T9	
+T11	Tool 601 607	HLA-HD
+T12	Biblio 609 631	Kawaguchi et al., 2017
+R3	BiblioOf Arg1:T12 Arg2:T11	
+T13	Data 525 542;555 559	WES/WGS (DNA-seq) data
+T14	Data 547 559	RNA-seq data
+T15	Tool 874 882	OptiType
+T16	Tool 887 893	HLA-HD
+T17	Data 909 921	RNA-seq data
+T18	Data 1109 1117	WGS data
+T19	WorkflowName 1209 1218	nextNEOpi
+T20	Tool 1224 1231	pVACseq
+T21	Biblio 1233 1252	Hundal et al., 2020
+R4	BiblioOf Arg1:T21 Arg2:T20	
+T22	Tool 1486 1495	NetMHCpan
+T23	Tool 1521 1530	MHCflurry
+T24	Biblio 1497 1515	Jurtz et al., 2017
+T25	Biblio 1532 1554	O’Donnell et al., 2020
+R5	BiblioOf Arg1:T24 Arg2:T22	
+R6	BiblioOf Arg1:T25 Arg2:T23	
+T26	Tool 1611 1618	NeoFuse
+T27	Biblio 1620 1640	Fotakis et al., 2020
+R7	BiblioOf Arg1:T27 Arg2:T26	
+T28	WorkflowName 1644 1653	nextNEOpi
+T29	Tool 2014 2019	MiXCR
+T30	Description 2031 2074	predict B-cell receptor and T-cell receptor
+R8	DescriptionOf Arg1:T30 Arg2:T29	
+T31	Biblio 2102 2122	Bolotin et al., 2015
+T32	WorkflowName 2140 2149	nextNEOpi
+T33	WorkflowName 2215 2224	nextNEOpi
+T34	ManagementSystem 2232 2240	Nextflow
+T35	Biblio 2260 2283	Di Tommaso et al., 2017
+R9	BiblioOf Arg1:T35 Arg2:T34	
+T37	Container 2568 2579	singularity
+T38	WorkflowName 2633 2642	nextNEOpi
+T39	Biblio 1988 2011	Litchfield et al., 2021
+T40	Description 1257 1292	predict class-I and -II neoepitopes
+T41	Description 1297 1352	derive features associated with neoantigen presentation
+R10	DescriptionOf Arg1:T41 Arg2:T20	
+R11	DescriptionOf Arg1:T40 Arg2:T20	
+T42	Database 819 839	1000 Genomes Project
+T43	Method 775 798	HLA typing benchmarking
+T44	Method 267 285	data preprocessing
+T45	Method 436 451	majority voting
+T46	Description 1456 1482	percentile rank quantified
+R12	DescriptionOf Arg1:T46 Arg2:T22	
+R13	DescriptionOf Arg1:T46 Arg2:T23	
+T47	Description 1557 1605	Class-I and -II fusion neoepitopes are predicted
+R14	DescriptionOf Arg1:T47 Arg2:T26	
+T48	Description 1919 1941	clonal TMB is computed
+T36	Environment 2546 2551	conda
+T49	Data 130 137;145 149	raw WES data

@@ -1,0 +1,202 @@
+T1	WorkflowName 0 5	mPies
+T2	Description 9 116	novel metaproteomics tool for the creation of relevant protein databases and automatized protein annotation
+T3	Method 151 165	Metaproteomics
+T4	Description 190 257	link the taxonomic diversity and functions of microbial communities
+T5	Biblio 259 260	1
+T6	Biblio 366 367	2
+T7	Biblio 512 513	3
+T9	Data 595 637	metagenomic and/or metatranscriptomic data
+T10	Biblio 639 640	4
+T11	Biblio 641 642	5
+T13	Biblio 682 683	6
+T14	Database 686 690	NCBI
+T15	Biblio 692 693	7
+T16	Biblio 709 710	8
+T18	Biblio 916 917	4
+T19	Biblio 1298 1299	9
+T20	Biblio 1407 1409	10
+T21	Tool 1412 1420	Prophane
+T22	Biblio 1422 1424	11
+T23	Tool 1429 1449	MetaProteomeAnalyzer
+T24	Biblio 1451 1453	12
+T25	Tool 1798 1803	MEGAN
+T26	Database 1874 1878	NCBI
+T28	Biblio 1938 1940	13
+T29	Biblio 2132 2134	14
+T30	Biblio 2297 2298	5
+T31	WorkflowName 2318 2323	mPies
+T32	Description 2416 2465	performs post-search protein consensus annotation
+T33	WorkflowName 2532 2537	mPies
+T34	Description 2568 2601	optimizing metaproteomic analysis
+T35	Description 2611 2648	standardized and automatized workflow
+T36	WorkflowName 2658 2663	mPies
+T37	Version 2685 2688	3.6
+T38	ProgrammingLanguage 2678 2684	Python
+T39	Description 2699 2718	workflow management
+T40	ManagementSystem 2726 2735	Snakemake
+T41	Biblio 2737 2739	15
+T42	Biblio 2765 2767	16
+T43	Description 2772 2794	ensure reproducibility
+T44	WorkflowName 2796 2801	mPies
+T45	Description 2843 2943	create databases (DBs) for protein search using amplicon/metagenomic and/or public repositories data
+T46	Data 2891 2943	amplicon/metagenomic and/or public repositories data
+T47	Parameter 2949 2984	non-assembled metagenome-derived DB
+T48	Parameter 2991 3022	assembled metagenome-derived DB
+T49	Parameter 3030 3049	taxonomy-derived DB
+T50	Parameter 3060 3081	functional-derived DB
+T51	WorkflowName 3113 3118	mPies
+T52	Description 3123 3213	automatically compute sequence alignment-based consensus annotation at protein group level
+T53	WorkflowName 3311 3316	mPies
+T58	WorkflowName 3511 3516	mPies
+T59	Data 3523 3544	metagenomic raw reads
+T60	File 3546 3557	fastq files
+T61	Tool 3564 3575	Trimmomatic
+T62	Biblio 3577 3579	17
+T63	Description 3586 3608	predicts partial genes
+T64	Data 3595 3608	partial genes
+T66	Tool 3614 3626	FragGeneScan
+T67	Biblio 3628 3630	18
+T72	Description 3730 3769	trimmed metagenomic reads are assembled
+T73	Data 3730 3755	trimmed metagenomic reads
+T74	Tool 3782 3789	MEGAHIT
+T75	Biblio 3791 3793	19
+T76	Tool 3798 3808	metaSPAdes
+T77	Biblio 3810 3812	20
+T78	Data 3819 3824	genes
+T79	Tool 3854 3862	Prodigal
+T80	Biblio 3864 3866	21
+T81	ManagementSystem 3888 3897	Snakemake
+T86	WorkflowName 4017 4022	mPies
+T87	Data 4075 4095	metagenomic raw data
+T88	Database 4143 4150	UniProt
+T89	WorkflowName 4162 4167	mPies
+T91	Tool 4173 4180	SingleM
+T92	Biblio 4182 4184	22
+T93	Data 4211 4228	metagenomic reads
+T94	Data 4246 4277	non-redundant list of taxon IDs
+T95	WorkflowName 4366 4371	mPies
+T96	Data 4386 4423	available proteomes for each taxon ID
+T97	Database 4429 4436	UniProt
+T98	Data 4506 4523	16S amplicon data
+T105	Description 4640 4692	create DBs that target specific functional processes
+T106	WorkflowName 4812 4817	mPies
+T107	Data 4829 4858	list of gene or protein names
+T108	Data 4904 4921	protein sequences
+T109	Database 4927 4934	UniProt
+T110	Method 4936 4957	Taxonomic restriction
+T112	Data 5194 5222	Duplicated protein sequences
+T113	Tool 5276 5282	CD-HIT
+T114	Biblio 5284 5286	23
+T115	WorkflowName 5519 5524	mPies
+T116	Description 5525 5599	facilitates taxonomic and functional consensus annotation at protein level
+T118	Description 5647 5654	aligned
+T119	Tool 5660 5667	Diamond
+T120	Biblio 5669 5671	24
+T121	Tool 5681 5688	NCBI-nr
+T122	Biblio 5690 5691	7
+T123	Data 5701 5721	taxonomic annotation
+T124	Description 5731 5752	functional prediction
+T125	Data 5754 5762	proteins
+T126	Description 5767 5774	aligned
+T127	Database 5783 5790	UniProt
+T129	Biblio 5815 5816	8
+T130	Biblio 5827 5829	25
+T131	Method 6045 6075	taxonomic consensus annotation
+T132	Data 6085 6099	alignment hits
+T133	Tool 6108 6115	NCBI-nr
+T134	Description 6149 6203	retrieve a taxonomic annotation for each protein group
+T135	Data 6160 6203	taxonomic annotation for each protein group
+T136	Biblio 6347 6359	Huson et al.
+T137	Biblio 6361 6363	13
+T138	Data 6400 6414	alignment hits
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+R2	DescriptionOf Arg1:T4 Arg2:T3	
+R3	BiblioOf Arg1:T5 Arg2:T3	
+T8	Database 673 680	Ensembl
+R4	BiblioOf Arg1:T13 Arg2:T8	
+R5	BiblioOf Arg1:T15 Arg2:T14	
+T139	Database 698 707	UniProtKB
+R6	BiblioOf Arg1:T16 Arg2:T139	
+T12	Tool 1371 1383	ProteinPilot
+T17	Tool 1385 1404	Pro Group algorithm
+*	Synonym T17 T12
+R7	BiblioOf Arg1:T20 Arg2:T12	
+R8	BiblioOf Arg1:T22 Arg2:T21	
+R9	BiblioOf Arg1:T24 Arg2:T23	
+R10	BiblioOf Arg1:T28 Arg2:T25	
+T27	Description 1813 1887	taxonomic binning by assigning sequences on the nodes of the NCBI taxonomy
+T140	Description 1892 1936	calculates the LCA on the best alignment hit
+R11	DescriptionOf Arg1:T27 Arg2:T25	
+R12	DescriptionOf Arg1:T140 Arg2:T25	
+T141	Description 2364 2411	allows the creation of protein search databases
+R13	DescriptionOf Arg1:T141 Arg2:T31	
+R14	DescriptionOf Arg1:T32 Arg2:T31	
+T142	Description 2485 2510	biological interpretation
+R15	DescriptionOf Arg1:T142 Arg2:T31	
+R16	DescriptionOf Arg1:T34 Arg2:T33	
+R17	DescriptionOf Arg1:T35 Arg2:T33	
+R18	VersionOf Arg1:T37 Arg2:T38	
+R19	DescriptionOf Arg1:T39 Arg2:T40	
+R20	BiblioOf Arg1:T41 Arg2:T40	
+T143	Environment 2755 2763	Bioconda
+R21	BiblioOf Arg1:T42 Arg2:T143	
+R22	DescriptionOf Arg1:T43 Arg2:T143	
+R23	DescriptionOf Arg1:T45 Arg2:T44	
+R24	InputOf Arg1:T46 Arg2:T44	
+R25	DescriptionOf Arg1:T52 Arg2:T51	
+R26	InputOf Arg1:T59 Arg2:T58	
+R27	InputOf Arg1:T59 Arg2:T61	
+R28	BiblioOf Arg1:T62 Arg2:T61	
+R29	DescriptionOf Arg1:T63 Arg2:T66	
+R30	BiblioOf Arg1:T67 Arg2:T66	
+R31	DescriptionOf Arg1:T72 Arg2:T74	
+R32	InputOf Arg1:T73 Arg2:T74	
+R33	BiblioOf Arg1:T75 Arg2:T74	
+R34	BiblioOf Arg1:T77 Arg2:T76	
+R35	DescriptionOf Arg1:T72 Arg2:T76	
+R36	InputOf Arg1:T73 Arg2:T76	
+R37	InputOf Arg1:T78 Arg2:T79	
+R38	BiblioOf Arg1:T80 Arg2:T79	
+T54	Description 4023 4057	extracts the taxonomic information
+R39	DescriptionOf Arg1:T54 Arg2:T86	
+R40	BiblioOf Arg1:T92 Arg2:T91	
+T55	Description 4189 4228	predict OTUs from the metagenomic reads
+R41	DescriptionOf Arg1:T55 Arg2:T91	
+R42	InputOf Arg1:T93 Arg2:T91	
+T56	Description 4100 4137	downloads the corresponding proteomes
+R43	DescriptionOf Arg1:T56 Arg2:T86	
+R44	IncludeIn Arg1:T97 Arg2:T96	
+R45	InputOf Arg1:T107 Arg2:T106	
+*	Synonym T109 T108
+T57	Description 4872 4921	downloads all the corresponding protein sequences
+R46	DescriptionOf Arg1:T57 Arg2:T106	
+R47	BiblioOf Arg1:T114 Arg2:T113	
+T65	Description 5263 5270	removed
+R48	InputOf Arg1:T112 Arg2:T113	
+R49	DescriptionOf Arg1:T65 Arg2:T113	
+R50	DescriptionOf Arg1:T116 Arg2:T115	
+R51	DescriptionOf Arg1:T118 Arg2:T119	
+R52	BiblioOf Arg1:T120 Arg2:T119	
+R53	BiblioOf Arg1:T122 Arg2:T121	
+T68	Data 5636 5643	protein
+R54	InputOf Arg1:T68 Arg2:T119	
+R55	InputOf Arg1:T125 Arg2:T127	
+R56	DescriptionOf Arg1:T126 Arg2:T127	
+T69	Database 5792 5802	Swiss-Prot
+T70	Database 5806 5812	TrEMBL
+T71	Database 5822 5825	COG
+R57	BiblioOf Arg1:T130 Arg2:T71	
+R58	BiblioOf Arg1:T129 Arg2:T127	
+R59	IncludeIn Arg1:T127 Arg2:T69	
+R60	IncludeIn Arg1:T127 Arg2:T70	
+T82	Method 6132 6145	LCA algorithm
+R61	DescriptionOf Arg1:T134 Arg2:T131	
+R62	InputOf Arg1:T135 Arg2:T131	
+T83	Database 6423 6430	UniProt
+T84	Database 6438 6441	COG
+T85	Parameter 3501 3509	mode (i)
+T90	Parameter 3719 3728	mode (ii)
+T99	Parameter 4005 4015	mode (iii)
+T100	Parameter 4585 4594	Mode (iv)
+R63	IncludeIn Arg1:T60 Arg2:T59	
+R64	InputOf Arg1:T132 Arg2:T131	

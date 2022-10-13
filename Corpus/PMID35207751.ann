@@ -1,0 +1,355 @@
+T1	WorkflowName 0 5	SWAAT
+T2	Description 6 90	Bioinformatics Workflow for Protein Structure-Based Annotation of ADME Gene Variants
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T4	Database 266 274	PharmVar
+T5	Biblio 276 292	www.pharmvar.org
+T6	Version 294 325	accessed on the 23 January 2020
+R2	BiblioOf Arg1:T5 Arg2:T4	
+R3	VersionOf Arg1:T6 Arg2:T4	
+T7	Database 384 401	Protein Data Bank
+T8	Database 403 406	PDB
+T9	Database 409 417	PharmVar
+T10	Database 517 555	Pharmacogenomic KnowledgeBase database
+T11	Database 557 565	PharmGKB
+T12	Database 575 625	Clinical Pharmacogenetic Implementation Consortium
+T13	Database 627 631	CPIC
+T14	Tool 859 867	MODELLER
+T15	Description 873 959	homology modeling software to predict the 3D coordinates of missing segments and atoms
+R7	DescriptionOf Arg1:T15 Arg2:T14	
+T17	Method 1348 1365	Ramachandran plot
+T18	Data 1672 1681;1716 1723	Capriotti dataset
+T19	Data 1688 1692;1716 1723	Khan dataset
+T20	Data 1703 1710;1716 1724	Guerios datasets
+T21	Database 2859 2866	AAindex
+T22	ProgrammingLanguage 3477 3483	Python
+T23	LibraryPackage 3492 3504	scikit-learn
+T24	Method 3898 3921	random forest algorithm
+T25	WorkflowName 6443 6448	SWAAT
+T26	Database 5051 5055	CPIC
+T27	Tool 5420 5444	Variant Effect Predictor
+T28	Hardware 5450 5459	webserver
+T29	Tool 5514 5518	SIFT
+T30	Description 5463 5507	predict the functional binary classification
+R10	DescriptionOf Arg1:T30 Arg2:T27	
+T31	Tool 5520 5530	PolyPhen-2
+T32	Tool 5532 5539	PROVEAN
+T33	Tool 5541 5548	MetaSVM
+T34	Tool 5550 5554	CADD
+T35	Tool 5560 5566	FATHMM
+T36	Parameter 5599 5615	default settings
+T37	Hardware 5627 5637	web server
+T38	Data 5658 5735	binary classification was assigned to the ‘high-impact’ and ‘neutral’ classes
+T39	WorkflowName 5818 5823	SWAAT
+T40	Method 6196 6229	Receiver Operating Characteristic
+T41	Method 6231 6234	ROC
+T42	File 6196 6240	Receiver Operating Characteristic (ROC) plot
+T43	LibraryPackage 6251 6262	scikit-lean
+T44	ProgrammingLanguage 6268 6274	Python
+T45	WorkflowName 6564 6569	SWAAT
+T46	WorkflowName 6557 6562	SWAAT
+T47	Version 6594 6609	version 20.10.0
+T48	ManagementSystem 6613 6621	Nextflow
+T49	Version 6715 6724	version 3
+R12	VersionOf Arg1:T47 Arg2:T48	
+T50	ProgrammingLanguage 6728 6734	Python
+R13	VersionOf Arg1:T49 Arg2:T50	
+T51	LibraryPackage 6758 6764	Pandas
+T52	LibraryPackage 6766 6771	Numpy
+T53	LibraryPackage 6772 6782	Matplotlib
+T54	LibraryPackage 6784 6789	Bokeh
+T55	LibraryPackage 6795 6804	biopython
+T56	LibraryPackage 6885 6893	freesasa
+T57	Tool 6900 6905	FoldX
+T58	Method 6912 6917	EnCoM
+T59	Tool 6928 6934	stride
+T61	WorkflowName 7005 7020	PRODRES pipline
+T62	Biblio 7022 7060	https://github.com/ElofssonLab/PRODRES
+T63	Version 7062 7093	accessed on the 2 February 2022
+T64	Description 7110 7154	calculate the PSSMs of the protein sequences
+T65	WorkflowName 7230 7235	SWAAT
+T66	Tool 7377 7385	Transvar
+T67	Description 7345 7352	mapping
+R21	DescriptionOf Arg1:T67 Arg2:T66	
+T68	ProgrammingLanguage 7646 7652	Python
+T69	WorkflowName 7723 7728	SWAAT
+T70	WorkflowName 7826 7831	SWAAT
+T71	WorkflowName 7819 7824	SWAAT
+T72	Description 7864 7904	annotate missense variants of ADME genes
+R22	DescriptionOf Arg1:T72 Arg2:T70	
+T73	File 7914 7923	VCF files
+T74	WorkflowName 8261 8266	SWAAT
+T75	Tool 8567 8572	FoldX
+T77	WorkflowName 8658 8663	SWAAT
+T78	Tool 9397 9407	missense3D
+T79	WorkflowName 9464 9469	SWAAT
+T80	WorkflowName 10618 10623	SWAAT
+T81	Method 10685 10690	ENCoM
+T82	Description 10639 10678	calculation of the protein normal modes
+R24	DescriptionOf Arg1:T82 Arg2:T81	
+T83	Method 10881 10886	ENCoM
+T84	Method 11061 11066	ENCoM
+T85	Tool 11238 11243	FTMap
+T87	WorkflowName 11449 11454	SWAAT
+T88	WorkflowName 11664 11669	SWAAT
+T89	ProgrammingLanguage 11691 11697	Python
+T90	ProgrammingLanguage 11710 11714	Bash
+T91	ManagementSystem 11772 11780	Nextflow
+T92	Database 12023 12053	database for the 36 ADME genes
+T93	WorkflowName 12112 12117	SWAAT
+T94	Biblio 12119 12172	https://github.com/hothman/SWAAT/tree/master/database
+T95	Version 12174 12205	accessed on the 2 February 2022
+R25	BiblioOf Arg1:T94 Arg2:T92	
+R26	VersionOf Arg1:T95 Arg2:T92	
+T96	WorkflowName 13104 13120	PRODRES pipeline
+T97	WorkflowName 13302 13309	PRODRES
+T98	Biblio 13311 13337	https://prodres.bioinfo.se
+R27	BiblioOf Arg1:T98 Arg2:T97	
+T99	Version 13339 13370	accessed on the 2 February 2022
+R28	VersionOf Arg1:T99 Arg2:T97	
+T100	Tool 13479 13491	FTMap server
+T101	WorkflowName 13562 13567	SWAAT
+T102	File 13733 13771	detailed report in HTML and CSV format
+T103	File 13838 13847	VCF files
+T104	WorkflowName 14036 14041	SWAAT
+T106	Data 14142 14161	amino acid sequence
+T107	Data 14167 14192	protein to genome mapping
+T108	Data 14198 14229	PDB to protein sequence mapping
+T109	Data 14235 14256	hotspot patch members
+T110	File 14262 14272	PSSM files
+T111	Data 14288 14296;14319 14325	BLOSUM62 scores
+T112	Data 14335 14375	normal modes of the reference structures
+*	Synonym T8 T7
+*	Synonym T12 T13
+*	Synonym T10 T11
+*	Synonym T41 T40
+T113	Database 187 197	PharmaADME
+T3	Biblio 869 871	26
+R4	BiblioOf Arg1:T3 Arg2:T14	
+T114	Data 155 173	32 core ADME genes
+T115	Data 974 992	ADME core proteins
+T116	Method 1143 1151	filtered
+T117	Method 1047 1064	homology modeling
+T118	Biblio 1281 1283	27
+T119	Biblio 1367 1369	28
+T120	Biblio 1683 1685	29
+T121	Biblio 1694 1696	30
+T122	Biblio 1712 1714	31
+R5	BiblioOf Arg1:T122 Arg2:T20	
+R6	BiblioOf Arg1:T121 Arg2:T19	
+R11	BiblioOf Arg1:T120 Arg2:T18	
+T123	Biblio 2868 2870	32
+R29	BiblioOf Arg1:T123 Arg2:T21	
+T124	Data 2973 2987;3003 3011	training (75%) datasets
+T125	Data 2992 3011	test (25%) datasets
+T126	Method 3440 3456	predictive model
+T127	Data 1737 1753	2614 data points
+T128	Database 2806 2813	AAindex
+T129	Biblio 3506 3508	33
+R30	BiblioOf Arg1:T129 Arg2:T23	
+T130	Biblio 4672 4674	34
+T131	Database 5000 5008	PharmVar
+T132	Biblio 5446 5448	40
+R31	BiblioOf Arg1:T132 Arg2:T27	
+T133	Biblio 6264 6266	33
+R32	BiblioOf Arg1:T133 Arg2:T43	
+T134	Biblio 6623 6625	41
+R33	BiblioOf Arg1:T134 Arg2:T48	
+T135	Biblio 6895 6897	43
+T136	Biblio 6907 6909	44
+T137	Biblio 6919 6921	45
+T138	Biblio 6936 6938	46
+T139	Biblio 6806 6808	42
+R34	BiblioOf Arg1:T139 Arg2:T55	
+R35	BiblioOf Arg1:T138 Arg2:T59	
+R36	BiblioOf Arg1:T137 Arg2:T58	
+R37	BiblioOf Arg1:T136 Arg2:T57	
+R20	DescriptionOf Arg1:T64 Arg2:T61	
+R17	BiblioOf Arg1:T62 Arg2:T61	
+R19	VersionOf Arg1:T63 Arg2:T61	
+T140	Biblio 7392 7394	47
+R38	BiblioOf Arg1:T140 Arg2:T66	
+T141	WorkflowName 7415 7433	auxiliary workflow
+T142	Tool 7660 7675	prot2genCoor.py
+T143	Description 7616 7629	quality check
+R39	DescriptionOf Arg1:T143 Arg2:T142	
+R40	InputOf Arg1:T73 Arg2:T70	
+T144	Description 7934 8231	extracts the information to map the genetic coordinates to protein coordinates, structurally models the missense protein variants, calculates their biophysical and structural properties, and finally reports all this information to assess the status and the pharmacological relevance of the variant
+R41	DescriptionOf Arg1:T144 Arg2:T70	
+T145	Biblio 8591 8593	44
+R42	BiblioOf Arg1:T145 Arg2:T75	
+T146	Biblio 9409 9411	48
+R43	BiblioOf Arg1:T146 Arg2:T78	
+T147	Biblio 9864 9867	18]
+T148	Biblio 9992 9994	49
+T149	Biblio 10417 10419	51
+T150	Biblio 10388 10390	50
+T151	Biblio 10692 10694	45
+T152	Biblio 10854 10856	52
+R44	BiblioOf Arg1:T151 Arg2:T81	
+T153	Biblio 11245 11247	53
+R45	BiblioOf Arg1:T153 Arg2:T85	
+T86	Data 11238 11243;11249 11253	FTMap data
+T154	Biblio 11788 11790	41
+R46	BiblioOf Arg1:T154 Arg2:T91	
+T155	Biblio 13531 13533	53
+T156	Biblio 199 200	5
+T157	Biblio 201 203	25
+R47	BiblioOf Arg1:T156 Arg2:T113	
+R48	BiblioOf Arg1:T157 Arg2:T113	
+T158	Biblio 5201 5203	35
+T159	Biblio 5204 5206	36
+T160	Biblio 5207 5209	37
+T161	Biblio 5210 5212	38
+T162	Biblio 5213 5215	39
+R49	BiblioOf Arg1:T135 Arg2:T56	
+T163	Biblio 11928 11985	https://github.com/hothman/SWAAT/tree/master/auxiliary_wf
+T164	Version 11987 12018	accessed on the 2 February 2022
+T165	WorkflowName 11796 11814	auxiliary workflow
+R50	BiblioOf Arg1:T163 Arg2:T165	
+R51	VersionOf Arg1:T164 Arg2:T165	
+T166	Data 72 90	ADME Gene Variants
+T167	Data 252 260	23 genes
+T168	Data 363 376	3D structures
+T16	Data 1066 1102	Proteins with poor alignment quality
+T169	Method 1269 1279	DOPE score
+R8	BiblioOf Arg1:T118 Arg2:T169	
+T170	Data 1472 1492	dataset of mutations
+T171	Parameter 1524 1534	ΔΔG values
+T172	Data 1640 1647	dataset
+R52	IncludeIn Arg1:T172 Arg2:T18	
+R53	IncludeIn Arg1:T172 Arg2:T19	
+R54	IncludeIn Arg1:T172 Arg2:T20	
+T173	Parameter 1789 1799	ΔΔG values
+T174	Data 1871 1899	96 unique protein structures
+T175	Method 2109 2126	filtering process
+T176	Method 2412 2432	computed 12 features
+T177	Description 2443 2944	ΔΔG, ΔΔSvib, the solvent-accessible surface area (SASA) ratio between the reference and the variant amino acids, the Position-Specific Scoring Matrix (PSSM) score for substituting the reference amino acid by the variant and by itself, respectively, Sneath’s index, Grantham’s index, and BLOSUM62 substitution score, amino acid volume descriptor (BIGC670101) from AAindex, hydrophobicity descriptor (JOND750101) from AAindex [32], and the difference of the total protein solvent-accessible surface area
+R55	DescriptionOf Arg1:T177 Arg2:T176	
+T178	Data 2815 2840	hydrophobicity descriptor
+R56	ComeFrom Arg1:T178 Arg2:T21	
+T179	Data 2759 2787	amino acid volume descriptor
+R57	ComeFrom Arg1:T179 Arg2:T128	
+T180	Data 2950 2957	dataset
+R58	IncludeIn Arg1:T180 Arg2:T124	
+R59	IncludeIn Arg1:T180 Arg2:T125	
+T181	Data 3017 3033	training dataset
+T182	Method 3046 3061	build the model
+T183	Method 3066 3084	fit the parameters
+T184	Data 3096 3108	test dataset
+T185	Method 3121 3145	evaluate the performance
+T186	Method 3169 3187	detect overfitting
+T187	Method 3647 3679	10-fold cross-validation process
+T188	Method 3758 3774	Cross-validation
+T189	Method 3971 3998	Hyperparameter optimization
+T190	Parameter 4014 4055	adjustment of the number of trees to 1000
+T191	Parameter 4059 4113	minimum number of samples used to split the nodes to 2
+T192	Parameter 4123 4174	minimum samples required to be at a leaf node of 42
+T193	Parameter 4180 4292	maximum number of features for the best tree split is defined by the square root of the total number of features
+T194	Parameter 4298 4336	maximum depth of the tree is set to 60
+T195	Data 4342 4359	bootstrap samples
+T196	Method 4373 4388	build the model
+T197	Method 3737 3756	build the predictor
+T198	Data 4564 4584	benchmarking dataset
+T199	Data 4471 4540	A list of variants, whose functional effects on the protein are known
+T200	Data 4600 4624	64 variants of DPYD gene
+T201	Biblio 4655 4670	Shrestha et al.
+R60	BiblioOf Arg1:T201 Arg2:T200	
+T202	Data 4845 4856	55 variants
+T203	Data 5029 5037	variants
+T204	Data 5126 5142	39 more variants
+T205	Parameter 5262 5302	ΔΔG values between −0.5 and 0.5 kcal/mol
+T206	Data 5218 5234	Neutral variants
+T207	Data 5308 5322	other variants
+T208	Data 5377 5398	benchmarking variants
+T209	Tool 5572 5588	prediction tools
+R9	ParameterOf Arg1:T36 Arg2:T209	
+R61	OutputOf Arg1:T38 Arg2:T209	
+T210	Method 5760 5774	classification
+T211	Tool 5818 5834	SWAAT classifier
+T212	Method 5854 5862	accuracy
+T213	Method 5864 5875	sensitivity
+T214	Method 5909 5920	specificity
+T215	Description 5977 6024	accuracy=TP+TNTP+TN+FP+FNTPR=TPTP+FNTNR=TNTN+FP
+R62	DescriptionOf Arg1:T215 Arg2:T212	
+T216	Method 6355 6375	Area Under the Curve
+T217	Method 6377 6380	AUC
+*	Synonym T216 T217
+T218	Method 6300 6319	true positive rates
+T219	Method 6325 6345	false positive rates
+T220	Data 6391 6437	raw scores of the different variant predictors
+R63	InputOf Arg1:T220 Arg2:T218	
+R64	InputOf Arg1:T220 Arg2:T219	
+R65	InputOf Arg1:T220 Arg2:T216	
+T221	Data 6462 6485	class probability score
+R66	InputOf Arg1:T221 Arg2:T25	
+T222	Description 6506 6517	calculation
+R67	DescriptionOf Arg1:T222 Arg2:T25	
+T223	WorkflowName 6639 6652	main workflow
+T60	WorkflowName 7210 7228	auxiliary workflow
+T224	Data 7241 7293	pre-mapped coordinates data of the genetic positions
+R14	InputOf Arg1:T224 Arg2:T65	
+T225	Data 7734 7749	GRCh37 assembly
+R15	InputOf Arg1:T225 Arg2:T69	
+T76	Method 10368 10386	molecular dynamics
+T226	Method 10396 10415	Monte Carlo methods
+T227	Description 10338 10359	simulation techniques
+R16	DescriptionOf Arg1:T227 Arg2:T76	
+R18	DescriptionOf Arg1:T227 Arg2:T226	
+R23	BiblioOf Arg1:T149 Arg2:T226	
+R68	BiblioOf Arg1:T150 Arg2:T76	
+T228	Data 11162 11172	ADME genes
+T229	Data 11330 11343	ADME proteins
+T230	Data 11467 11506	Z-score and Percentile score statistics
+R69	OutputOf Arg1:T230 Arg2:T87	
+T231	Data 11522 11548	number of hits per hotspot
+R70	OutputOf Arg1:T231 Arg2:T87	
+T232	Tool 11691 11705	Python scripts
+T233	Tool 11710 11727	Bash instructions
+T234	Description 11832 11914	build a database that contains information retrieved during the annotation process
+R71	DescriptionOf Arg1:T234 Arg2:T165	
+T235	Data 12252 12262	ADME genes
+T236	WorkflowName 12337 12355	auxiliary workflow
+T237	WorkflowName 12313 12331	auxiliary workflow
+T238	Data 12542 12568	functionally related genes
+T239	Data 12681 12712	list of the Uniprot identifiers
+T240	Database 12693 12700	Uniprot
+T241	Data 12721 12735	PDB structures
+T242	Database 12721 12724	PDB
+T243	Data 12757 12762	genes
+T244	Data 12458 12463	genes
+T245	WorkflowName 12874 12887	main workflow
+T246	WorkflowName 12786 12804	auxiliary workflow
+T247	Description 12896 12906	annotation
+T248	Description 12819 12857	generate and aggregate the information
+R72	DescriptionOf Arg1:T248 Arg2:T246	
+R73	DescriptionOf Arg1:T247 Arg2:T245	
+T249	Data 12922 12945	protein to gene mapping
+T250	Data 12947 12976	protein to structure mapping,
+T251	File 13069 13083	database files
+T252	Data 13146 13151	PSSMs
+R74	OutputOf Arg1:T252 Arg2:T96	
+T253	Hardware 13281 13290	webserver
+T254	Data 13248 13273	sequences of the proteins
+T255	File 13462 13471	PDB files
+T256	Database 13462 13465	PDB
+T257	WorkflowName 13511 13529	auxiliary workflow
+T258	WorkflowName 13581 13594	main workflow
+R75	IncludeIn Arg1:T101 Arg2:T258	
+T260	Description 13644 13718	annotate them according to sequence-based and biophysical-based properties
+R77	DescriptionOf Arg1:T260 Arg2:T258	
+R78	OutputOf Arg1:T102 Arg2:T258	
+T261	Data 13626 13642	list of variants
+R76	InputOf Arg1:T261 Arg2:T258	
+T259	Data 13808 13824	list of variants
+T262	Data 13865 13869	gene
+T263	Data 13929 13934	genes
+T264	Database 13978 13985	Uniprot
+T265	Data 13978 13997	Uniprot identifiers
+T105	WorkflowName 14093 14111	auxiliary workflow
+T266	Parameter 14049 14075	path to the database files
+R79	ParameterOf Arg1:T266 Arg2:T104	
+T267	Database 14061 14075	database files
+R80	OutputOf Arg1:T267 Arg2:T105	
+T268	Database 14198 14201	PDB
+T269	Data 14298 14306;14319 14325	Grantham scores
+T270	Data 14312 14325	Sneath scores

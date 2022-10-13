@@ -1,0 +1,110 @@
+T1	WorkflowName 59 80	metashot/prok-quality
+T2	Description 0 53	Large-scale quality assessment of prokaryotic genomes
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T3	WorkflowName 112 133	Metashot/prok-quality
+T4	ManagementSystem 155 163	Nextflow
+T5	Description 164 188	domain-specific language
+R2	DescriptionOf Arg1:T5 Arg2:T4	
+T6	ManagementSystem 190 198	Nextflow
+T7	Container 386 392	Docker
+T8	WorkflowName 550 571	metashot/prok-quality
+T9	Version 572 578	v1.2.0
+R3	VersionOf Arg1:T9 Arg2:T8	
+T10	Tool 754 760	CheckM
+T11	Version 761 767	v1.1.2
+R4	VersionOf Arg1:T11 Arg2:T10	
+T12	Tool 912 918	CheckM
+T13	Tool 1031 1037	CheckM
+T14	Tool 1093 1097	GUNC
+T15	Version 1098 1104	v1.0.1
+R5	VersionOf Arg1:T15 Arg2:T14	
+T16	Tool 1127 1133	CheckM
+T17	Tool 1306 1310	GUNC
+T18	Tool 1347 1351	GUNC
+T19	Description 1352 1439	quantifies the lineage homogeneity of contigs with respect to the full gene complement,
+R6	DescriptionOf Arg1:T19 Arg2:T18	
+T20	Tool 1530 1537	Barrnap
+T21	Version 1538 1542	v0.9
+R7	VersionOf Arg1:T21 Arg2:T20	
+T22	Tool 1607 1642	BAsic Rapid Ribosomal RNA Predictor
+T23	Tool 1645 1652	Barrnap
+T24	Parameter 1660 1686	Hidden Markov models (HMM)
+R9	ParameterOf Arg1:T24 Arg2:T22	
+T25	Tool 1734 1745	tRNAscan-SE
+T26	Version 1746 1752	v2.0.6
+R10	VersionOf Arg1:T26 Arg2:T25	
+T27	Tool 1784 1795	tRNAscan-SE
+T28	Parameter 1807 1845	bacteria and archaea covariance models
+R11	ParameterOf Arg1:T28 Arg2:T27	
+T29	Tool 1904 1908	dRep
+T30	Version 1909 1915	v2.6.2
+R12	VersionOf Arg1:T30 Arg2:T29	
+T31	Method 1917 1930	Dereplication
+T32	Tool 2341 2345	dRep
+T33	Tool 2369 2373	dRep
+T34	Tool 2445 2451	CheckM
+T37	LibraryPackage 2740 2745	NumPy
+T38	LibraryPackage 2751 2757	Pandas
+T39	LibraryPackage 2762 2774	scikit-learn
+T40	WorkflowName 2800 2821	metashot/prok-quality
+T41	Version 2822 2828	v1.2.0
+T42	Container 2838 2844	Docker
+T43	ManagementSystem 2849 2857	Nextflow
+T44	Version 2869 2877	v20.07.1
+R14	VersionOf Arg1:T44 Arg2:T43	
+T45	Container 2899 2910	Singularity
+T46	Container 2952 2958	Docker
+T47	Tool 3014 3020	CheckM
+T48	Version 3022 3028	v1.1.2
+R15	VersionOf Arg1:T48 Arg2:T47	
+T49	Description 204 273	framework for building scalable scientific workflows using containers
+R16	DescriptionOf Arg1:T49 Arg2:T6	
+R17	VersionOf Arg1:T41 Arg2:T40	
+T50	Version 2640 2641	3
+T36	ProgrammingLanguage 2634 2640	Python
+R18	VersionOf Arg1:T50 Arg2:T36	
+T35	ProgrammingLanguage 2582 2588	Python
+T51	Version 2588 2589	3
+R19	VersionOf Arg1:T51 Arg2:T35	
+T52	Database 1693 1723	bacteria and archaea databases
+T53	Version 739 752	version 1.2.0
+T54	Parameter 958 1029	ubiquitous and lineage-specific, single-copy core genes (SCGs) catalogs
+R20	ParameterOf Arg1:T54 Arg2:T12	
+T55	Description 1054 1091	recover the basic assembly statistics
+R21	DescriptionOf Arg1:T55 Arg2:T13	
+*	Synonym T23 T22
+T57	Description 672 717	manipulate the output of the different tasks.
+T58	Description 811 863	assessment of completeness and contamination of MAGs
+T59	Biblio 919 921	13
+R22	BiblioOf Arg1:T59 Arg2:T12	
+T60	Description 929 951	estimate these metrics
+R23	DescriptionOf Arg1:T60 Arg2:T12	
+T61	Biblio 1311 1313	14
+T62	Biblio 1255 1256	6
+R24	BiblioOf Arg1:T61 Arg2:T17	
+T63	Description 1544 1599	The presence of 5S, 23S and 16S rRNA genes is predicted
+R25	DescriptionOf Arg1:T63 Arg2:T22	
+T64	Method 1660 1680	Hidden Markov models
+T65	Method 1682 1685	HMM
+*	Synonym T64 T65
+T66	Biblio 1797 1799	15
+T67	Description 1754 1777	tRNA genes are searched
+R26	DescriptionOf Arg1:T67 Arg2:T27	
+R27	BiblioOf Arg1:T66 Arg2:T27	
+T68	Biblio 2074 2076	16
+T69	Biblio 2195 2197	17
+T70	Description 1936 2019	procedure that groups the input genomes according to their whole-genome similarity,
+R28	DescriptionOf Arg1:T70 Arg2:T29	
+T71	Parameter 2026 2073	metrics such as the Average Nucleotide Identity
+R29	ParameterOf Arg1:T71 Arg2:T29	
+T72	Method 2085 2098	Dereplication
+T73	Tool 2293 2297	GUNC
+T74	Biblio 2347 2349	18
+T75	Biblio 2747 2749	17
+R13	BiblioOf Arg1:T75 Arg2:T37	
+T56	Parameter 3124 3142	--max_memory 16.GB
+T76	Parameter 3105 3119	--reduced_tree
+R8	BiblioOf Arg1:T74 Arg2:T32	
+T77	Hardware 3057 3068	workstation
+T78	Parameter 3074 3086	16 GB of RAM
+T79	Parameter 2969 2981	70 GB of RAM

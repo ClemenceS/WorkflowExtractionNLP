@@ -1,0 +1,48 @@
+Accurate and Efficient KIR Gene and Haplotype Inference From Genome Sequencing Reads With Novel K-mer Signatures
+
+
+	Materials and Methods
+
+
+
+	Overview
+
+The workflow of KPI consists of three steps,
+ ** Discover the 25mer gene markers based on a multiple sequence alignment analysis of 68 full-length haplotype sequences.
+** Count the 25mer markers in the reads of genomic DNA per individual to generate the individual’s 25mer genotype.
+** Predict presence/absence per gene from the marker genotypes for each individual.
+** Predict haplotype pairs from the gene presence/absence calls for each individual.
+In the following, we first explain each step and then describe the synthetic data and GoNL data used for the evaluation.
+
+
+	Step 1: Discovering 25mer Gene Markers
+
+To discover gene marker 25mers, first a multiple sequence alignment (MSA) was created with 68 publicly deposited full-length haplotypes sequences (11). Briefly, each haplotype was annotated at an average resolution of ~4kbp using a set of 15 120-base markers. This high-level annotation was aligned into a MSA representing a structural alignment of all haplotypes. Then, each subregion was aligned to base pair resolution. This resulted in a full resolution, full haplotype MSA that accurately classifies each allele into a haplotype-defined locus, and it aligns the alleles precisely at each locus. The haplotype and gene annotations of the MSA provided a list of full-length alleles for 16 genes: KIR2DL1-5, KIR2DS1-5, KIR2DP1, KIR3DL1-3, KIR3DP1, and KIR3DS1. Markers for each gene locus were chosen by selecting all sequences of length 25 (25mers) present in every allele of the gene but not elsewhere in the KIR haplotypes nor the rest of the genome reference GRCh38. More details about the algorithm are in Supplemental Figure 1. The marker sequences are in Supplemental Data Sheet 1 and also checked in to GitHub at https://github.com/droeatumn/kpi/tree/master/input in text and fasta format.
+
+
+	Step 2: Count 25mer Markers
+
+KMC 3, with workflows implemented in Nextflow (12) and Apache Groovy (13) and a software environment implemented as a Docker container, is used to create 25mer databases from sequence or short-read data and match the markers across the datasets. Using KMC 3, we generate the list of all 25mers from the short reads of each individual and then match the 25mers in the marker databases to report the hit counts of each 25mer marker in the individual. Details are in Supplemental Figure 1.
+
+
+	Step 3: Individual Genotyping From 25mer Markers
+
+KPI calls presence/absence per gene by aggregating the presence/absence genotypes of many small (25mer) markers, each specific to one gene. 25mers with hit counts less than three are considered sequencing errors and set to zero. If the mean hit count of all the markers per gene is zero, then the gene is predicted absent; otherwise, it is called present. Additional details can be found in Supplemental Figure 1.
+
+
+	Step 4: Individual Haplotyping From Genotypes
+
+Haplotype-pair predictions were made by fitting the genotype to all possible pairs of the 16 structural reference haplotypes defined in Figure 1. The numbers and frequencies of the haplotypes are from Jiang et al. 2012 (4) ( Table 1); some of their haplotypes are combined because Jiang et al. consider certain alleles as separate haplotypes, such as full or deleted alleles of KIR2DS4. These 16 haplotypes represent 97% of all haplotypes in the Jiang et al. report.
+For the GoNL predictions, haplotype ambiguity was reduced by family trio patterns and then further by the EM (Expectation-Maximization)-based methods as described and used in Vierra-Green 2012 (14). Haplotype frequencies were calculated from the EM-reduced individual haplotype-pair predictions. These haplotype frequency calculations are not possible on the KPI’s haplotype-pair predictions because they can be ambiguous.
+
+
+	Synthetic Capture on Diploid Data
+
+KPI was evaluated on a synthetic test set. There are six reference haplotype structures with publicly deposited full-length sequences ( Figure 1, top six rows). For each of these six structures, one sequence was randomly chosen to represent that structure, and it was paired with a random haplotype sequence from the set of all sequences, with an equal probability for each sequence. dwgsim (12) was used to generate 10,000 2×150 pair reads per haplotype (~20× coverage) with 1% error rate. This provided a simulated six-person validation set of six diploid whole-region short-read sequences, representing all fully sequenced haplotype structures and paired to provide a variety of genotypes. The sequences are included in Supplemental Data Sheet 2.
+
+
+	GoNL Family WGS and Immunochip SNP Data
+
+KPI was also run on a large real-world example. WGS was obtained from The Genome of the Netherlands (GoNL) (13), a genome sequencing project whose goal is to map the genetic variation within the population of Netherlands in 250 family trios (750 individuals). The project provided non-paired sequencing of the whole genomes of the population, which was done on the Illumina HiSeq 2000 platform. Coverage of the KIR region were similar to the previously reported (13) whole-genome average of ~10–15×. Two individuals from two different families were removed from the GoNL project for data quality reasons, giving a total of 748 individuals.
+KPI’s GoNL predictions were compared with results from microarray-based interpretation algorithm KIR*IMP. Illumina Immunochip microarray SNP data was obtained from GoNL (13). The data was prepared and executed following instructions using KIR*IMP v1.2.0 on 2019-10-05.
+To the best of our knowledge, there only exists one method to predict KIR gene content from WGS sequences (15). However, we were unable to obtain results with it for both evaluation data sets. According to the authors, the current version is deprecated and to be replaced soon (16).

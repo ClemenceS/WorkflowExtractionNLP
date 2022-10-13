@@ -1,0 +1,49 @@
+mPies: a novel metaproteomics tool for the creation of relevant protein databases and automatized protein annotation
+
+
+	Implementation
+
+
+
+	Background
+
+Metaproteomics is a valuable method to link the taxonomic diversity and functions of microbial communities [1]. However, the use of metaproteomics still faces methodological challenges and lacks of standardisation [2]. The creation of relevant protein search databases and protein annotation remain hampered by the inherent complexity of microbial communities [3].
+Protein search databases can be created based on reads or contigs derived from metagenomic and/or metatranscriptomic data [4,5]. Public repositories such as Ensembl [6], NCBI [7] or UniProtKB [8] can also be used as search databases but it is necessary to apply relevant filters (e.g. based on the habitat or the taxonomic composition) in order to decrease computation time and false discovery rate [4]. Until now, no tool exists that either creates taxonomic or functional subsets of public repositories or combines different protein databases in order to optimize the total number of identified proteins.
+The so-called protein inference issue occurs when the same peptide sequence is found in multiple proteins, thus leading to inaccurate taxonomic and functional interpretation [9]. To address this issue, protein identification software tools such as ProteinPilot (Pro Group algorithm) [10], Prophane [11] or MetaProteomeAnalyzer [12] perform automatic grouping of homologous protein sequences. Interpreting protein groups can be challenging especially in complex microbial community where redundant proteins can be found in a broad taxonomic range. A well-known strategy to deal with homologous protein sequences is to calculate the lowest common ancestor (LCA). For instance, MEGAN performs taxonomic binning by assigning sequences on the nodes of the NCBI taxonomy and calculates the LCA on the best alignment hit [13]. However, another crucial challenge related to protein annotation still remains: protein sequences annotation often relies on alignment programs automatically retrieving the first hit only [14]. The reliability of this approach is hampered by the existence of taxonomic and functional discrepancies among the top alignment results with very low e-values [5]. Here, we present mPies, a new highly customizable program that allows the creation of protein search databases and performs post-search protein consensus annotation, thus facilitating biological interpretation.
+
+
+	Workflow design
+
+mPies provides multiple options for optimizing metaproteomic analysis within a standardized and automatized workflow (Fig.1). mPies is written in Python 3.6, uses the workflow management system Snakemake [15] and relies on Bioconda [16] to ensure reproducibility. mPies can run in up to four different modes to create databases (DBs) for protein search using amplicon/metagenomic and/or public repositories data: (i) non-assembled metagenome-derived DB, (ii) assembled metagenome-derived DB, (iii) taxonomy-derived DB, and (iv) functional-derived DB. After protein identification, mPies can automatically compute sequence alignment-based consensus annotation at protein group level. By taking into account multiple alignment hits for reliable taxonomic and functional inference, mPies limits the protein inference issue and allows more relevant biological interpretation of metaproteomes from diverse environments.
+
+
+
+	Mode (i): Non-assembled metagenome-derived DB
+
+In mode (i), mPies trims metagenomic raw reads (fastq files) with Trimmomatic [17], and predicts partial genes with FragGeneScan [18] which are built into the protein DB.
+
+
+	Mode (ii): Assembled metagenome-derived DB
+
+In mode (ii), trimmed metagenomic reads are assembled either with MEGAHIT [19] or metaSPAdes [20]. The genes are subsequently called with Prodigal [21]. The utilization of Snakemake allows easy adjustment of the assembly and gene calling parameters.
+
+
+	Mode (iii): Taxonomy-derived DB
+
+In mode (iii), mPies extracts the taxonomic information derived from the metagenomic raw data and downloads the corresponding proteomes from UniProt. To do so, mPies uses SingleM [22] to predict OTUs from the metagenomic reads. Subsequently, a non-redundant list of taxon IDs corresponding to the taxonomic diversity of the observed habitat is generated. Finally, mPies retrieves all available proteomes for each taxon ID from UniProt. It is noteworthy that the taxonomy-derived DB can be generated from 16S amplicon data or a user-defined list.
+
+
+	Mode (iv): Functional-derived DB
+
+Mode (iv) is a variation of mode (iii) which allows to create DBs that target specific functional processes (e.g. carbon fixation or sulphur cycle) instead of downloading entire proteomes for taxonomic ranks. For that purpose, mPies requires a list of gene or protein names as input and downloads all the corresponding protein sequences from UniProt. Taxonomic restriction can be defined (e.g. Proteobacteria-related sequences only) for highly specific DB creation.
+
+
+	Post-processing
+
+If more than one mode was selected for protein DB generation, all proteins are merged into one combined protein search DB. Duplicated protein sequences (default: sequence similarity 100%) are removed with CD-HIT [23]. All protein headers are hashed (default: MD5) to obtain uniform headers and to reduce the file size for the final protein search database in order to keep the memory requirements of downstream analysis low.
+
+
+	Protein annotation
+
+mPies facilitates taxonomic and functional consensus annotation at protein level. After protein identification, each protein is aligned with Diamond [24] against NCBI-nr [7] for the taxonomic annotation. For the functional prediction, proteins are aligned against UniProt (Swiss-Prot or TrEMBL) [8] and COG [25]. The alignment hits (default: retained aligned sequences = 20, bitscore ≥80) are automatically retrieved for consensus taxonomic and functional annotation, for which the detailed strategies are provided below.
+The taxonomic consensus annotation uses the alignment hits against NCBI-nr and applies the LCA algorithm to retrieve a taxonomic annotation for each protein group (protein grouping comprises the assignment of multiple peptides to the same protein and is facilitated by proteomics software) as described by Huson et al. [13]. For the functional consensus, the alignment hits against UniProt and/or COG are used to extract the most frequent functional annotation per protein group within their systematic recommended names. This is the first time that a metaproteomics tool includes this critical step, as previously only the first alignment hit was kept. In order to ensure the most accurate annotation, a minimum of 20 best alignment hits should be kept for consensus annotation. Nevertheless, this parameter is customizable and and this number could be modified.

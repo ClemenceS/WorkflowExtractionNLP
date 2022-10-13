@@ -1,0 +1,229 @@
+T1	WorkflowName 0 5	ARMOR
+T2	Description 10 93	Automated Reproducible MOdular Workflow for Preprocessing and Differential Analysis
+T3	Data 97 109	RNA-seq Data
+T4	WorkflowName 153 158	ARMOR
+T5	Description 183 213	perform an end-to-end analysis
+T6	Data 217 234	bulk RNA-seq data
+T7	File 250 261	FASTQ files
+T8	Data 267 287	raw sequencing reads
+T9	Data 300 305	Reads
+T10	Description 320 335	quality control
+T11	Tool 341 347	FastQC
+T12	Biblio 350 408	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+T13	Description 427 443	adapter trimming
+T14	Tool 450 461	TrimGalore!
+T15	Biblio 464 527	https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+T16	Description 543 549	mapped
+T17	Data 555 574	transcriptome index
+T18	Tool 581 587	Salmon
+T19	Biblio 589 606	Patro et al. 2017
+T20	Description 625 646	aligned to the genome
+T21	Tool 653 657	STAR
+T22	Biblio 659 676	Dobin et al. 2013
+T23	Data 679 710	Estimated transcript abundances
+T24	Tool 716 722	Salmon
+T25	ProgrammingLanguage 741 742	R
+T26	LibraryPackage 753 760	tximeta
+T27	Biblio 770 789	Soneson et al. 2015
+T28	Biblio 790 806	Love et al. 2019
+T29	Description 812 853	analyzed for differential gene expression
+T30	Description 871 900	differential transcript usage
+T31	Tool 906 911	edgeR
+T32	Biblio 913 933	Robinson et al. 2010
+T33	Tool 939 946	DRIMSeq
+T34	Biblio 948 973	Nowicka and Robinson 2016
+T35	Data 980 995	quantifications
+T36	Data 1006 1014	metadata
+T37	Data 1037 1057	statistical analyses
+T38	File 1074 1102	SingleCellExperiment objects
+T39	Biblio 1104 1122	Lun and Risso 2019
+T40	Biblio 1199 1216	Huber et al. 2015
+T41	Biblio 1217 1238	Amezquita et al. 2019
+T42	Description 1241 1283	Quantification and quality control results
+T43	File 1304 1318	MultiQC report
+T44	Tool 1304 1311	MultiQC
+T45	Biblio 1320 1337	Ewels et al. 2016
+T46	File 1416 1425	Snakefile
+T48	WorkflowName 1490 1495	ARMOR
+T49	Data 1519 1549	RNA-seq data from any organism
+T50	Database 1659 1666	Ensembl
+T51	Biblio 1668 1687	Zerbino et al. 2018
+T52	Database 1692 1699	GENCODE
+T53	Biblio 1701 1721	Frankish et al. 2019
+T54	File 1737 1752	reference files
+T55	File 1769 1780	FASTQ files
+T56	Data 1790 1806	sequencing reads
+T57	File 1839 1857	configuration file
+T58	File 1892 1905	metadata file
+T59	Description 1910 2079	tab-delimited text file listing the name of the samples, the library type (single- or paired-end) and any other covariates that will be used for the statistical analysis
+T62	File 2109 2118	Snakefile
+T63	File 2156 2167	input files
+T64	File 2194 2212	configuration file
+T65	WorkflowName 2267 2272	ARMOR
+T66	Biblio 2312 2335	Köster and Rahmann 2012
+T67	ManagementSystem 2430 2439	Snakemake
+T68	File 2690 2708	configuration file
+T69	File 2862 2871	Snakefile
+T70	Environment 3077 3097	auto-generated conda
+T71	ManagementSystem 3152 3161	Snakemake
+T72	File 3260 3276	environment file
+T73	Tool 3356 3364	software
+T74	ManagementSystem 3495 3504	Snakemake
+T75	Environment 3509 3514	conda
+T76	WorkflowName 3591 3596	ARMOR
+T77	Environment 3642 3647	conda
+T78	Description 3675 3692	manage everything
+T80	ProgrammingLanguage 3735 3736	R
+T82	File 4085 4111	envs/environment.yaml file
+T83	Environment 4124 4129	conda
+T86	WorkflowName 4362 4367	ARMOR
+T87	ManagementSystem 4397 4406	snakemake
+T88	Environment 4456 4461	conda
+T89	ManagementSystem 4550 4559	Snakemake
+T91	File 4584 4605	envs/environment.yaml
+T92	ProgrammingLanguage 4672 4673	R
+T94	ProgrammingLanguage 4682 4683	R
+T95	Biblio 4703 4725	scripts/install_pkgs.R
+T96	File 4796 4814	configuration file
+T97	Parameter 4928 4932	path
+T98	File 5004 5022	configuration file
+T99	File 5105 5119	.Renviron file
+T100	ProgrammingLanguage 5138 5139	R
+T101	WorkflowName 5266 5271	ARMOR
+T102	Hardware 5291 5296	macOS
+T103	Hardware 5301 5314	Linux systems
+T104	WorkflowName 5341 5346	ARMOR
+T105	Description 5356 5382	quasi-likelihood framework
+T106	Tool 5386 5391	edgeR
+T107	Biblio 5393 5413	Robinson et al. 2010
+T108	Biblio 5414 5429	Lun et al. 2016
+T109	Description 5434 5480	perform tests for differential gene expression
+T110	Tool 5482 5488	camera
+T111	Biblio 5490 5507	Wu and Smyth 2012
+T112	Description 5512 5547	perform associated geneset analysis
+T113	Tool 5553 5560	DRIMSeq
+T114	Biblio 5562 5587	Nowicka and Robinson 2016
+T115	Description 5592 5649	test for differential transcript usage between conditions
+T116	File 5711 5730	Rmarkdown templates
+T117	Tool 5711 5720	Rmarkdown
+T118	Biblio 5732 5751	Allaire et al. 2018
+T119	Biblio 5752 5767	Xie et al. 2018
+T120	Description 5903 5920	test any contrast
+T121	File 5964 5982	configuration file
+T122	ProgrammingLanguage 5998 5999	R
+T123	Method 6157 6170	template code
+T124	Method 6217 6233	additional plots
+T126	Method 6325 6345	statistical analysis
+T128	File 6437 6459	standalone html report
+T129	File 6553 6565	Output files
+T130	File 6571 6583	output files
+T131	WorkflowName 6606 6611	ARMOR
+T132	File 6684 6693	log files
+T133	File 6760 6796	detailed summary of the output files
+T136	ManagementSystem 7051 7060	Snakemake
+T137	Parameter 7070 7077	flag -D
+T138	Parameter 7081 7099	‐‐detailed-summary
+T139	Method 7112 7131	benchmark directive
+T140	ManagementSystem 7135 7144	Snakemake
+T141	WorkflowName 7146 7151	ARMOR
+T142	File 7181 7202	additional text files
+T143	Method 7294 7314	statistical analyses
+T144	Data 7337 7379	transcript- and gene-level quantifications
+T145	File 7393 7421	SingleCellExperiment objects
+T146	Biblio 7423 7441	Lun and Risso 2019
+T147	Description 7519 7556	downstream analysis and visualization
+T148	Biblio 7637 7661	Rue-Albrecht et al. 2018
+T149	Environment 7915 7920	conda
+T150	Environment 8068 8080	single conda
+T151	Parameter 8104 8120	conda env create
+T152	File 8310 8340	config.yaml configuration file
+T153	ManagementSystem 8346 8355	snakemake
+T154	WorkflowName 8417 8422	ARMOR
+T155	File 8502 8518	config.yaml file
+T156	ManagementSystem 8564 8573	Snakemake
+T157	WorkflowName 8585 8590	ARMOR
+T158	File 8681 8695	file structure
+T159	Environment 8829 8834	conda
+T160	WorkflowName 9216 9221	ARMOR
+T161	WorkflowName 9245 9250	ARMOR
+T162	Biblio 9289 9322	https://github.com/csoneson/ARMOR
+T163	Biblio 9424 9462	https://github.com/csoneson/ARMOR/wiki
+T164	File 9607 9636	Supplemental file DataS1.html
+T166	File 9650 9664	MultiQC report
+T167	Database 9801 9809	FigShare
+T168	Biblio 9811 9846	https://doi.org/10.25387/g3.8053280
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+R2	InputOf Arg1:T3 Arg2:T1	
+R3	InputOf Arg1:T6 Arg2:T4	
+R4	DescriptionOf Arg1:T5 Arg2:T4	
+R5	InputOf Arg1:T7 Arg2:T4	
+R6	IncludeIn Arg1:T7 Arg2:T8	
+R7	DescriptionOf Arg1:T10 Arg2:T11	
+R8	BiblioOf Arg1:T12 Arg2:T11	
+R9	DescriptionOf Arg1:T13 Arg2:T14	
+R10	BiblioOf Arg1:T15 Arg2:T14	
+R11	InputOf Arg1:T17 Arg2:T18	
+R12	DescriptionOf Arg1:T16 Arg2:T18	
+R13	InputOf Arg1:T9 Arg2:T11	
+R14	DescriptionOf Arg1:T20 Arg2:T21	
+R15	BiblioOf Arg1:T22 Arg2:T21	
+R16	BiblioOf Arg1:T19 Arg2:T18	
+R17	OutputOf Arg1:T23 Arg2:T24	
+R18	BiblioOf Arg1:T27 Arg2:T26	
+R19	BiblioOf Arg1:T28 Arg2:T26	
+R20	DescriptionOf Arg1:T30 Arg2:T31	
+R21	BiblioOf Arg1:T32 Arg2:T31	
+R22	BiblioOf Arg1:T34 Arg2:T33	
+R23	DescriptionOf Arg1:T29 Arg2:T31	
+R24	DescriptionOf Arg1:T30 Arg2:T33	
+R25	DescriptionOf Arg1:T29 Arg2:T33	
+R26	BiblioOf Arg1:T39 Arg2:T38	
+T169	Hardware 1175 1197	Bioconductor ecosystem
+R27	BiblioOf Arg1:T40 Arg2:T169	
+R28	BiblioOf Arg1:T41 Arg2:T169	
+R29	DescriptionOf Arg1:T42 Arg2:T44	
+R30	BiblioOf Arg1:T45 Arg2:T44	
+R31	InputOf Arg1:T49 Arg2:T48	
+R32	BiblioOf Arg1:T51 Arg2:T50	
+R33	BiblioOf Arg1:T53 Arg2:T52	
+T47	ManagementSystem 2301 2310	Snakemake
+R34	BiblioOf Arg1:T66 Arg2:T47	
+T61	File 2419 2428	Snakefile
+T170	Hardware 3299 3318	local installations
+T79	Environment 3860 3865	conda
+T171	WorkflowName 4077 4084	ARMOR’s
+T172	WorkflowName 4275 4280	ARMOR
+T173	WorkflowName 4221 4226	ARMOR
+T175	ProgrammingLanguage 4840 4841	R
+T176	Environment 4861 4866	conda
+T177	ProgrammingLanguage 4877 4878	R
+T178	ProgrammingLanguage 4944 4945	R
+T180	ProgrammingLanguage 5051 5052	R
+T181	ManagementSystem 5188 5197	Snakemake
+R36	BiblioOf Arg1:T107 Arg2:T106	
+R37	BiblioOf Arg1:T108 Arg2:T106	
+R38	DescriptionOf Arg1:T109 Arg2:T106	
+R39	DescriptionOf Arg1:T112 Arg2:T110	
+R40	BiblioOf Arg1:T111 Arg2:T110	
+R41	DescriptionOf Arg1:T105 Arg2:T106	
+R42	BiblioOf Arg1:T114 Arg2:T113	
+R43	DescriptionOf Arg1:T115 Arg2:T113	
+R44	BiblioOf Arg1:T146 Arg2:T145	
+T134	LibraryPackage 7623 7627	iSEE
+R45	BiblioOf Arg1:T148 Arg2:T134	
+T182	WorkflowName 7784 7789	ARMOR
+T183	Parameter 7871 7891	snakemake‐‐use-conda
+T184	Parameter 8368 8401	snakemake‐‐configfile config.yaml
+R46	BiblioOf Arg1:T162 Arg2:T161	
+R47	BiblioOf Arg1:T163 Arg2:T161	
+T185	WorkflowName 9511 9516	ARMOR
+T165	Tool 9650 9657	MultiQC
+R48	BiblioOf Arg1:T168 Arg2:T167	
+T186	File 1606 1632	annotated reference genome
+T187	File 1562 1585	reference transcriptome
+R49	IncludeIn Arg1:T50 Arg2:T186	
+R50	IncludeIn Arg1:T50 Arg2:T187	
+R51	IncludeIn Arg1:T52 Arg2:T187	
+R52	IncludeIn Arg1:T52 Arg2:T186	
+T60	Hardware 7493 7505	Bioconductor
+R35	IncludeIn Arg1:T166 Arg2:T164	

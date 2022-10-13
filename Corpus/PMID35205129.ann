@@ -1,0 +1,267 @@
+T1	Database 227 230	PEQ
+T2	Data 921 939	Total RNA extracts
+T5	Data 1127 1141	tissue samples
+T6	Biblio 1311 1348	Qiagen, Germantown, Maryland, Germany
+T7	Description 1635 1643	measured
+T8	Method 1647 1658	fluorometry
+T10	Method 1739 1758	Quantus fluorometer
+T11	Method 1894 1897	PCR
+T12	Tool 1901 1908	RT-qPCR
+T13	Tool 2101 2114	HTS providers
+T14	Data 2170 2199	Fourteen and nine RNA samples
+T16	Data 2549 2556	samples
+T19	Data 2690 2719	TruSeq Stranded Total RNA kit
+T20	Tool 2721 2729	Illumina
+T21	Description 2898 2969	separate 18 to 30 bp long RNA from total RNA before library preparation
+T22	Data 3076 3090	sRNA libraries
+T23	Parameter 3145 3180	unique molecular identifiers (UMIs)
+T24	Data 3186 3193	samples
+T25	Method 3229 3262	rolling cycle sequencing approach
+T26	Method 3269 3295	custom sequencing platform
+T27	Data 3308 3343	2 × 150 bp paired-end RNA-Seq reads
+T28	Data 3348 3370	75 bp single-end reads
+T29	Data 3379 3395	sRNA-Seq samples
+T30	Biblio 3461 3464	SP2
+T31	Data 3592 3619	Paired-end 2 × 150 bp reads
+T32	Data 3697 3704	samples
+T33	Description 3816 3836	final size selection
+T34	Tool 3852 3870	Pippin prep system
+T35	Parameter 3899 3948	P marker and 125–175 bp size selection parameters
+T36	Data 3950 3972	Single-end 75 bp reads
+T37	File 4089 4104	raw fastq files
+T38	Data 4127 4145	Short Read Archive
+T39	Database 4171 4193	BioProject PRJNA752836
+T40	Data 4212 4217	reads
+T41	Data 4231 4238	RNA-Seq
+T42	Data 4257 4276	low quality regions
+T43	Description 4281 4300	sequencing adapters
+T45	Tool 4307 4318	Trim Galore
+T46	Biblio 4320 4322	27
+T47	Method 4329 4337	adapters
+T48	Data 4485 4496	SP1 samples
+T49	Data 4502 4525	Illumina TruSeq adapter
+T50	Data 4556 4567	SP2 samples
+T51	Data 4573 4585	sRNA dataset
+T52	Tool 4598 4601	SP1
+T53	Data 4627 4648	low quality sequences
+T54	Description 4653 4661	adapters
+T55	Tool 4668 4676	SOAPnuke
+T56	Biblio 4678 4680	28
+T57	Data 4729 4748	low quality regions
+T58	Tool 4755 4760	Fastp
+T59	Biblio 4762 4764	29
+T60	Data 4771 4781	sRNA reads
+T61	Tool 4794 4797	SP2
+T62	Data 4815 4832	Illumina adapters
+T63	Data 4837 4856	low quality regions
+T64	Tool 4863 4868	Fastp
+T65	Tool 4870 4876	FastQC
+T66	Description 4889 4952	check the quality of reads prior to and after quality filtering
+T67	Data 4969 4997	RNA-Seq and sRNA-Seq samples
+T68	Biblio 4999 5001	30
+T69	Tool 5063 5069	Bowtie
+T70	Biblio 5071 5073	31
+T71	Biblio 5103 5127	https://www.arb-silva.de
+T72	Version 5129 5155	accessed on 9 January 2021
+T73	Method 5158 5188	Four bioinformatics approaches
+T74	Data 5210 5238	ribodepleted RNA-Seq samples
+T75	Biblio 5410 5412	32
+T76	Tool 5418 5424	Kodoja
+T77	Biblio 5426 5428	33
+T78	Description 5611 5649	stringent level assignment for viruses
+T79	Tool 5687 5693	Kraken
+T80	Biblio 5695 5697	34
+T81	Tool 5703 5708	Kaiju
+T82	Biblio 5710 5712	35
+T83	Description 5835 5867	de novo transcriptome assemblers
+T84	Description 5873 5886	rnaviral mode
+T85	Tool 5890 5896	SPAdes
+T86	Version 5897 5901	3.15
+T87	Biblio 5903 5905	36
+T88	Tool 5911 5919	Trinity-
+T89	Version 5919 5926	v2.11.0
+T90	Biblio 5928 5930	37
+T91	Container 5938 5949	singularity
+T92	Tool 5955 5962	Trinity
+T93	Data 5968 5989	quality-trimmed reads
+T94	Biblio 6238 6341	https://informatics.fas.harvard.edu/best-practices-for-de-novo-transcriptome-assembly-with-trinity.html
+T95	Version 6343 6369	accessed on 9 January 2021
+T96	Tool 6372 6378	SPAdes
+T97	Version 6379 6383	3.15
+T98	Parameter 6402 6437	rnaviral mode on default parameters
+T99	Parameter 6445 6471	k-mer lengths of 33 and 49
+T100	Data 6477 6484	contigs
+T101	Method 6503 6530	de novo assembly approaches
+T102	Tool 6567 6571	CAP3
+T103	Biblio 6573 6575	38
+T104	Data 6677 6679	nt
+T105	Tool 6696 6705	megablast
+T106	Biblio 6707 6709	39
+T107	Data 6720 6729	5 matches
+T108	Data 6751 6763	report table
+T109	Tool 6783 6793	BlastTools
+T110	Biblio 6795 6834	https://github.com/schmidda/blast-tools
+T111	Version 6836 6860	accessed on 9 March 2021
+T112	Tool 6955 6974	sRNA-Seq technology
+T113	Tool 6994 7005	VirusDetect
+T114	Version 7006 7009	1.7
+T115	Biblio 7011 7013	40
+T116	Tool 7019 7028	VirReport
+T117	Biblio 7030 7075	https://github.com/eresearchqut/virreport.git
+T118	Version 7077 7104	accessed on 2 February 2022
+T119	Description 7109 7153;7159 7167	portable, scalable and reproducible nextflow pipeline
+T120	ManagementSystem 7145 7153	nextflow
+T121	Biblio 7155 7157	41
+T122	Biblio 7266 7268	42
+T123	WorkflowName 7322 7333	VirusDetect
+T124	Data 7335 7340	reads
+T125	Data 7365 7412	ribosomal RNA and host representative sequences
+T126	Parameter 7508 7536	cut-off depth parameter of 5
+T127	WorkflowName 7548 7557	VirReport
+T128	Description 7589 7607	de novo assemblers
+T129	Tool 7609 7615	SPAdes
+T130	Version 7616 7620	3.14
+T131	Biblio 7622 7624	43
+T132	Biblio 7625 7627	44
+T133	Tool 7634 7640	Velvet
+T134	Version 7641 7647	1.2.10
+T135	Biblio 7649 7651	45
+T136	Tool 7763 7779	VirReport-SPAdes
+T137	Tool 7784 7800	VirReport-Velvet
+T138	Tool 7825 7831	SPAdes
+T139	Tool 8089 8100	VirusDetect
+T140	Tool 8105 8114	VirReport
+T141	Data 8199 8206	contigs
+T142	Tool 8219 8225	SPAdes
+T143	Tool 8230 8236	Velvet
+T144	Data 8287 8299	RNA-Seq data
+T145	ProgrammingLanguage 8310 8316	python
+T146	Tool 8310 8323	python script
+T147	Data 8350 8359	top virus
+T148	Data 8363 8380	viroid blastn hit
+T149	Data 8391 8403	report table
+T150	Tool 8417 8427	BlastTools
+T151	Data 8476 8506	21–22 nt- and 24 nt-long reads
+T152	Tool 8513 8519	Bowtie
+T153	Data 8659 8673	PCR duplicates
+T155	Tool 8696 8707	UMICollapse
+T156	Biblio 8709 8711	46
+T157	Data 8763 8775	sRNA samples
+T158	Data 8838 8867	total number of aligned reads
+T159	Data 8872 8890	deduplicated reads
+T160	Description 9049 9075	Coverage and average depth
+T161	Description 9081 9091	calculated
+T162	Tool 9098 9104	Picard
+T163	Biblio 9112 9151	http://broadinstitute.github.io/picard/
+T164	Version 9153 9177	accessed on 9 March 2021
+T165	Data 9380 9404	representative sequences
+T166	Data 9453 9468	de novo contigs
+T167	Data 9489 9522	ribodepleted RNA-Seq and sRNA-Seq
+T168	Data 9719 9743	representative sequences
+T169	Description 9864 9955	derive read counts and fragments per kilobase of transcript per million mapped reads (FPKM)
+T170	Data 10180 10206	24 across 14 plant samples
+T171	Data 10223 10245	14 across nine samples
+T172	Biblio 10521 10523	16
+T173	Biblio 10524 10526	47
+T174	Data 10588 10638	sRNA-Seq and RNA-Seq derived quality trimmed reads
+T175	Method 10700 10719	randomly subsampled
+T176	Tool 10726 10731	seqtk
+T177	Biblio 10733 10735	48
+T178	Data 10742 10758	sRNA-Seq dataset
+T179	Data 10873 10899	2.5 M and 4 M single reads
+T180	Data 10908 10921	sRNA-Seq data
+T181	Parameter 10927 10968	1 M, 2.5 M, 4 M and 10 M paired-end reads
+T182	Data 10977 10993	RNA-Seq datasets
+T183	Data 11001 11011	subsamples
+T184	Description 11017 11027	reanalyzed
+T185	Tool 11034 11040	Kodoja
+T186	Tool 11055 11071	VirReport-Velvet
+T187	Biblio 11231 11233	16
+T188	Biblio 11234 11236	47
+T189	Method 11261 11279	contamination flag
+T190	Method 11281 11283	CF
+T191	Tool 11306 11312	Kodoja
+T192	Tool 11314 11318	PVDP
+T193	Tool 11320 11329	VirReport
+T194	Tool 11334 11345	VirusDetect
+T195	File 11485 11495	RPM values
+T196	Description 11511 11532	bioinformatics method
+T197	Tool 11534 11538	PVDP
+T198	Tool 11540 11551	VirusDetect
+T199	Tool 11582 11588	Kodoja
+T200	Tool 11590 11599	VirReport
+T201	Method 11606 11620	CF assumptions
+T202	Parameter 11918 11935	maximum RPM value
+T203	Method 53 79	High Throughput Sequencing
+T204	Method 0 23	Side-by-Side Comparison
+R1	BiblioOf Arg1:T177 Arg2:T176	
+R2	BiblioOf Arg1:T163 Arg2:T162	
+R3	BiblioOf Arg1:T103 Arg2:T102	
+R4	BiblioOf Arg1:T106 Arg2:T105	
+R5	OutputOf Arg1:T108 Arg2:T109	
+R6	BiblioOf Arg1:T110 Arg2:T109	
+R7	VersionOf Arg1:T111 Arg2:T109	
+R8	VersionOf Arg1:T114 Arg2:T113	
+R9	BiblioOf Arg1:T115 Arg2:T113	
+R10	BiblioOf Arg1:T117 Arg2:T116	
+R11	VersionOf Arg1:T118 Arg2:T116	
+R12	BiblioOf Arg1:T121 Arg2:T120	
+T3	Tool 7206 7264	Yabi web-based Virus Surveillance and Diagnostics pipeline
+R13	BiblioOf Arg1:T122 Arg2:T3	
+R14	VersionOf Arg1:T130 Arg2:T129	
+R15	BiblioOf Arg1:T131 Arg2:T129	
+R16	BiblioOf Arg1:T132 Arg2:T129	
+R17	VersionOf Arg1:T134 Arg2:T133	
+R18	BiblioOf Arg1:T135 Arg2:T133	
+R19	DescriptionOf Arg1:T128 Arg2:T129	
+R20	DescriptionOf Arg1:T128 Arg2:T133	
+T4	Tool 8018 8024	Velvet
+R21	VersionOf Arg1:T97 Arg2:T96	
+R22	ParameterOf Arg1:T98 Arg2:T96	
+R23	ParameterOf Arg1:T99 Arg2:T96	
+T9	Method 6578 6615	Nucleotide sequence similarity search
+T15	Database 6660 6675	NCBI nucleotide
+R24	IncludeIn Arg1:T9 Arg2:T105	
+T17	Data 6619 6628	scaffolds
+T18	Data 8164 8172;8188 8193	21–22 nt reads
+T205	Data 8177 8193	24 nt-long reads
+R25	InputOf Arg1:T18 Arg2:T139	
+R26	InputOf Arg1:T18 Arg2:T139	
+R27	InputOf Arg1:T18 Arg2:T140	
+R28	InputOf Arg1:T205 Arg2:T140	
+R29	BiblioOf Arg1:T156 Arg2:T155	
+R30	OutputOf Arg1:T153 Arg2:T155	
+R31	BiblioOf Arg1:T82 Arg2:T81	
+R32	BiblioOf Arg1:T80 Arg2:T79	
+R33	VersionOf Arg1:T89 Arg2:T88	
+R34	BiblioOf Arg1:T90 Arg2:T88	
+R35	VersionOf Arg1:T86 Arg2:T85	
+R36	BiblioOf Arg1:T87 Arg2:T85	
+R37	BiblioOf Arg1:T70 Arg2:T69	
+R38	BiblioOf Arg1:T77 Arg2:T76	
+T154	Database 5087 5101	Silva database
+T206	Tool 5371 5401	plant virus detection pipeline
+T207	Tool 5403 5407	PVDP
+*	Synonym T207 T206
+R39	BiblioOf Arg1:T75 Arg2:T206	
+*	Synonym T190 T189
+R40	IncludeIn Arg1:T175 Arg2:T176	
+T208	Parameter 8028 8044	k-mer size of 15
+T209	Parameter 8051 8069	depth cut-off of 3
+R41	ParameterOf Arg1:T208 Arg2:T4	
+R42	ParameterOf Arg1:T209 Arg2:T4	
+T210	Parameter 7841 7853;7957 7995	k-mer ranges 9 to 21, increasing by increments of 2
+R43	ParameterOf Arg1:T210 Arg2:T138	
+T211	Database 8258 8262	NCBI
+T212	Parameter 5459 5477	default parameters
+T213	Database 5510 5518	kodojaDB
+T214	Database 5532 5546	PlantVirusesDB
+T215	Version 5519 5523	v1.0
+T216	Version 5547 5563	0420v4_masked.fa
+R44	VersionOf Arg1:T216 Arg2:T214	
+R45	VersionOf Arg1:T215 Arg2:T213	
+T217	Data 5568 5574	Kodoja
+T218	Data 5579 5583	PVDP
+R46	BiblioOf Arg1:T71 Arg2:T154	
+R47	VersionOf Arg1:T72 Arg2:T154	
+R48	BiblioOf Arg1:T46 Arg2:T45	

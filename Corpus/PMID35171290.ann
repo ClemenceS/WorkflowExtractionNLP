@@ -1,0 +1,290 @@
+T1	Tool 2510 2515	Guppy
+T2	Version 2516 2522	v4.2.3
+R1	VersionOf Arg1:T2 Arg2:T1	
+T3	Tool 2545 2551	Bonito
+T4	Version 2552 2558	v0.3.6
+R2	VersionOf Arg1:T4 Arg2:T3	
+T5	Tool 3383 3390	MinIONs
+T6	Tool 3408 3415	MinKNOW
+T7	Version 3416 3425	> v20.3.1
+R3	VersionOf Arg1:T7 Arg2:T6	
+T8	ManagementSystem 3536 3544	Nextflow
+T9	WorkflowName 3584 3603	np-core/np-assembly
+T10	Tool 3679 3685	rasusa
+T11	Version 3686 3692	v0.3.0
+R4	VersionOf Arg1:T11 Arg2:T10	
+T12	Biblio 3694 3703	Hall 2022
+R5	BiblioOf Arg1:T12 Arg2:T10	
+T13	Description 3618 3673	randomly subsamples reads to a maximum of 200× coverage
+R6	DescriptionOf Arg1:T13 Arg2:T10	
+T14	Description 3709 3758	filtered Q > 7 with minimum read length of 100 bp
+T15	Tool 3765 3770	nanoq
+T16	Version 3771 3777	v0.8.0
+T17	Biblio 3779 3800	Steinig and Coin 2022
+R7	VersionOf Arg1:T16 Arg2:T15	
+R8	BiblioOf Arg1:T17 Arg2:T15	
+R9	DescriptionOf Arg1:T14 Arg2:T15	
+T18	Tool 3803 3808	Fastp
+T19	Version 3809 3816	v0.20.1
+T20	Biblio 3818 3834	Chen et al. 2018
+R10	BiblioOf Arg1:T20 Arg2:T18	
+R11	VersionOf Arg1:T19 Arg2:T18	
+T21	Description 3848 3895	trim adapter and low-quality Illumina sequences
+T22	Data 3877 3895	Illumina sequences
+T23	Tool 3995 3999	flye
+T24	Tool 4064 4069	pilon
+T25	Description 3946 3993	polished long-read assembly using ONT data only
+T26	Data 3980 3988	ONT data
+R12	DescriptionOf Arg1:T25 Arg2:T23	
+T27	Description 3932 3942	assemblies
+R13	DescriptionOf Arg1:T27 Arg2:T23	
+R14	DescriptionOf Arg1:T27 Arg2:T24	
+T28	Description 4011 4062	short-read correction of the ONT long-read assembly
+R15	DescriptionOf Arg1:T28 Arg2:T24	
+T29	Tool 4193 4197	Flye
+T30	Version 4198 4204	v2.8.3
+R16	VersionOf Arg1:T30 Arg2:T29	
+T31	Biblio 4206 4228	Kolmogorov et al. 2019
+R17	BiblioOf Arg1:T31 Arg2:T29	
+T32	Tool 4278 4286	minimap2
+T33	Tool 4310 4315	Racon
+T34	Version 4287 4297	v2.17-r941
+T35	Version 4316 4322	1.4.20
+T36	Biblio 4324 4341	Vaser et al. 2017
+T37	Biblio 4299 4306	Li 2018
+R18	VersionOf Arg1:T34 Arg2:T32	
+R19	BiblioOf Arg1:T37 Arg2:T32	
+R20	VersionOf Arg1:T35 Arg2:T33	
+R21	BiblioOf Arg1:T36 Arg2:T33	
+T38	Tool 4373 4379	Medaka
+T39	Version 4380 4385	1.2.3
+T40	Description 4347 4367	subsequent polishing
+R22	DescriptionOf Arg1:T40 Arg2:T38	
+R23	VersionOf Arg1:T39 Arg2:T38	
+T41	Tool 4520 4525	Pilon
+T42	Description 4526 4532	v1.2.3
+R24	DescriptionOf Arg1:T42 Arg2:T41	
+T43	Description 4422 4433	corrections
+T44	Data 4454 4495	Illumina paired-end reads for each genome
+R25	DescriptionOf Arg1:T43 Arg2:T41	
+T45	Tool 4578 4587	Unicycler
+T46	Version 4588 4594	v0.4.8
+R26	VersionOf Arg1:T46 Arg2:T45	
+T47	Method 4659 4666	Shovill
+T48	Description 4650 4658	pipeline
+R27	DescriptionOf Arg1:T48 Arg2:T47	
+T49	Version 4667 4673	v1.1.0
+R28	VersionOf Arg1:T49 Arg2:T47	
+T50	Biblio 4676 4712	https://github.com/tseemann/shovill)
+R29	BiblioOf Arg1:T50 Arg2:T47	
+T51	Data 4596 4625	Reference Illumina assemblies
+T52	Tool 4719 4724	Skesa
+T53	Tool 4751 4758	Mykrobe
+T54	Version 4759 4765	v0.9.0
+T55	Version 4725 4731	v2.4.0
+R30	VersionOf Arg1:T55 Arg2:T52	
+R31	VersionOf Arg1:T54 Arg2:T53	
+T56	Biblio 4767 4783	Hunt et al. 2019
+R32	BiblioOf Arg1:T56 Arg2:T53	
+T57	Description 4736 4745	genotyped
+R33	DescriptionOf Arg1:T57 Arg2:T53	
+T58	Tool 4802 4808	SCCion
+T59	Version 4809 4815	v0.4.0
+T60	Biblio 4818 4852	https://github.com/esteinig/sccion
+R34	BiblioOf Arg1:T60 Arg2:T58	
+R35	VersionOf Arg1:T59 Arg2:T58	
+T61	Description 4855 4994	a wrapper around common assembly-based genotyping tools and databases (Zankari et al. 2012;Chen et al. 2016;Kaya et al. 2018) for S. aureus
+R36	DescriptionOf Arg1:T61 Arg2:T58	
+T62	Tool 5226 5233	dnadiff
+T63	Version 5234 5238	v1.3
+R37	VersionOf Arg1:T63 Arg2:T62	
+T64	Tool 5450 5456	CoverM
+T65	Version 5457 5463	v0.6.0
+R38	VersionOf Arg1:T65 Arg2:T64	
+T66	Biblio 5466 5497	https://github.com/wwood/CoverM
+R39	BiblioOf Arg1:T66 Arg2:T64	
+T67	Description 5360 5397	Coverage against the reference genome
+R40	DescriptionOf Arg1:T67 Arg2:T64	
+T68	Tool 5616 5622	Medaka
+T69	Version 5623 5629	v1.2.3
+R41	VersionOf Arg1:T69 Arg2:T68	
+T70	Description 5593 5615	neural network callers
+R42	DescriptionOf Arg1:T70 Arg2:T68	
+T71	Biblio 5632 5670	https://github.com/nanoporetech/medaka
+R43	BiblioOf Arg1:T71 Arg2:T68	
+T72	Tool 5676 5681	Clair
+T73	Version 5682 5688	v2.1.1
+R44	DescriptionOf Arg1:T70 Arg2:T72	
+T74	Tool 5729 5735	Snippy
+T75	Version 5736 5742	v4.6.0
+R45	VersionOf Arg1:T75 Arg2:T74	
+T76	Biblio 5745 5779	https://github.com/tseemann/snippy
+R46	BiblioOf Arg1:T76 Arg2:T74	
+T77	Description 5793 5857	generate a core-site alignment of the ST93 background population
+R47	DescriptionOf Arg1:T77 Arg2:T74	
+T78	Tool 5995 6001	Snippy
+T79	LibraryPackage 6247 6259	scikit-learn
+T81	Method 6148 6161	random forest
+T82	Biblio 6174 6205	Sanderson and colleagues (2020)
+T83	Biblio 6261 6282	Pedregosa et al. 2011
+R48	BiblioOf Arg1:T83 Arg2:T79	
+R49	BiblioOf Arg1:T82 Arg2:T81	
+T84	Parameter 6289 6320	default hyperparameter settings
+R50	ParameterOf Arg1:T84 Arg2:T81	
+T85	LibraryPackage 6349 6359	pysamstats
+T86	Data 6590 6620	Illumina and ONT sequence data
+T87	Description 6922 6958	60% training and 40% validation data
+T88	Biblio 7047 7071	Sanderson and colleagues
+T89	Tool 7239 7245	Snippy
+T90	Tool 7254 7259	Clair
+T91	Tool 7302 7308	Snippy
+T92	Tool 7317 7323	Snippy
+T93	Method 7385 7398	random forest
+T94	Tool 7441 7447	Snippy
+T95	Tool 7531 7537	Snippy
+T96	Tool 7897 7902	Clair
+T97	Tool 8023 8034	Snippy-core
+T98	Tool 7991 8004	Snippy's core
+T99	Description 8005 8021	alignment caller
+R51	DescriptionOf Arg1:T99 Arg2:T98	
+T100	Biblio 8113 8148	https://github.com/np-core/nanopath
+T101	LibraryPackage 8094 8102	NanoPath
+R52	BiblioOf Arg1:T100 Arg2:T101	
+T103	Tool 8431 8436	Clair
+T104	Method 8454 8474	random forest models
+T105	Tool 8652 8663	Snippy-core
+T106	Description 8559 8600	reference alignments of the Illumina data
+R54	DescriptionOf Arg1:T106 Arg2:T105	
+T107	Tool 8959 8967	RAXML-NG
+T108	Parameter 8977 9042	GTR+G and Lewi's ascertainment bias correction for SNP alignments
+R55	ParameterOf Arg1:T108 Arg2:T107	
+T109	Tool 9218 9222	ITOL
+T110	Biblio 9224 9245	Letunic and Bork 2019
+R56	BiblioOf Arg1:T110 Arg2:T109	
+T111	Tool 9480 9486	BEAST2
+T112	ProgrammingLanguage 9502 9508	Python
+T113	LibraryPackage 9520 9538	NanoPath Beastling
+T114	File 9641 9651	YAML files
+T115	LibraryPackage 10280 10288	NanoPath
+T116	File 10304 10326	BEAST2 XML model files
+T117	Tool 10304 10310	BEAST2
+T118	LibraryPackage 10353 10359	BEAGLE
+T119	LibraryPackage 10410 10420	bdskytools
+T120	ProgrammingLanguage 10432 10433	R
+R57	DescriptionOf Arg1:T21 Arg2:T18	
+T121	Data 4040 4062	ONT long-read assembly
+T122	Data 4100 4111	short reads
+T123	Data 4144 4154	long reads
+T124	LibraryPackage 8754 8762	NanoPath
+T125	Biblio 4926 4945	Zankari et al. 2012
+T126	Biblio 4946 4962	Chen et al. 2016
+T127	Biblio 4963 4979	Kaya et al. 2018
+R58	VersionOf Arg1:T73 Arg2:T72	
+T80	Method 6218 6241	RandomForest classifier
+T128	Biblio 5413 5429	Chua et al. 2010
+T129	Method 9653 9671	Birth–death models
+T130	Biblio 3565 3603	https://github.com/np-core/np-assembly
+R59	BiblioOf Arg1:T130 Arg2:T9	
+T131	Method 9450 9476	birth–death skyline models
+T132	Description 8701 8750	polished hybrid alignments with ONT outbreak SNPs
+R60	DescriptionOf Arg1:T132 Arg2:T124	
+R61	IncludeIn Arg1:T119 Arg2:T120	
+T133	Data 530 534	data
+T134	Data 158 166	isolates
+T135	Data 540 580	methicillin sensitive S. aureus isolates
+T136	Data 710 718	Isolates
+T137	Data 1350 1374	Illumina short-read data
+T138	Method 2331 2351	R9.4.1 high accuracy
+T139	Method 2416 2436	HAC methylation mode
+T140	Method 2459 2494	all context methylation Rerio model
+T141	Method 2559 2575	R9.4.1 DNA model
+T142	Description 9681 9904	dynamics of a population forward in time using the (transmission) rate λ, the death (become uninfectious) rate δ, the sampling probability ρ, and the time of the start of the population (outbreak; also called origin time) T
+R62	DescriptionOf Arg1:T142 Arg2:T129	
+T143	Data 248 256	Isolates
+T144	Data 913 921	Isolates
+T145	Data 1099 1107	Isolates
+T146	Biblio 1398 1417	van Hal et al. 2018
+T147	Method 2300 2311	Basecalling
+T148	Hardware 2610 2633	local NVIDIA GTX1080-Ti
+T149	Hardware 2639 2673	remote cluster of NVIDIA P100 GPUs
+T150	Data 2738 2746	isolates
+T151	Biblio 3039 3059	Lipworth et al. 2020
+T152	Description 4395 4420	long-read hybrid assembly
+R63	DescriptionOf Arg1:T152 Arg2:T41	
+T153	Description 4542 4568	short-read hybrid assembly
+R64	DescriptionOf Arg1:T153 Arg2:T45	
+T154	Description 5128 5215	assessed differences between the Illumina references and hybrid- or nanopore assemblies
+R65	DescriptionOf Arg1:T154 Arg2:T62	
+T155	Data 7433 7453	de novo Snippy calls
+T156	Data 8151 8165	Core SNP sites
+T159	Method 8828 8840	ML phylogeny
+T160	Biblio 9134 9153	van Hal et al. 2018
+T161	Method 62 81	Nanopore Sequencing
+R66	BiblioOf Arg1:T146 Arg2:T137	
+T162	Parameter 4259 4274	four iterations
+R67	ParameterOf Arg1:T162 Arg2:T32	
+T163	Method 6125 6143	feature extraction
+T164	Tool 7010 7035	N. gonorrhoeae classifier
+T165	Method 6983 6994	classifiers
+T166	Biblio 8518 8541	Sanderson et al. (2020)
+T167	Data 8490 8513	N. gonorrhoeae data set
+R68	BiblioOf Arg1:T166 Arg2:T167	
+T168	Data 5804 5822	core-site alignmen
+T169	Data 5884 5918	reference Illumina core alignments
+T170	Data 5933 5966	outbreaks in FNQ and PNG isolates
+T171	Data 6069 6104	ONT and Illumina sequenced isolates
+R69	IncludeIn Arg1:T80 Arg2:T79	
+T172	Description 6325 6343	feature extraction
+R70	DescriptionOf Arg1:T172 Arg2:T85	
+T173	Data 6661 6687	three mixed sequence types
+T174	Data 6727 6761	one of FNQ within-lineage isolates
+T175	Data 6787 6835	one of Papua New Guinean within-lineage isolates
+T176	Data 6638 6646	isolates
+T177	Method 6894 6905	classifiers
+T178	Data 6857 6885	Training and validation sets
+R71	DescriptionOf Arg1:T87 Arg2:T178	
+T179	Data 7093 7118	isolates from FNQ and PNG
+R72	InputOf Arg1:T179 Arg2:T164	
+R73	BiblioOf Arg1:T88 Arg2:T164	
+T180	Description 7125 7150	independent test data set
+R74	DescriptionOf Arg1:T180 Arg2:T179	
+T181	Data 7191 7195	SNPs
+T182	Data 7230 7245	Illumina Snippy
+T183	Data 7250 7260	ONT Clair,
+T184	Data 7267 7275	ONT SNPs
+T185	Data 7523 7526	ONT
+T186	Data 7350 7359	ONT calls
+T187	Data 7719 7742	Illumina reference data
+T188	Data 7872 7884	ONT isolates
+T189	Method 7967 7985	core functionality
+T190	Method 8070 8086	alignment caller
+R75	IncludeIn Arg1:T190 Arg2:T101	
+T102	Data 8044 8069	ONT and Illumina core SNP
+R53	InputOf Arg1:T102 Arg2:T190	
+T191	Data 8230 8238	isolates
+T192	Data 8301 8308	isolate
+T193	Data 8417 8425	ONT SNPs
+R76	OutputOf Arg1:T193 Arg2:T103	
+R77	IncludeIn Arg1:T193 Arg2:T167	
+T194	Data 8569 8600	alignments of the Illumina data
+T195	Data 8733 8750	ONT outbreak SNPs
+T157	Data 8888 8924	Illumina and ONT polished alignments
+T158	Data 9028 9042	SNP alignments
+T196	Data 9065 9074	SRR115236
+T197	Description 9159 9214	decorated with metadata of sample origin at state level
+R78	DescriptionOf Arg1:T197 Arg2:T109	
+R79	IncludeIn Arg1:T131 Arg2:T111	
+T198	Description 9545 9651	stores model configurations of the serially (PNG) and contemporaneously sampled models (FNQ) in YAML files
+R80	DescriptionOf Arg1:T198 Arg2:T113	
+T199	Parameter 9747 9753	rate λ
+T200	Parameter 9759 9764;9787 9793	death rate δ
+T201	Parameter 9799 9821	sampling probability ρ
+T202	Parameter 9831 9866;9903 9904	time of the start of the population T
+T203	Parameter 9890 9901	origin time
+*	Synonym T202 T203
+T204	Biblio 10181 10200	Steinig et al. 2021
+T205	Parameter 10123 10179	lineage-wide fixed substitution rate prior at 3.199×10-4
+R81	BiblioOf Arg1:T204 Arg2:T205	
+T206	Parameter 10064 10076	model priors
+T207	Hardware 10371 10374	GPU
+T208	Tool 10500 10523	custom plotting scripts

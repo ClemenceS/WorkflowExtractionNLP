@@ -1,0 +1,25 @@
+Large-scale quality assessment of prokaryotic genomes with metashot/prok-quality
+
+
+	Methods
+
+
+
+	Implementation
+
+Metashot/prok-quality is written using the Nextflow domain-specific language. Nextflow is a framework for building scalable scientific workflows using containers, allowing implicit parallelism on a wide range of computing systems. Reproducibility is guaranteed by versioned Docker images, which enclose software applications together with their dependencies, allowing isolation from the host environment and portability across platforms. metashot/prok-quality v1.2.0 is composed of five main modules (Figure 1) and includes several custom scripts, designed to manipulate the output of the different tasks.
+Software included in version 1.2.0:
+CheckM v1.1.2. Several tools have been developed for the assessment of completeness and contamination of MAGs. The proposed workflow includes the widely used CheckM[13] which estimate these metrics using ubiquitous and lineage-specific, single-copy core genes (SCGs) catalogs. CheckM is also used to recover the basic assembly statistics.
+GUNC v1.0.1. SCG-based tools like CheckM can have very low sensitivity towards contamination by fragments from unrelated organisms (non-redundant contamination).[6] In order to circumvent this problem, the recent GUNC[14] tool was added to the pipeline. GUNC quantifies the lineage homogeneity of contigs with respect to the full gene complement, accurately detecting chimerism induced by both redundant and non-redundant contamination.
+Barrnap v0.9. The presence of 5S, 23S and 16S rRNA genes is predicted by the BAsic Rapid Ribosomal RNA Predictor ( Barrnap) using Hidden Markov models (HMM). Both bacteria and archaea databases are used.
+tRNAscan-SE v2.0.6. tRNA genes are searched using tRNAscan-SE,[15] using bacteria and archaea covariance models. The number of tRNAs and tRNA isotypes found is reported.
+dRep v2.6.2. Dereplication is a procedure that groups the input genomes according to their whole-genome similarity, using metrics such as the Average Nucleotide Identity[16] (ANI). Dereplication dramatically simplifies downstream analysis when the input genomes come from different sources.[17] In the proposed workflow, filtered genomes (genomes that pass completeness, contamination and GUNC filters) are optionally dereplicated using dRep.[18] For each cluster, dRep reports, as the cluster representative, the best-scoring MAG using the CheckM’s quality estimates. The score is computed using the following formula:
+score = completeness − 5 × contamination + 0.5 × log(N50)
+Python3 custom scripts. The workflow includes three Python3 custom scripts, designed to manipulate the output of the different steps. The scripts make use of NumPy,[17] Pandas and scikit-learn libraries.
+
+
+	Operation
+
+metashot/prok-quality v1.2.0 requires Docker and Nextflow (tested on v20.07.1). Alternatively, the Singularity container engine can be used in place of Docker. At least 70 GB of RAM is required, a limit imposed by CheckM (v1.1.2). The workflow can run in a workstation with 16 GB of RAM using the options
+--reduced_tree and
+--max_memory 16.GB.

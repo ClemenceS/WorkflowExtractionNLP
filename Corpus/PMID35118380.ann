@@ -1,0 +1,292 @@
+T1	Container 1198 1204	Docker
+T12	Method 3574 3587	preprocessing
+T13	Data 2885 2912	Illumina and Nanopore reads
+T14	Data 3382 3393	short reads
+T15	Data 3592 3601	raw reads
+T16	Data 3607 3627	short Illumina reads
+T17	Data 3732 3742	PhiX reads
+T19	Data 3881 3900	long Nanopore reads
+T2	File 3355 3366	FASTQ files
+T20	Data 4181 4192	short reads
+T21	Data 4205 4233	raw and processed long reads
+T22	Data 4330 4348	preprocessed reads
+T23	Data 4419 4439	short and long reads
+T24	Data 4552 4585	reads of each sample individually
+T3	ManagementSystem 172 180	Nextflow
+T4	Container 1209 1220	Singularity
+T6	Data 1630 1649	real-world datasets
+T7	Data 2792 2831	CAMI II challenge toy mouse gut dataset
+T8	Data 3052 3070	simulated datasets
+T9	Tool 384 390	module
+T26	WorkflowName 0 11	nf-core/mag
+T27	Description 15 80	best-practice pipeline for metagenome hybrid assembly and binning
+R1	DescriptionOf Arg1:T27 Arg2:T26	
+T29	WorkflowName 146 157	nf-core/mag
+T30	ProgrammingLanguage 204 208	DSL2
+T31	Biblio 616 618	11
+T32	Database 718 724	GitHub
+T33	Description 827 846	pipeline versioning
+T34	Description 886 978	building and archiving associated containers that contain the required software dependencies
+T35	Description 1074 1154	detailed reporting of the used pipeline/software versions and applied parameters
+T37	Description 1228 1259	reproducibility and portability
+T38	Hardware 1282 1297	compute systems
+T39	Hardware 1304 1319	local computers
+T40	Hardware 1321 1333	HPC clusters
+T41	Hardware 1338 1353	cloud platforms
+T42	WorkflowName 1359 1370	nf-core/mag
+T43	Data 1393 1411	small test dataset
+T5	Database 1470 1476	GitHub
+T44	Hardware 1537 1540	AWS
+T45	Biblio 1743 1771	https://nf-co.re/mag/results
+T46	Database 1725 1732	nf-core
+R3	BiblioOf Arg1:T45 Arg2:T46	
+T47	Database 1794 1801	nf-core
+T48	Biblio 1900 1934	https://github.com/nf-core/modules
+T49	Tool 1882 1897	nf-core/modules
+R4	BiblioOf Arg1:T48 Arg2:T49	
+T10	Database 2043 2050	nf-core
+T11	WorkflowName 2269 2280	nf-core/mag
+T50	Description 2298 2322	reproducibility settings
+R5	DescriptionOf Arg1:T50 Arg2:T11	
+T51	WorkflowName 2641 2652	nf-core/mag
+T52	Data 2676 2704	metagenomic time series data
+T53	Tool 2710 2717	CAMISIM
+T54	Biblio 2719 2721	12
+R6	BiblioOf Arg1:T54 Arg2:T53	
+R7	OutputOf Arg1:T52 Arg2:T53	
+T55	Description 2666 2675	simulated
+R8	DescriptionOf Arg1:T55 Arg2:T53	
+T56	Tool 2734 2741	CAMISIM
+T57	Data 2767 2781	genome sources
+R9	InputOf Arg1:T57 Arg2:T56	
+R10	IncludeIn Arg1:T7 Arg2:T57	
+T58	Biblio 2834 2836	13
+R11	BiblioOf Arg1:T58 Arg2:T7	
+T59	Data 2850 2861	791 genomes
+T61	Data 2914 2935	Two groups of samples
+T62	Data 2970 2997	time series of four samples
+T63	WorkflowName 3138 3149	nf-core/mag
+T64	Biblio 3177 3215	https://doi.org/10.5281/zenodo.5155395
+R12	BiblioOf Arg1:T64 Arg2:T8	
+T65	File 3084 3101	sample sheet file
+R13	InputOf Arg1:T8 Arg2:T63	
+T66	WorkflowName 3270 3281	nf-core/mag
+T67	File 3399 3425	sample sheet in CSV format
+R14	IncludeIn Arg1:T14 Arg2:T2	
+T68	Tool 3629 3634	fastp
+T69	Biblio 3636 3638	14
+T70	Description 3652 3680	adapter and quality trimming
+R16	DescriptionOf Arg1:T70 Arg2:T68	
+R17	InputOf Arg1:T16 Arg2:T68	
+R18	BiblioOf Arg1:T69 Arg2:T68	
+T71	Tool 3682 3689	Bowtie2
+T73	Tool 3748 3754	FastQC
+T74	Description 3699 3742	identifying and removing host or PhiX reads
+R19	DescriptionOf Arg1:T74 Arg2:T71	
+T75	Biblio 3691 3693	15
+R20	BiblioOf Arg1:T75 Arg2:T71	
+T76	Biblio 3757 3815	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+R21	BiblioOf Arg1:T76 Arg2:T73	
+T77	Description 3821 3841	quality control (QC)
+T78	Data 3724 3728;3737 3742	host reads
+R22	DescriptionOf Arg1:T77 Arg2:T73	
+T79	Data 3849 3875	raw and preprocessed reads
+T18	Tool 3902 3910	porechop
+T80	Biblio 3913 3947	https://github.com/rrwick/Porechop
+T81	Description 3961 3977	adapter trimming
+T82	Tool 3979 3987	NanoLyse
+T83	Biblio 3990 4024	https://github.com/rrwick/Filtlong
+T84	Description 4029 4070	remove phage lambda control contamination
+T85	Tool 4076 4084	Filtlong
+T86	Biblio 4086 4088	16
+T87	Description 4094 4111	quality filtering
+R23	InputOf Arg1:T16 Arg2:T71	
+R24	InputOf Arg1:T16 Arg2:T73	
+R25	InputOf Arg1:T19 Arg2:T18	
+R26	BiblioOf Arg1:T80 Arg2:T18	
+R27	DescriptionOf Arg1:T81 Arg2:T18	
+R28	InputOf Arg1:T19 Arg2:T82	
+R29	BiblioOf Arg1:T83 Arg2:T82	
+R30	DescriptionOf Arg1:T84 Arg2:T82	
+R31	BiblioOf Arg1:T86 Arg2:T85	
+R32	DescriptionOf Arg1:T87 Arg2:T85	
+T88	Description 4195 4197	QC
+T89	Tool 4253 4261	NanoPlot
+T90	Biblio 4264 4298	https://github.com/rrwick/Filtlong
+R33	BiblioOf Arg1:T90 Arg2:T89	
+R34	InputOf Arg1:T21 Arg2:T89	
+R35	DescriptionOf Arg1:T88 Arg2:T89	
+T91	Tool 4382 4389	MEGAHIT
+T92	Tool 4398 4404	SPAdes
+T93	Biblio 4391 4393	17
+T94	Biblio 4406 4408	18
+T95	Biblio 4509 4511	19
+T96	Description 4358 4375	de novo assembled
+R36	InputOf Arg1:T22 Arg2:T91	
+R37	InputOf Arg1:T22 Arg2:T92	
+R38	DescriptionOf Arg1:T96 Arg2:T91	
+R39	DescriptionOf Arg1:T96 Arg2:T92	
+R40	BiblioOf Arg1:T93 Arg2:T91	
+R41	BiblioOf Arg1:T94 Arg2:T92	
+T97	Tool 4495 4507	hybridSPAdes
+R42	BiblioOf Arg1:T95 Arg2:T97	
+T98	Description 4456 4471	hybrid assembly
+R43	DescriptionOf Arg1:T98 Arg2:T97	
+T100	WorkflowName 4526 4537	nf-core/mag
+T101	Parameter 4622 4689	compute co-assemblies according to user specified group information
+T102	Tool 4691 4699	MetaBAT2
+T103	Tool 4971 4976	QUAST
+T104	Biblio 4701 4703	20
+T105	Biblio 4978 4980	21
+T106	Biblio 5101 5103	22
+R46	BiblioOf Arg1:T104 Arg2:T102	
+T107	Description 4982 5004	summarizes QC features
+R47	DescriptionOf Arg1:T107 Arg2:T103	
+T108	Data 5012 5032	generated assemblies
+T109	Data 5037 5041	MAGs
+R48	InputOf Arg1:T108 Arg2:T103	
+R49	InputOf Arg1:T109 Arg2:T103	
+T110	Description 4721 4830	bin the contigs into individual MAGs based on nucleotide frequencies and co-abundance patterns across samples
+R50	DescriptionOf Arg1:T110 Arg2:T102	
+T111	Data 4742 4757	individual MAGs
+R51	OutputOf Arg1:T111 Arg2:T102	
+T112	Data 4899 4913	MAG abundances
+T113	Data 4922 4939	different samples
+R52	BiblioOf Arg1:T105 Arg2:T103	
+T114	Data 5043 5059	MAG completeness
+T115	Tool 5094 5099	BUSCO
+T116	Data 5043 5046;5064 5077	MAG contamination
+R53	OutputOf Arg1:T116 Arg2:T115	
+R54	OutputOf Arg1:T114 Arg2:T115	
+R55	BiblioOf Arg1:T106 Arg2:T115	
+T117	Data 5201 5205	MAGs
+T118	Description 5210 5233	taxonomically annotated
+T119	Tool 5240 5247	GTDB-TK
+T120	Tool 5256 5263	CAT/BAT
+T121	Biblio 5249 5251	23
+T122	Biblio 5265 5267	24
+R56	BiblioOf Arg1:T122 Arg2:T120	
+R57	BiblioOf Arg1:T121 Arg2:T119	
+R58	DescriptionOf Arg1:T118 Arg2:T119	
+R59	DescriptionOf Arg1:T118 Arg2:T120	
+R60	InputOf Arg1:T117 Arg2:T119	
+R61	InputOf Arg1:T117 Arg2:T120	
+T123	Tool 5276 5283	CAT/BAT
+T124	Data 5322 5325	MAG
+T125	Description 5295 5317	taxonomically classify
+R62	DescriptionOf Arg1:T125 Arg2:T123	
+R63	InputOf Arg1:T124 Arg2:T123	
+T126	Tool 5327 5334	GTDB-TK
+T127	Tool 5502 5507	BUSCO
+T128	Data 5356 5368	marker genes
+T129	Data 5402 5478	MAGs passing quality thresholds regarding the completeness and contamination
+R65	InputOf Arg1:T129 Arg2:T126	
+R66	OutputOf Arg1:T129 Arg2:T127	
+T130	WorkflowName 5556 5567	nf-core/mag
+T131	Data 5578 5617	summary containing estimated abundances
+R67	OutputOf Arg1:T131 Arg2:T130	
+T132	Tool 5639 5644	QUAST
+T133	Tool 5646 5651	BUSCO
+T134	Tool 5656 5663	GTDB-TK
+T135	Data 5681 5684	MAG
+T136	Data 5639 5644;5664 5671	QUAST metrics
+T137	Data 5646 5651;5664 5671	BUSCO metrics
+T138	Data 5656 5671	GTDB-TK metrics
+T139	Data 5723 5747	Preprocessed short reads
+T25	Tool 5769 5776	Kraken2
+T140	Tool 5785 5795	Centrifuge
+T141	Data 5819 5831	Krona charts
+T143	Biblio 5778 5780	25
+T144	Biblio 5797 5799	26
+R68	BiblioOf Arg1:T144 Arg2:T140	
+R69	BiblioOf Arg1:T143 Arg2:T25	
+R71	InputOf Arg1:T139 Arg2:T25	
+R72	InputOf Arg1:T139 Arg2:T140	
+T145	Biblio 5833 5835	27
+R73	BiblioOf Arg1:T145 Arg2:T141	
+T146	Tool 5920 5927	MultiQC
+T147	Biblio 5929 5931	28
+R74	BiblioOf Arg1:T147 Arg2:T146	
+T148	Data 5955 6029	comprehensive quality report aggregating the QC results across all samples
+R75	OutputOf Arg1:T148 Arg2:T146	
+T149	WorkflowName 6060 6071	nf-core/mag
+T150	WorkflowName 6191 6202	nf-core/mag
+T151	Database 6254 6268	CAMI challenge
+T152	Biblio 6270 6272	13
+T153	Biblio 6273 6275	29
+R76	BiblioOf Arg1:T152 Arg2:T151	
+R77	BiblioOf Arg1:T153 Arg2:T151	
+T154	WorkflowName 6540 6551	nf-core/mag
+T155	Version 6552 6558	v2.1.0
+R78	VersionOf Arg1:T155 Arg2:T154	
+T156	Tool 6610 6617	CAMISIM
+T157	Data 6566 6594	metagenomic time series data
+R79	OutputOf Arg1:T157 Arg2:T156	
+R80	InputOf Arg1:T157 Arg2:T154	
+T158	Data 6645 6652	heatmap
+T159	WorkflowName 6711 6722	nf-core/mag
+T160	WorkflowName 6868 6879	nf-core/mag
+T161	Parameter 6899 6936	short read only, sample-wise assembly
+T162	Parameter 6943 6971	hybrid, sample-wise assembly
+T163	Parameter 6979 7018	short read only, group-wise co-assembly
+T164	Parameter 7028 7058	hybrid, group-wise co-assembly
+T165	Data 7201 7228	particular time series data
+T166	Database 872 878	GitHub
+T167	Description 1429 1456	continuous integration (CI)
+T168	File 3441 3446;3473 3488	paths long read files
+T169	ProgrammingLanguage 254 258	DSL2
+T170	Database 480 487	nf-core
+T171	Description 505 614	enforces a set of strict best-practice guidelines to ensure high-quality pipeline development and maintenance
+R81	DescriptionOf Arg1:T171 Arg2:T170	
+R82	BiblioOf Arg1:T31 Arg2:T170	
+T172	ProgrammingLanguage 1817 1821	DSL2
+T173	Parameter 2346 2367	random seed parameter
+T174	Parameter 2372 2413	fix and report multi-threading parameters
+R83	ParameterOf Arg1:T174 Arg2:T11	
+R84	ParameterOf Arg1:T173 Arg2:T11	
+R86	InputOf Arg1:T65 Arg2:T63	
+T175	File 3441 3455	paths to short
+R15	IncludeIn Arg1:T175 Arg2:T67	
+R87	IncludeIn Arg1:T168 Arg2:T67	
+R88	InputOf Arg1:T79 Arg2:T73	
+T176	WorkflowName 4872 4880	pipeline
+T177	Description 5752 5762	classified
+R89	DescriptionOf Arg1:T177 Arg2:T25	
+R90	DescriptionOf Arg1:T177 Arg2:T140	
+T178	Description 5805 5815	visualized
+T179	Tool 5819 5824	Krona
+R91	DescriptionOf Arg1:T178 Arg2:T179	
+T180	Data 6666 6695	MAG abundances across samples
+R92	ParameterOf Arg1:T161 Arg2:T160	
+R93	ParameterOf Arg1:T162 Arg2:T160	
+R94	ParameterOf Arg1:T163 Arg2:T160	
+R95	ParameterOf Arg1:T164 Arg2:T160	
+T28	Description 259 299	enables a modularized pipeline structure
+R2	DescriptionOf Arg1:T28 Arg2:T169	
+T182	Tool 407 420	sub-workflows
+R85	IncludeIn Arg1:T7 Arg2:T59	
+T60	Description 6595 6604	simulated
+R96	DescriptionOf Arg1:T60 Arg2:T156	
+T181	Tool 746 751	Slack
+R97	DescriptionOf Arg1:T37 Arg2:T1	
+R98	DescriptionOf Arg1:T37 Arg2:T4	
+T36	Description 762 802	Pipeline portability and reproducibility
+T183	Data 1499 1525	‘full-size’ pipeline tests
+T184	Hardware 1577 1582	cloud
+T185	Data 1655 1677	full-size test results
+T186	Description 2061 2088	facilitates reproducibility
+R99	DescriptionOf Arg1:T186 Arg2:T10	
+T187	Parameter 2428 2467	generate and/or save required databases
+R100	ParameterOf Arg1:T187 Arg2:T11	
+R101	OutputOf Arg1:T13 Arg2:T56	
+T188	Method 2941 2950	simulated
+R102	BiblioOf Arg1:T64 Arg2:T65	
+R44	InputOf Arg1:T23 Arg2:T97	
+T72	Description 4538 4547	assembles
+R45	DescriptionOf Arg1:T72 Arg2:T100	
+R103	InputOf Arg1:T24 Arg2:T100	
+T99	Description 4889 4898	estimates
+T189	Description 5081 5090	estimated
+R104	DescriptionOf Arg1:T189 Arg2:T115	
+R64	InputOf Arg1:T128 Arg2:T126	
+R70	OutputOf Arg1:T158 Arg2:T159	

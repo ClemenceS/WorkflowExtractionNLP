@@ -1,0 +1,267 @@
+T1	Biblio 2107 2130	Di Tommaso et al., 2017
+T10	ManagementSystem 2208 2216	Nextflow
+T11	ManagementSystem 2549 2557	Nextflow
+T12	ManagementSystem 2965 2973	Nextflow
+T13	ManagementSystem 5029 5037	Nextflow
+T14	ManagementSystem 5115 5123	Nextflow
+T15	Container 3344 3355	Singularity
+T16	Container 3558 3569	Singularity
+T17	Container 5091 5102	Singularity
+T18	Container 5239 5250	Singularity
+T19	File 4326 4345	annotated VCF files
+T2	Container 3206 3212	Docker
+T20	File 4375 4385	GVCF files
+T21	Data 4038 4086	tumour/normal dataset with 90x/90x read coverage
+T23	Data 424 438	sequence reads
+T24	Data 458 474	reference genome
+T3	Container 3334 3340	Docker
+T4	Container 3397 3403	Docker
+T5	Container 5081 5087	Docker
+T6	Container 5229 5235	Docker
+T7	Container 5288 5294	Docker
+T8	File 4219 4230	FASTQ files
+T9	ManagementSystem 2097 2105	Nextflow
+T25	WorkflowName 0 5	Sarek
+T26	Description 9 63	portable workflow for whole-genome sequencing analysis
+R1	DescriptionOf Arg1:T26 Arg2:T25	
+T28	WorkflowName 155 160	Sarek
+T29	Description 170 262	portable workflow for germline and somatic variant detection, annotation and quality control
+R2	DescriptionOf Arg1:T29 Arg2:T28	
+T30	Data 272 275;295 299	WGS data
+T31	Data 277 280;295 299	WES data
+T32	Data 284 299	gene panel data
+T33	Method 403 417	pre-processing
+T34	Tool 480 487	BWA-MEM
+T35	Biblio 489 497	Li, 2013
+T36	Description 443 450	aligned
+R3	InputOf Arg1:T23 Arg2:T34	
+R4	DescriptionOf Arg1:T36 Arg2:T34	
+R5	InputOf Arg1:T24 Arg2:T34	
+T37	Description 512 525	deduplication
+T38	Description 530 543	recalibration
+T39	Tool 549 553	GATK
+R6	DescriptionOf Arg1:T38 Arg2:T39	
+R7	DescriptionOf Arg1:T37 Arg2:T39	
+T40	Biblio 555 575	McKenna et al., 2010
+T41	Data 582 598	germline samples
+T42	Tool 675 690	HaplotypeCaller
+T43	Biblio 692 712	McKenna et al., 2010
+T44	Biblio 728 744	Kim et al., 2018
+T45	Tool 718 726	Strelka2
+R8	BiblioOf Arg1:T43 Arg2:T42	
+R9	BiblioOf Arg1:T44 Arg2:T45	
+T47	Data 600 626	single-nucleotide variants
+T48	Data 631 656	small insertion/deletions
+R11	InputOf Arg1:T41 Arg2:T42	
+T49	Data 751 772	structural variations
+T50	Tool 791 796	Manta
+T51	Tool 821 827	TIDDIT
+T52	Biblio 798 815	Chen et al., 2016
+T53	Biblio 829 850	Eisfeldt et al., 2017
+R12	BiblioOf Arg1:T53 Arg2:T51	
+R13	BiblioOf Arg1:T52 Arg2:T50	
+R14	OutputOf Arg1:T47 Arg2:T42	
+R15	OutputOf Arg1:T48 Arg2:T42	
+R16	InputOf Arg1:T41 Arg2:T45	
+R17	InputOf Arg1:T41 Arg2:T50	
+R18	InputOf Arg1:T41 Arg2:T51	
+R19	OutputOf Arg1:T49 Arg2:T50	
+R20	OutputOf Arg1:T49 Arg2:T51	
+T54	Data 857 872	somatic samples
+T56	Tool 979 992	GATK4 Mutect2
+T57	Tool 1022 1030	Strelka2
+T61	Biblio 994 1016	Cibulskis et al., 2013
+T62	Biblio 1032 1048	Kim et al., 2018
+R24	BiblioOf Arg1:T61 Arg2:T56	
+R25	BiblioOf Arg1:T62 Arg2:T57	
+R27	InputOf Arg1:T54 Arg2:T56	
+R28	InputOf Arg1:T54 Arg2:T57	
+T63	Data 874 903	somatic single-base mutations
+T64	Data 905 908	SSM
+*	Synonym T64 T63
+T65	Data 914 956	small somatic insertion/deletion mutations
+T66	Data 958 961	SIM
+*	Synonym T65 T66
+R30	OutputOf Arg1:T63 Arg2:T56	
+R31	OutputOf Arg1:T63 Arg2:T57	
+R33	OutputOf Arg1:T65 Arg2:T56	
+R34	OutputOf Arg1:T65 Arg2:T57	
+T67	Data 1051 1078	Somatic structural variants
+T68	Tool 1166 1171	Manta
+T69	Tool 1193 1198	ASCAT
+T70	Tool 1227 1240	Control-FREEC
+T71	Biblio 1173 1190	Chen et al., 2016
+T72	Biblio 1200 1220	Van Loo et al., 2010
+T73	Biblio 1242 1260	Boeva et al., 2012
+R35	BiblioOf Arg1:T71 Arg2:T68	
+R36	BiblioOf Arg1:T72 Arg2:T69	
+R37	BiblioOf Arg1:T73 Arg2:T70	
+R38	OutputOf Arg1:T67 Arg2:T68	
+R39	OutputOf Arg1:T67 Arg2:T69	
+R40	OutputOf Arg1:T67 Arg2:T70	
+T74	Tool 1328 1334	snpEff
+T75	Tool 1364 1367	VEP
+T76	Biblio 1336 1358	Cingolani et al., 2012
+T77	Biblio 1369 1389	McLaren et al., 2016
+T78	Data 1267 1275	variants
+T79	Description 1280 1322	annotated for potential functional effects
+R41	DescriptionOf Arg1:T79 Arg2:T74	
+R42	DescriptionOf Arg1:T79 Arg2:T75	
+R43	InputOf Arg1:T78 Arg2:T74	
+R44	InputOf Arg1:T78 Arg2:T75	
+T80	WorkflowName 1405 1410	Sarek
+T81	Tool 1472 1478	FastQC
+T82	Tool 1480 1488	QualiMap
+T83	Tool 1518 1526	BCFtools
+T84	Tool 1539 1547	Samtools
+T85	Tool 1571 1579	VCFtools
+T86	Description 1428 1465	wide range of quality control metrics
+R45	DescriptionOf Arg1:T86 Arg2:T81	
+R46	DescriptionOf Arg1:T86 Arg2:T82	
+R47	DescriptionOf Arg1:T86 Arg2:T83	
+R48	DescriptionOf Arg1:T86 Arg2:T84	
+R49	DescriptionOf Arg1:T86 Arg2:T85	
+T87	Biblio 1490 1515	Okonechnikov et al., 2016
+T88	Biblio 1528 1536	Li, 2011
+T89	Biblio 1549 1564	Li et al., 2009
+T90	Biblio 1581 1601	Danecek et al., 2011
+T91	Biblio 1684 1702	Ewels et al., 2016
+T92	Tool 1675 1682	MultiQC
+R50	BiblioOf Arg1:T87 Arg2:T82	
+R51	BiblioOf Arg1:T88 Arg2:T83	
+R52	BiblioOf Arg1:T89 Arg2:T84	
+R53	BiblioOf Arg1:T90 Arg2:T85	
+R55	BiblioOf Arg1:T91 Arg2:T92	
+T94	WorkflowName 1740 1745	Sarek
+T95	Tool 1709 1717	software
+T96	Description 1804 1816	high quality
+T97	Description 1818 1833	well-maintained
+T98	Description 1844 1863	robust installation
+T99	Description 1868 1888	running performances
+R56	DescriptionOf Arg1:T96 Arg2:T95	
+R57	IncludeIn Arg1:T94 Arg2:T95	
+R58	DescriptionOf Arg1:T97 Arg2:T95	
+R59	DescriptionOf Arg1:T98 Arg2:T95	
+R60	DescriptionOf Arg1:T99 Arg2:T95	
+T100	WorkflowName 1956 1961	Sarek
+T101	Tool 1890 1938	Additional alternative or complementing software
+T102	Version 1965 1978	later updates
+R61	BiblioOf Arg1:T1 Arg2:T9	
+T103	WorkflowName 2073 2078	Sarek
+T104	Description 2135 2206	workflow language designed specifically for bioinformatics applications
+R62	DescriptionOf Arg1:T104 Arg2:T9	
+T105	Description 2223 2241	transparent design
+R63	DescriptionOf Arg1:T105 Arg2:T10	
+T106	WorkflowName 2254 2259	Sarek
+T107	WorkflowName 2298 2303	Sarek
+T108	ManagementSystem 2497 2502	Bpipe
+T109	Description 2503 2520	workflow language
+R64	DescriptionOf Arg1:T109 Arg2:T108	
+T110	WorkflowName 2542 2546	DNAp
+T111	Description 2308 2398	well-functioning error reporting to diagnose e.g. software or hardware errors during a run
+R65	DescriptionOf Arg1:T111 Arg2:T107	
+T112	Hardware 2701 2727	cloud compute environments
+T113	Hardware 2738 2750	Google Cloud
+R66	ExampleOf Arg1:T113 Arg2:T112	
+T114	Hardware 2755 2758	AWS
+R67	ExampleOf Arg1:T114 Arg2:T112	
+T115	Hardware 2625 2630	Slurm
+T116	Hardware 2632 2647	Sun Grid Engine
+T117	Hardware 2649 2652	LSF
+T118	Hardware 2657 2667	Kubernetes
+T119	Hardware 2772 2775	AWS
+T120	Hardware 2852 2871	Amazon Web Services
+T121	WorkflowName 2873 2878	Sarek
+T122	Description 2792 2848	possibility to easily distribute thousands of batch jobs
+R68	DescriptionOf Arg1:T122 Arg2:T119	
+T123	Biblio 3054 3072	Ewels et al., 2019
+T124	WorkflowName 3142 3147	Sarek
+T125	Environment 3180 3185	Conda
+T126	Database 3206 3215	DockerHub
+T127	Biblio 3218 3241	https://hub.docker.com/
+R69	BiblioOf Arg1:T127 Arg2:T126	
+T128	Tool 3142 3162	Sarek required tools
+T129	Description 3078 3136	facilitate easy installation and to ensure reproducibility
+R70	DescriptionOf Arg1:T129 Arg2:T125	
+T130	WorkflowName 3251 3256	Sarek
+T131	Environment 3309 3314	Conda
+T132	Biblio 3357 3377	Kurtzer et al., 2017
+R71	BiblioOf Arg1:T132 Arg2:T15	
+T133	Description 3409 3446	widely appreciated container solution
+R72	DescriptionOf Arg1:T133 Arg2:T4	
+T134	Biblio 3607 3627	Kurtzer et al., 2017
+R73	BiblioOf Arg1:T134 Arg2:T16	
+T136	WorkflowName 3881 3886	Sarek
+T137	Hardware 3924 3956	POSIX-compatible computer system
+T138	Data 4001 4030	germline and somatic variants
+T140	Method 3967 3984	full WGS analysis
+R75	IncludeIn Arg1:T138 Arg2:T21	
+R76	InputOf Arg1:T21 Arg2:T140	
+T141	Parameter 4114 4122	16 cores
+T142	Parameter 4154 4190	at least 4 TB available free storage
+T143	File 4315 4324	BAM files
+T144	File 4350 4359	CNV files
+T145	Data 4420 4441	2.3 TB temporary data
+T146	WorkflowName 4800 4805	Sarek
+T147	WorkflowName 4964 4969	Sarek
+T148	Hardware 4984 4999	computer system
+T149	Environment 5061 5066	Conda
+T150	WorkflowName 5152 5157	Sarek
+T151	Database 5175 5181	GitHub
+T152	Database 5288 5298	Docker Hub
+T153	Environment 5318 5323	Conda
+T154	Environment 5342 5350	Bioconda
+T155	Biblio 5352 5372	Grüning et al., 2018
+R78	BiblioOf Arg1:T155 Arg2:T154	
+T156	Data 5533 5551	small test dataset
+T22	Database 5659 5665	GitHub
+T157	Data 67 96	germline and somatic variants
+T160	Data 192 220	germline and somatic variant
+R79	InputOf Arg1:T30 Arg2:T28	
+R80	InputOf Arg1:T31 Arg2:T28	
+R81	InputOf Arg1:T32 Arg2:T28	
+R82	BiblioOf Arg1:T35 Arg2:T34	
+R83	BiblioOf Arg1:T40 Arg2:T39	
+R84	OutputOf Arg1:T48 Arg2:T45	
+R85	OutputOf Arg1:T47 Arg2:T45	
+R86	BiblioOf Arg1:T76 Arg2:T74	
+R87	BiblioOf Arg1:T77 Arg2:T75	
+T93	Data 1621 1669	aggregated quality control review across samples
+R54	OutputOf Arg1:T93 Arg2:T92	
+T165	Database 3004 3011	nf-core
+T27	Description 600 669	single-nucleotide variants and small insertion/deletions are detected
+R10	DescriptionOf Arg1:T27 Arg2:T42	
+R21	DescriptionOf Arg1:T27 Arg2:T45	
+T46	Description 751 785	structural variations are detected
+R22	DescriptionOf Arg1:T46 Arg2:T50	
+R23	DescriptionOf Arg1:T46 Arg2:T51	
+R90	InputOf Arg1:T157 Arg2:T25	
+T58	Description 874 975	somatic single-base mutations (SSM) and small somatic insertion/deletion mutations (SIM) are detected
+R92	DescriptionOf Arg1:T58 Arg2:T56	
+R93	DescriptionOf Arg1:T58 Arg2:T57	
+T59	Tool 318 343	state-of-the-art software
+R94	IncludeIn Arg1:T28 Arg2:T59	
+T60	Parameter 4138 4148	128 GB RAM
+T55	Description 1051 1162	Somatic structural variants (including copy-number variation), as well as ploidy and sample purity are detected
+R26	DescriptionOf Arg1:T55 Arg2:T68	
+R29	DescriptionOf Arg1:T55 Arg2:T72	
+R32	DescriptionOf Arg1:T55 Arg2:T70	
+R91	IncludeIn Arg1:T80 Arg2:T81	
+R95	IncludeIn Arg1:T80 Arg2:T82	
+R96	IncludeIn Arg1:T80 Arg2:T83	
+R97	IncludeIn Arg1:T80 Arg2:T84	
+T158	Description 1604 1614	visualized
+R98	DescriptionOf Arg1:T158 Arg2:T92	
+T159	Description 2404 2479	incomplete runs are easily restarted from any stage in the workflow process
+R88	DescriptionOf Arg1:T159 Arg2:T107	
+*	Synonym T120 T119
+R99	BiblioOf Arg1:T123 Arg2:T165	
+T135	Hardware 4890 4899	CPU cores
+T139	Tool 4746 4754	software
+T161	Method 4759 4771	parallelized
+T162	Method 4813 4836	scatter-gather approach
+T163	File 5454 5473	Configuration files
+T164	WorkflowName 5514 5519	Sarek
+T166	Data 5558 5572	suite of tests
+T167	Description 5576 5599	verify the installation
+T168	Description 5623 5673	Continuous Integration testing with GitHub Actions

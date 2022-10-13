@@ -1,0 +1,98 @@
+T1	WorkflowName 0 10	uORF-Tools
+T2	Description 11 96	Workflow for the determination of translation-regulatory upstream open reading frames
+T3	WorkflowName 148 158	uORF-Tools
+T4	Biblio 226 273	https://github.com/Biochemistry1-FFM/uORF-Tools
+T5	ManagementSystem 290 299	Snakemake
+T6	Biblio 301 303	22
+T7	Description 309 384	automatically installs all tool dependencies in a version-controlled manner
+T8	Environment 389 397	bioconda
+T9	Biblio 399 401	23
+T10	Hardware 444 463	cluster environment
+T11	WorkflowName 478 488	uORF-Tools
+T12	File 512 521	bam files
+T13	Data 525 553	ribosome profiling data sets
+T14	File 609 626	genome fasta file
+T15	File 634 653	annotation gtf file
+T16	WorkflowName 666 676	uORF-Tools
+T17	File 689 715	new genome annotation file
+T18	File 800 815	annotation file
+T19	Biblio 907 927	www.gencodegenes.org
+T20	Data 929 971	longest protein coding transcript variants
+T21	File 1001 1010	bam files
+T22	File 1019 1051	generated genome annotation file
+T23	File 1056 1096	experiment-specific uORF annotation file
+T24	Tool 1121 1130	Ribo-TISH
+T25	Biblio 1132 1134	21
+T26	Description 1161 1200	identifies translation initiation sites
+T27	Data 1208 1221	ribo-seq data
+T28	WorkflowName 1323 1333	uORF-Tools
+T31	Data 1459 1464	uORFs
+T32	Parameter 1526 1550	maximal length of 400 nt
+T33	WorkflowName 1590 1600	uORF-Tools
+T34	Biblio 1790 1792	24
+T35	File 1892 1912	uORF annotation file
+T36	Data 1939 1960	35 ribo-seq data sets
+T37	File 2124 2139	annotation file
+T38	File 2209 2244	experiment-specific annotation file
+T40	Biblio 2306 2366	uORF-Tools/comprehensive_annotation/uORF_annotation_hg38.csv
+T42	File 2375 2391	config.yaml file
+T43	File 2439 2471	uORF and genome annotation files
+T44	WorkflowName 2473 2483	uORF-Tools
+T45	File 2496 2506	count file
+T46	Description 2496 2611	count file containing all reads that correspond to coding sequences (CDS) of the longest protein coding transcripts
+T47	File 2641 2651	count file
+T48	Tool 2851 2857	DESeq2
+T49	Biblio 2859 2861	25
+T50	WorkflowName 3512 3522	uORF-Tools
+T51	Data 3544 3552	main ORF
+T52	Data 3557 3576	uORF ribo-seq reads
+T53	Data 3692 3710	ORF-to-uORF ratios
+T54	WorkflowName 3832 3842	uORF-Tools
+T55	File 3863 3872	bam files
+T57	File 4020 4031	fastq files
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+R2	BiblioOf Arg1:T4 Arg2:T3	
+R3	BiblioOf Arg1:T6 Arg2:T5	
+R4	DescriptionOf Arg1:T7 Arg2:T8	
+R5	BiblioOf Arg1:T9 Arg2:T8	
+R6	IncludeIn Arg1:T12 Arg2:T13	
+R7	InputOf Arg1:T12 Arg2:T11	
+R8	InputOf Arg1:T14 Arg2:T11	
+R9	InputOf Arg1:T15 Arg2:T11	
+R10	OutputOf Arg1:T17 Arg2:T16	
+T58	Database 896 903	Gencode
+R11	BiblioOf Arg1:T19 Arg2:T58	
+R12	BiblioOf Arg1:T25 Arg2:T24	
+R13	InputOf Arg1:T21 Arg2:T24	
+R14	InputOf Arg1:T22 Arg2:T24	
+R15	OutputOf Arg1:T23 Arg2:T24	
+T59	Tool 1151 1160	Ribo-TISH
+R16	DescriptionOf Arg1:T26 Arg2:T59	
+T29	WorkflowName 2412 2422	uORF-Tools
+R17	InputOf Arg1:T43 Arg2:T44	
+R18	DescriptionOf Arg1:T46 Arg2:T44	
+R19	OutputOf Arg1:T45 Arg2:T44	
+R20	BiblioOf Arg1:T49 Arg2:T48	
+R21	InputOf Arg1:T55 Arg2:T54	
+T30	File 3971 3978	S1 File
+T39	Data 1261 1265	ORFs
+T41	Data 1280 1284	ORFs
+R22	OutputOf Arg1:T39 Arg2:T59	
+T56	Data 1296 1301	uORFs
+T60	Description 1236 1265	information to determine ORFs
+R23	DescriptionOf Arg1:T60 Arg2:T59	
+T61	Data 1518 1522	ORFs
+T62	Data 1711 1716	uORFs
+T63	Data 1863 1868	uORFs
+T64	Data 1636 1641	uORFs
+R24	OutputOf Arg1:T64 Arg2:T33	
+T65	Description 1618 1641	identification of uORFs
+R25	DescriptionOf Arg1:T65 Arg2:T33	
+T66	Data 2091 2096	uORFs
+T67	Data 2112 2116	ORFs
+T68	Data 2912 2915	ORF
+T69	Data 2936 2939	ORF
+T70	Data 2976 2980	uORF
+T71	Data 3296 3299	ORF
+T72	Data 3343 3347	uORF
+T73	Data 3414 3418	uORF

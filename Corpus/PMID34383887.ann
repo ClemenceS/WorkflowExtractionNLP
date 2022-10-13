@@ -1,0 +1,133 @@
+T1	WorkflowName 0 5	nf-LO
+T2	Description 9 72	Scalable, Containerized Workflow for Genome-to-Genome Lift Over
+T3	Method 125 145	ultrafast assemblers
+T4	Biblio 147 165	Joseph et al. 2018
+T5	Biblio 166 182	Ruan and Li 2020
+T6	Biblio 377 401	Zoonomia Consortium 2020
+T7	Data 581 592	gene models
+T8	Biblio 800 821	Carithers et al. 2013
+T9	Biblio 822 842	Amberger et al. 2015
+T10	Biblio 843 857	Hu et al. 2019
+T11	Biblio 858 867	OMIA 2020
+T12	Description 902 937;972 1020	lift over positions and annotations to the new genome from well-annotated assemblies
+T13	Tool 1042 1050	LiftOver
+T14	Biblio 1052 1080	Navarro Gonzalez et al. 2021
+T15	Tool 1086 1096	NCBI Remap
+T16	Biblio 1098 1113	Luu et al. 2020
+T17	File 1129 1144	alignment files
+T18	Data 1250 1267	reference genomes
+T19	File 1339 1354	lift over files
+T20	Tool 1458 1461	flo
+T21	Biblio 1490 1509	Pracana et al. 2017
+T22	Tool 1515 1522	LiftOff
+T23	Description 1527 1546	ultrafast lift over
+T24	Biblio 1548 1573	Shumate and Salzberg 2021
+T25	Description 1611 1656	scalable workflow to generate lift over files
+T26	File 1641 1656	lift over files
+T27	WorkflowName 1718 1723	nf-LO
+T28	Description 1776 1807	supports parallelized alignment
+T29	Description 1845 1948	can be finely tuned to achieve the desired sensitivity, speed of process, and repeatability of analyses
+T30	WorkflowName 1950 1955	nf-LO
+T31	Description 1959 2067	a workflow to facilitate the generation of genome alignment chain files compatible with the LiftOver utility
+T32	File 2002 2030	genome alignment chain files
+T33	ManagementSystem 2086 2094	Nextflow
+T34	Description 2098 2338	domain-specific language and workflow manager that allows easy implementation, redistribution, and scalability of complex workflows across every Unix-based operating system; ranging from a desktop machine to cloud computing and HPC clusters
+T36	Hardware 2243 2270	Unix-based operating system
+T37	Hardware 2287 2302	desktop machine
+T38	Hardware 2306 2321	cloud computing
+T39	Hardware 2326 2338	HPC clusters
+T40	Container 2395 2401	docker
+T41	Environment 2422 2430	anaconda
+T42	Description 2444 2524	facilitating the diffusion and adoption of the workflow across different systems
+T43	File 2555 2584	input genomes in fasta format
+T44	Data 2832 2843	two genomes
+T45	Description 2848 2880	pairwise alignment of the blocks
+T46	Description 2885 2956	generating the chain-net file that can be used to perform the lift over
+T47	File 2900 2914	chain-net file
+T48	Method 3064 3081	chunking approach
+T49	Tool 3344 3348	blat
+T50	Biblio 3350 3359	Kent 2002
+T51	File 3388 3416	same species lift over files
+T52	Tool 3451 3458	GSAlign
+T53	Biblio 3460 3476	Lin and Hsu 2020
+T54	WorkflowName 3575 3580	nf-LO
+T55	Tool 3599 3604	lastz
+T56	Biblio 3606 3617	Harris 2007
+T57	Description 3655 3694	generate between species LiftOver files
+T58	File 3664 3694	between species LiftOver files
+T59	Tool 3700 3708	minimap2
+T60	Biblio 3710 3717	Li 2018
+T61	Tool 3776 3784	aligners
+T62	Biblio 3880 3889	UCSC 2018
+T63	Description 4013 4122	possibility to provide sets of custom parameters to achieve the desired balance between speed and sensitivity
+T64	Description 4201 4219	lift over coverage
+T65	File 4223 4237	LiftOver files
+T66	Database 4243 4247	UCSC
+T67	Method 4375 4385	alignments
+T68	File 4445 4460	chain-net files
+T69	File 4537 4556	standard bed format
+T70	Tool 4621 4629	CrossMap
+T71	Biblio 4631 4647	Zhao et al. 2014
+T73	Description 4732 4772	collect metrics on the lifted annotation
+T74	Tool 4817 4825	mafTools
+T75	Biblio 4827 4843	Earl et al. 2014
+T76	Description 4848 4881	report metrics for the chain file
+T77	File 4871 4881	chain file
+T78	File 4944 4955	HTML format
+T79	Description 4959 5024	facilitate the interpretation and collection across multiple runs
+T80	Tool 5075 5098	UCSC lift over pipeline
+T81	ManagementSystem 5110 5118	Nextflow
+T82	Hardware 5241 5258	Unix-based system
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T83	Data 783 798	model organisms
+R2	DescriptionOf Arg1:T12 Arg2:T13	
+R3	BiblioOf Arg1:T14 Arg2:T13	
+R4	DescriptionOf Arg1:T12 Arg2:T15	
+R5	BiblioOf Arg1:T16 Arg2:T15	
+R6	BiblioOf Arg1:T21 Arg2:T20	
+R7	BiblioOf Arg1:T24 Arg2:T22	
+T84	Description 1466 1488	same species lift over
+R8	DescriptionOf Arg1:T84 Arg2:T20	
+R9	DescriptionOf Arg1:T23 Arg2:T22	
+T85	WorkflowName 1602 1607	nf-LO
+R10	DescriptionOf Arg1:T25 Arg2:T85	
+R11	OutputOf Arg1:T26 Arg2:T85	
+T86	Data 1661 1680	any pair of genomes
+R12	InputOf Arg1:T86 Arg2:T85	
+T87	Tool 1694 1716	UCSC LiftOver pipeline
+T88	Data 1742 1749	genomes
+T89	Database 1755 1774	public repositories
+T90	Description 1737 1774	pull genomes from public repositories
+R13	DescriptionOf Arg1:T29 Arg2:T27	
+R14	DescriptionOf Arg1:T90 Arg2:T27	
+R15	DescriptionOf Arg1:T28 Arg2:T27	
+R16	DescriptionOf Arg1:T31 Arg2:T30	
+T35	File 2967 2995	bed/gff/gtf/vcf/bam/maf file
+R17	BiblioOf Arg1:T50 Arg2:T49	
+T91	Description 3366 3445	aligner of choice for same species lift over files from the UCSC genome browser
+R18	DescriptionOf Arg1:T91 Arg2:T49	
+T92	Description 3479 3528	a new, high speed same-species alignment software
+R19	BiblioOf Arg1:T53 Arg2:T52	
+R20	DescriptionOf Arg1:T92 Arg2:T52	
+T93	Description 3095 3162	reduces the runtime of the analysis by parallelizing the alignments
+R21	DescriptionOf Arg1:T93 Arg2:T48	
+T94	Method 3168 3177	alignment
+T95	Method 3284 3307	same-species alignments
+R22	IncludeIn Arg1:T95 Arg2:T49	
+R23	IncludeIn Arg1:T95 Arg2:T52	
+T96	Method 3545 3573	different-species lift overs
+R24	BiblioOf Arg1:T56 Arg2:T55	
+R25	IncludeIn Arg1:T54 Arg2:T55	
+R26	IncludeIn Arg1:T54 Arg2:T59	
+R27	BiblioOf Arg1:T60 Arg2:T59	
+T97	Description 3720 3764	one of the fastest genome-to-genome aligners
+R28	DescriptionOf Arg1:T97 Arg2:T59	
+R29	DescriptionOf Arg1:T57 Arg2:T55	
+R30	InputOf Arg1:T58 Arg2:T55	
+R31	BiblioOf Arg1:T71 Arg2:T70	
+T72	Parameter 4684 4687	VCF
+T98	Parameter 4689 4692	BAM
+T99	Parameter 4698 4701	GFF
+R32	BiblioOf Arg1:T75 Arg2:T74	
+R33	DescriptionOf Arg1:T76 Arg2:T74	
+T100	Tool 4405 4429	UCSC processing pipeline

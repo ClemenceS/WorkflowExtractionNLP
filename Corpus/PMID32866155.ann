@@ -1,0 +1,273 @@
+T1	Container 256 262	Docker
+T10	Description 2728 2753	expression quantification
+T2	Container 601 607	Docker
+T3	ManagementSystem 14 22	Nextflow
+T4	ManagementSystem 175 183	Nextflow
+T5	ManagementSystem 764 772	Nextflow
+T6	ManagementSystem 1228 1236	Nextflow
+T7	ProgrammingLanguage 928 934	Python
+T8	Tool 2389 2393	STAR
+T9	Method 1741 1766	expression quantification
+T11	WorkflowName 0 10	GeneTEFlow
+T12	Description 42 93	analysing gene and transposable elements expression
+R1	DescriptionOf Arg1:T12 Arg2:T11	
+T13	Data 99 111	RNA-Seq data
+R2	InputOf Arg1:T13 Arg2:T11	
+T14	WorkflowName 135 145	GeneTEFlow
+T15	Description 187 250	portable, flexible, and reproducible workflow management system
+R3	DescriptionOf Arg1:T15 Arg2:T4	
+T16	Description 289 324	securely build and run applications
+R4	DescriptionOf Arg1:T16 Arg2:T1	
+T17	Hardware 328 346	multiple platforms
+T18	WorkflowName 361 371	GeneTEFlow
+T19	Tool 394 414	bioinformatics tools
+T20	Description 444 446	QC
+T21	Data 520 532	RNA-Seq data
+T22	Tool 540 560	bioinformatics tools
+T23	Tool 565 579	custom scripts
+T24	Hardware 670 693	computational platforms
+T25	Description 622 656	ensure portability of the workflow
+R6	DescriptionOf Arg1:T25 Arg2:T2	
+T26	Method 695 710	Data processing
+T27	Method 715 729	analysis steps
+T28	WorkflowName 856 866	GeneTEFlow
+T29	ProgrammingLanguage 916 920	Perl
+T30	ProgrammingLanguage 922 923	R
+T31	File 1101 1135	raw sequence files in fastq format
+T32	File 1139 1176	sample meta data file in excel format
+T34	File 1199 1220	gene annotation files
+T33	File 1178 1194;1215 1220	reference genome files
+T35	WorkflowName 1064 1072	workflow
+R7	InputOf Arg1:T31 Arg2:T35	
+R8	InputOf Arg1:T32 Arg2:T35	
+R9	InputOf Arg1:T33 Arg2:T35	
+R10	InputOf Arg1:T34 Arg2:T35	
+T37	File 1261 1282	sample meta data file
+T38	Data 1399 1463	Human reference genome UCSC hg38 with the gene annotation (.gtf)
+T39	Database 1484 1513	Illumina iGenomes collections
+T40	Biblio 1515 1517	28
+R12	BiblioOf Arg1:T40 Arg2:T39	
+R13	ComeFrom Arg1:T38 Arg2:T39	
+T41	Tool 1535 1555	bioinformatics tools
+T42	WorkflowName 1568 1578	GeneTEFlow
+T43	WorkflowName 1684 1694	GeneTEFlow
+T44	File 1664 1682	configuration file
+T45	Method 1737 1739	QC
+T46	Method 1768 1791	differential expression
+T47	Method 1796 1816	down-stream analysis
+T48	Tool 1893 1904	Trimmomatic
+T49	Version 1905 1910	v0.36
+T50	Biblio 1913 1915	29
+R14	VersionOf Arg1:T49 Arg2:T48	
+R15	BiblioOf Arg1:T50 Arg2:T48	
+T51	Data 1868 1886	Illumina raw reads
+T52	Description 1825 1858	adapter sequences are trimmed off
+R16	DescriptionOf Arg1:T52 Arg2:T48	
+T53	Description 1957 1991	low-quality reads are filtered out
+R17	DescriptionOf Arg1:T53 Arg2:T48	
+T54	Data 1935 1951	paired-end reads
+T55	Data 1957 1974	low-quality reads
+T56	Tool 1999 2005	FastQC
+T57	Version 2006 2013	v0.11.7
+T58	Biblio 2016 2018	30
+R18	VersionOf Arg1:T57 Arg2:T56	
+R19	BiblioOf Arg1:T58 Arg2:T56	
+T59	Description 2035 2073	survey the quality of sequencing reads
+R20	DescriptionOf Arg1:T59 Arg2:T56	
+T60	Data 2079 2085	report
+R21	OutputOf Arg1:T60 Arg2:T56	
+T61	Data 2144 2175	high throughput sequencing data
+T62	Tool 2286 2290	RSEM
+T63	Parameter 2258 2282	“rsem-prepare-reference”
+R22	ParameterOf Arg1:T63 Arg2:T62	
+T64	Version 2292 2299	v.1.3.0
+R23	VersionOf Arg1:T64 Arg2:T62	
+T65	Data 2177 2242	Reference genome index for mapping sequencing reads to mRNA genes
+R24	OutputOf Arg1:T65 Arg2:T62	
+T66	Version 2394 2401	v2.6.0c
+T67	Biblio 2404 2406	31
+R25	VersionOf Arg1:T66 Arg2:T8	
+R26	BiblioOf Arg1:T67 Arg2:T8	
+T68	Method 2328 2347	pre-processing step
+T69	Data 2366 2382	reference genome
+T70	Data 2302 2307	Reads
+T71	Description 2352 2358	mapped
+R27	DescriptionOf Arg1:T71 Arg2:T8	
+R28	InputOf Arg1:T70 Arg2:T8	
+R29	InputOf Arg1:T69 Arg2:T8	
+T72	Parameter 2505 2532	“rsem-calculate-expression”
+T73	Tool 2536 2540	RSEM
+T74	Version 2541 2547	v1.3.0
+T75	Parameter 2554 2572	default parameters
+T76	Biblio 2574 2576	32
+R30	VersionOf Arg1:T74 Arg2:T73	
+R31	ParameterOf Arg1:T72 Arg2:T73	
+R32	ParameterOf Arg1:T75 Arg2:T73	
+R33	BiblioOf Arg1:T76 Arg2:T73	
+T77	Description 2409 2498	Gene level expression is quantitated as expected counts and transcripts per million (TPM)
+R34	DescriptionOf Arg1:T77 Arg2:T73	
+T78	ProgrammingLanguage 2586 2590	Perl
+T80	Description 2617 2722	aggregate data from each sample into a single data matrix for expected counts and TPM values respectively
+T81	Tool 2792 2798	SQuIRE
+T82	Biblio 2800 2802	22
+R35	BiblioOf Arg1:T82 Arg2:T81	
+T83	Data 2757 2775	locus-specific TEs
+R36	DescriptionOf Arg1:T10 Arg2:T81	
+T84	Method 2811 2845	aligning reads to reference genome
+T85	Tool 2847 2853	SQuIRE
+T86	Description 2854 2982	classifies reads into unique reads (reads mapped to a single locus) and multi-mapping reads (reads mapped to multiple locations)
+R37	DescriptionOf Arg1:T86 Arg2:T85	
+T87	Data 2865 2870	reads
+T88	Data 2876 2888	unique reads
+T89	Data 2926 2945	multi-mapping reads
+T90	Tool 2989 2995	SQuIRE
+T91	Description 2996 3050	calculates unique read expression of each annotated TE
+T92	Method 3168 3192	expectation-maximization
+T93	Tool 3227 3233	SQuIRE
+R39	IncludeIn Arg1:T92 Arg2:T93	
+T94	Description 3237 3315	recursively calculate the fractions of multi-mapping reads (E-step) of each TE
+T95	Method 3412 3436	quality control measures
+T96	Method 3443 3463	reads alignment step
+T97	File 3535 3542;3555 3559	Boxplot plot
+T98	File 3547 3559	density plot
+T99	Description 3572 3651	evaluate the overall consistency of the expression distribution for each sample
+T100	Method 3699 3713	Pearson method
+T101	Description 3653 3680	Sample correlation analysis
+R41	DescriptionOf Arg1:T101 Arg2:T100	
+T102	Data 3645 3651	sample
+T103	Data 3797 3809	sample group
+T104	Method 3811 3839	Principal component analysis
+T105	Parameter 3720 3730	TPM values
+R42	ParameterOf Arg1:T105 Arg2:T100	
+T106	Description 3861 3895	identify potential outlier samples
+R43	DescriptionOf Arg1:T106 Arg2:T104	
+T107	Data 3935 3948	sample groups
+T108	LibraryPackage 4037 4043	DESeq2
+T109	Version 4044 4051	v1.18.1
+T110	Biblio 4062 4064	33
+R44	VersionOf Arg1:T109 Arg2:T108	
+R45	BiblioOf Arg1:T110 Arg2:T108	
+T111	Description 3950 4017	Differential expression analysis of genes and transposable elements
+R46	DescriptionOf Arg1:T111 Arg2:T108	
+T112	Method 4283 4296	Venn diagrams
+T113	ProgrammingLanguage 4382 4383	R
+T114	LibraryPackage 4393 4407	ComplexHeatmap
+T115	Biblio 4410 4412	34
+T116	Biblio 4608 4610	36
+R47	BiblioOf Arg1:T115 Arg2:T114	
+T117	Description 4309 4332	hierarchical clustering
+R48	DescriptionOf Arg1:T117 Arg2:T114	
+T118	Data 4336 4375	significantly dysregulated genes or TEs
+T119	Parameter 4419 4437	euclidean distance
+T120	Parameter 4442 4479	average linkage clustering parameters
+R49	ParameterOf Arg1:T119 Arg2:T114	
+R50	ParameterOf Arg1:T120 Arg2:T114	
+T121	Tool 4511 4515	GSEA
+T122	Tool 4481 4509	Gene set enrichment analysis
+*	Synonym T121 T122
+T123	Biblio 4524 4526	35
+T124	Version 4517 4521	v3.0
+R51	VersionOf Arg1:T124 Arg2:T121	
+R52	BiblioOf Arg1:T123 Arg2:T121	
+T125	Database 4568 4597	Molecular Signatures Database
+T126	Database 4599 4605	MSigDB
+*	Synonym T126 T125
+T127	WorkflowName 4641 4651	GeneTEFlow
+T128	WorkflowName 4703 4713	GeneTEFlow
+T130	WorkflowName 4747 4757	GeneTEFlow
+T131	Parameter 4772 4789	step-by-step mode
+T132	Data 4827 4839	RNA-Seq data
+T133	Database 4844 4850	GitHub
+T134	WorkflowName 4888 4898	GeneTEFlow
+T135	WorkflowName 5104 5114	GeneTEFlow
+T136	Biblio 5130 5167	https://github.com/zhongw2/GeneTEFlow
+R53	BiblioOf Arg1:T136 Arg2:T135	
+T137	File 1228 1255	Nextflow configuration file
+R54	InputOf Arg1:T21 Arg2:T18	
+R11	InputOf Arg1:T137 Arg2:T35	
+T36	Method 3841 3844	PCA
+*	Synonym T104 T36
+T79	Description 448 460	quantitation
+T138	Description 465 514	differential expression analysis of genes and TEs
+R5	DescriptionOf Arg1:T20 Arg2:T19	
+R55	DescriptionOf Arg1:T79 Arg2:T19	
+R56	DescriptionOf Arg1:T138 Arg2:T19	
+T139	Tool 750 757	modules
+T140	Tool 846 852	module
+R57	IncludeIn Arg1:T28 Arg2:T140	
+T141	Tool 894 907	Linux scripts
+T142	File 980 998	configuration file
+T143	Tool 956 962	module
+R58	InputOf Arg1:T142 Arg2:T143	
+T144	WorkflowName 1025 1035	GeneTEFlow
+R59	IncludeIn Arg1:T42 Arg2:T41	
+R60	InputOf Arg1:T38 Arg2:T41	
+T145	Hardware 1594 1617	computational resources
+T146	Description 1580 1645	Scheduling of computational resources for each application module
+R61	DescriptionOf Arg1:T146 Arg2:T44	
+T147	Tool 1627 1645	application module
+R62	InputOf Arg1:T51 Arg2:T48	
+T148	Data 1921 1931;1946 1951	single-end reads
+R63	IncludeIn Arg1:T51 Arg2:T148	
+R64	IncludeIn Arg1:T51 Arg2:T54	
+R65	IncludeIn Arg1:T51 Arg2:T55	
+T149	Data 2057 2073	sequencing reads
+T150	Description 2079 2098	report is generated
+R66	DescriptionOf Arg1:T150 Arg2:T56	
+T151	Description 2177 2251	Reference genome index for mapping sequencing reads to mRNA genes is built
+R67	DescriptionOf Arg1:T151 Arg2:T62	
+T152	Tool 2579 2598	Custom Perl scripts
+R68	DescriptionOf Arg1:T80 Arg2:T152	
+T153	Data 2642 2648	sample
+T154	Data 2663 2722	data matrix for expected counts and TPM values respectively
+T155	Data 2820 2825	reads
+T156	Data 2829 2845	reference genome
+R69	IncludeIn Arg1:T88 Arg2:T87	
+R70	IncludeIn Arg1:T89 Arg2:T87	
+R71	InputOf Arg1:T87 Arg2:T85	
+R72	OutputOf Arg1:T88 Arg2:T85	
+R73	OutputOf Arg1:T89 Arg2:T85	
+T157	Data 3007 3029	unique read expression
+R74	OutputOf Arg1:T157 Arg2:T90	
+T158	Data 3038 3050	annotated TE
+R75	InputOf Arg1:T158 Arg2:T90	
+R76	OutputOf Arg1:T158 Arg2:T90	
+R38	DescriptionOf Arg1:T91 Arg2:T90	
+T159	Description 3055 3157	assigns the fractions of multi-mapping reads based on the normalized unique read expression of each TE
+R77	DescriptionOf Arg1:T159 Arg2:T90	
+T160	Data 3080 3099	multi-mapping reads
+R78	OutputOf Arg1:T160 Arg2:T90	
+T161	Data 3113 3157	normalized unique read expression of each TE
+R79	InputOf Arg1:T161 Arg2:T90	
+T162	Method 3194 3196	EM
+*	Synonym T92 T162
+T163	Description 3198 3207	algorithm
+R80	DescriptionOf Arg1:T163 Arg2:T92	
+T164	Description 3321 3377	re-estimate total read counts (M-step) until convergence
+R40	DescriptionOf Arg1:T164 Arg2:T92	
+T165	Data 3276 3295	multi-mapping reads
+T166	Data 3313 3315	TE
+T167	Data 3333 3350	total read counts
+T168	Description 3467 3533	detect potential outlier samples resulted from experimental errors
+R81	DescriptionOf Arg1:T168 Arg2:T95	
+T169	Data 3484 3499	outlier samples
+T170	Description 3734 3809	assess the correlation between biological replicates from each sample group
+R82	DescriptionOf Arg1:T170 Arg2:T100	
+T171	Description 3903 3948	investigate relationships among sample groups
+R83	DescriptionOf Arg1:T171 Arg2:T104	
+T172	Data 3880 3895	outlier samples
+T173	Data 3986 4017	genes and transposable elements
+T174	Data 4081 4126	up-regulated and down-regulated genes and TEs
+T175	Description 4157 4275	analyse overlap among significantly regulated genes and TEs from pair-wise comparisons between different sample groups
+T176	Data 4262 4275	sample groups
+T177	Data 4179 4216	significantly regulated genes and TEs
+T178	Data 4547 4558	collections
+R84	ComeFrom Arg1:T178 Arg2:T125	
+R85	InputOf Arg1:T178 Arg2:T121	
+T179	File 4703 4732	GeneTEFlow configuration file
+T129	Data 4671 4686	several folders
+R86	OutputOf Arg1:T129 Arg2:T127	
+T180	Description 4948 4979	remove some low-quality samples
+T181	Data 4960 4979	low-quality samples
+T182	Method 5007 5039	differential expression analysis
+T183	File 5041 5114	A tutorial with detailed instructions on how to set up and run GeneTEFlow

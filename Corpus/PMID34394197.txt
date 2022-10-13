@@ -1,0 +1,41 @@
+poreCov-An Easy to Use, Fast, and Robust Workflow for SARS-CoV-2 Genome Reconstruction via Nanopore Sequencing
+
+
+	Materials and Methods
+
+
+
+	General Design
+
+One of the main aspects of poreCov is to keep the bioinformatics part as simplistic as possible while still comprehensive and robust. Our development focused on easy installation, configuration, and execution on various computer systems with clear results and a minimal set of necessary input parameters. We developed customized scripts to collect and visualize all relevant results in a comprehensive summary report that comes as an intuitive HTML report as well as an Excel sheet (XLSX) and a tab-separated table (TSV) for direct programmatic access. To start an analysis with poreCov, only the bare necessity of inputs is required (where is the data located, what kind of input data is it, which primers are used). Other parameters are set to recommended default values but can still be changed by experienced users if necessary.
+We use Nextflow (Di Tommaso et al., 2017) as a workflow manager giving poreCov the capabilities to be executed on most computational infrastructures from a laptop up to a compute cluster and cloud computing solutions. The native container support (Docker, Singularity) allows for comfortable, stable, and install-free execution of the various included tools without software dependency conflicts. Our containers are prebuilt, stored on docker hub,[1] and automatically downloaded by poreCov if not already available on the system. This leaves Nextflow and either Docker or Singularity as the only dependencies needed to be installed for poreCov. If these dependencies are available, an initial installation and further updates of the workflow and the included tools can be performed with a single simple command (“nextflow pull replikation/poreCov”). When poreCov runs on a high-performance computing (HPC) cluster or cloud services, all resources (CPUs, RAM) for all processes and associated containers are pre-configured but can be adjusted via a user-specific configuration file when needed.
+We use complete version control for poreCov from the workflow itself to every tool to achieve reproducible results. For this purpose, each of the more than 15 containers used is version-controlled based on their associated tool. Besides, each poreCov version can be accessed and executed individually, and the tool versions used during genome reconstruction and analysis are listed in the final report.
+
+
+	Inputs
+
+poreCov automatically adjusts the necessary workflow steps based on the provided input. As a result, a more flexible workflow execution is possible depending on the available data (Figure 1). As each sequencing lab has its own way for processing nanopore sequencing data, we allow for three different sequence inputs to start the genome reconstruction and variant calling steps: (1) a directory containing fast5 raw files (not basecalled), (2) an already basecalled directory containing fastq sequence files (e.g., the output from a MinIT or GridION). Additionally, (3) combined, single fastq file (one fastq file per sample) can be provided to simplify further the reanalysis of read data sets (e.g., from public repositories like ENA). Moreover, the genome reconstruction step is automatically skipped if already reconstructed genomes (fasta files) are provided as a direct input. By that, poreCov also allows to quickly and conveniently re-analyze previous genomes, e.g., to check for new clade or lineage assignments or to simply generate quality metrics and a summary report for a set of SARS-CoV-2 genomes. Optionally, a sample sheet can be provided to rename barcodes automatically and to simplify data analysis and file management post-analysis.
+
+
+	Included Analysis Steps and Tools
+
+
+
+	Read Processing and Quality Control
+
+For the nanopore raw data (fast5) as an input, poreCov provides some necessary flexibility as the GPU basecaller Guppy (Oxford Nanopore Technologies) and the dependencies can be difficult to install. By default, poreCov assumes that either Docker or Singularity with GPU support can be used. However, users can switch to a local installation of Guppy or CPU-based basecalling or skip basecalling automatically by providing already basecalled reads (fastq). All reads are taxonomically classified via Kraken2 (Wood et al., 2019) against a pre-computed database comprised of the human GRCH38.p13 genome and all GISAID SARS-CoV-2 genomes as of February 2021 (available at doi.org/10.5281/zenodo.4534746) to unveil possible contamination or isolation issues from the wet lab. Krona plots (Ondov et al., 2011) are used to visualize the results. Reads are quality-controlled (read length distribution, quality scores, etc.) either via NanoPlot (De Coster et al., 2018) for fastq files or pycoQC (Leger and Leonardi, 2019) for fast5 files. All reads are prefiltered based on their length (default: 400–700 bp for version 3 of the ARTIC primers) and these reads are mapped back against the Wuhan reference genome (Accession: NC_045512.2) using minimap2 (Li, 2018) to provide visual feedback of amplicon dropouts for each sample, which are a common issue during the multiplex PCR step of the tiled amplicon sequencing protocol.
+
+
+	SARS-CoV-2 Genome Reconstruction
+
+All Reads that passed the length filtering are passed to the genome reconstruction via the ARTIC pipeline.[2] The ARTIC pipeline comprises tools and custom scripts for working with viral nanopore sequencing data generated from tiling amplicon schemes. General mappings are performed with minimap2 (Li, 2018), and intermediate file transformations are performed with SAMtools and BCFtools (Danecek et al., 2021). By default, genotyping is performed via medaka[3] and Longshot (Edge and Bansal, 2019) but can also be done via nanopolish[4] if fast5 data is provided. Regions with a low read coverage of 20× or less are masked by default.
+
+
+	SARS-CoV-2 Genome Analysis
+
+After the genome reconstruction via ARTIC, each reconstructed and polished genome is further analyzed via pangolin (lineage determination[5]), nextstrain (nextstrain clades, mutations, and deletions) (Hadfield et al., 2018), and president (calculating various genome quality metrics[6]). Finally, all results are summarized in an HTML, TSV, and XLSX report to allow fast detection of low-performing samples, evaluation of negative controls, and an overview of virus lineages and detected mutations.
+
+
+	Runtime and Resources
+
+The execution of poreCov requires only a lightweight computing device with four threads (two CPUs) and 8 GB of RAM. However, the analysis will take longer for lower configurations. poreCov shows its strengths on larger workstations or HPCs with full parallelization through the used workflow management system. By default, poreCov utilizes all available threads and tries to run at least four jobs in parallel for the analysis. If necessary, this behavior can be individually controlled and fine-tuned via the cores option flag (Table 2).

@@ -1,0 +1,187 @@
+T1	WorkflowName 0 5	PyBDA
+T2	Description 9 77	command line tool for automated analysis of big biological data sets
+T3	WorkflowName 91 96	PyBDA
+T4	Method 138 165	machine learning algorithms
+T5	WorkflowName 379 384	PyBDA
+T6	Hardware 390 403	Apache Spark’
+T7	Biblio 644 645	8
+T8	Biblio 646 647	9
+T9	WorkflowName 696 701	PyBDA
+T10	File 820 831	config file
+T11	WorkflowName 881 886	PyBDA
+T12	WorkflowName 978 983	PyBDA
+T13	ManagementSystem 989 998	Snakemake
+T14	Biblio 1000 1002	10
+T15	Description 1007 1055	automatically execute these workflows of methods
+T16	WorkflowName 1071 1076	PyBDA
+T17	WorkflowName 1173 1178	PyBDA
+T18	File 1215 1226	config file
+T19	Method 1248 1267	statistical methods
+T20	Method 1271 1298	machine learning algorithms
+T21	Description 1332 1405	bipartite, directed graph in which one set of nodes represents conditions
+T23	WorkflowName 1830 1839	Petri net
+T24	File 1853 1897	triple of input file, method and output file
+T25	ManagementSystem 1919 1928	Snakemake
+T26	Tool 1962 1975	Python module
+T27	ProgrammingLanguage 1962 1968	Python
+T30	LibraryPackage 2076 2081	Spark
+T31	Data 2083 2092	data sets
+T32	Description 2097 2138	automatically chunked into smaller pieces
+T33	Hardware 2158 2196	distributed high performance computing
+T34	Hardware 2198 2201	HPC
+T35	Method 2437 2454	big data analysis
+T36	Method 2459 2486	machine learning frameworks
+T37	WorkflowName 2660 2665	PyBDA
+T38	LibraryPackage 2718 2728	TensorFlow
+T39	Biblio 2730 2732	11
+T40	LibraryPackage 2735 2747	scikit-learn
+T42	Biblio 2749 2750	8
+T43	LibraryPackage 2753 2756	mlr
+T44	Biblio 2758 2759	9
+T45	LibraryPackage 2762 2767	MLLib
+T46	Biblio 2769 2770	6
+T47	LibraryPackage 2776 2779	h20
+T48	Biblio 2781 2783	12
+T49	LibraryPackage 2842 2849	PyTorch
+T50	Biblio 2851 2853	13
+T51	LibraryPackage 2856 2861	Keras
+T52	Biblio 2863 2865	14
+T53	LibraryPackage 2870 2876	Edward
+T54	Biblio 2878 2880	15
+T56	Description 3009 3032	probabilistic modelling
+T57	LibraryPackage 3042 3047	PyMC3
+T58	Biblio 3049 3051	16
+T59	LibraryPackage 3054 3060	GPFlow
+T60	Biblio 3062 3064	17
+T61	LibraryPackage 3069 3074	greta
+T62	Biblio 3076 3078	18
+T63	Description 3125 3206	statistical modelling and probabilistic programming and not for big data analysis
+T69	LibraryPackage 4117 4127	TensorFlow
+T71	LibraryPackage 4592 4595	mlr
+T72	Hardware 4740 4752	HPC clusters
+T73	File 4846 4854	big data
+T74	LibraryPackage 4863 4868	MLLib
+T75	LibraryPackage 4873 4876	h20
+T76	LibraryPackage 5047 5050	mlr
+T77	LibraryPackage 5098 5103	Spark
+T78	Method 5352 5362	map-reduce
+T79	Method 5366 5387	matrix multiplication
+T80	LibraryPackage 5417 5422	Spark
+T81	WorkflowName 5424 5429	PyBDA
+T82	Method 5509 5525	machine learning
+T83	LibraryPackage 5620 5625	Spark
+T84	WorkflowName 5713 5718	PyBDA
+T85	WorkflowName 6009 6014	PyBDA
+T86	Method 6024 6059	kernel principal component analysis
+T87	Method 6068 6098	independent component analysis
+T88	Method 6106 6134	linear discriminant analysis
+T89	Method 6145 6160	factor analysis
+T90	Method 6162 6164	FA
+T91	WorkflowName 6227 6232	PyBDA
+T92	WorkflowName 6369 6374	pyBDA
+T93	WorkflowName 6392 6397	PyBDA
+T94	Hardware 6403 6416	Spark cluster
+T95	Parameter 6447 6457	IP address
+T96	LibraryPackage 6467 6472	Spark
+T97	Hardware 6532 6539	cluster
+T98	Hardware 6541 6551	standalone
+T99	Hardware 6553 6563	Kubernetes
+T100	Hardware 6653 6680	distributed HPC environment
+T101	LibraryPackage 6702 6707	Spark
+T102	File 6745 6756	config file
+T103	File 6771 6781	data files
+T104	Parameter 6787 6803	parameterization
+T105	File 6823 6834	config file
+T106	Method 6900 6928	principal component analysis
+T107	Method 6930 6933	PCA
+T108	File 6939 7003	ICA to 5 dimensions on a data set called single_cell_samples.tsv
+T109	WorkflowName 7055 7060	PyBDA
+T110	Method 7108 7131	Gaussian mixture models
+T111	Method 7133 7136	GMM
+T112	Method 7271 7295	generalized linear model
+T113	Method 7297 7300	GLM
+T114	Method 7308 7321	random forest
+T115	Method 7323 7325	RF
+T116	Parameter 7332 7358	binomial response variable
+T117	WorkflowName 7422 7427	PyBDA
+T118	File 7553 7571	Petri net of files
+T119	WorkflowName 7670 7675	PyBDA
+T120	LibraryPackage 7683 7688	Spark
+T121	Parameter 7696 7717	15Gb of driver memory
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T122	Method 114 133	statistical methods
+R2	IncludeIn Arg1:T3 Arg2:T122	
+R3	IncludeIn Arg1:T3 Arg2:T4	
+R4	BiblioOf Arg1:T14 Arg2:T13	
+R5	DescriptionOf Arg1:T15 Arg2:T13	
+T123	Method 1198 1207	Petri net
+T124	Method 1317 1326	Petri net
+R6	DescriptionOf Arg1:T21 Arg2:T124	
+T125	Method 1568 1583	Petri net model
+T22	LibraryPackage 2027 2032	Spark
+R7	DescriptionOf Arg1:T32 Arg2:T30	
+*	Synonym T33 T34
+R8	BiblioOf Arg1:T39 Arg2:T38	
+R9	BiblioOf Arg1:T42 Arg2:T40	
+R10	BiblioOf Arg1:T44 Arg2:T43	
+R11	BiblioOf Arg1:T46 Arg2:T45	
+R12	BiblioOf Arg1:T48 Arg2:T47	
+R13	BiblioOf Arg1:T50 Arg2:T49	
+R14	BiblioOf Arg1:T52 Arg2:T51	
+R15	BiblioOf Arg1:T54 Arg2:T53	
+T28	Description 2696 2706	frameworks
+R16	DescriptionOf Arg1:T28 Arg2:T38	
+R17	DescriptionOf Arg1:T28 Arg2:T40	
+R18	DescriptionOf Arg1:T28 Arg2:T43	
+R19	DescriptionOf Arg1:T28 Arg2:T47	
+R20	DescriptionOf Arg1:T28 Arg2:T45	
+T29	Description 2810 2832	machine learning tools
+R21	DescriptionOf Arg1:T29 Arg2:T49	
+R22	DescriptionOf Arg1:T29 Arg2:T51	
+R23	DescriptionOf Arg1:T29 Arg2:T53	
+R24	DescriptionOf Arg1:T56 Arg2:T57	
+R25	BiblioOf Arg1:T58 Arg2:T57	
+R26	BiblioOf Arg1:T60 Arg2:T59	
+R27	BiblioOf Arg1:T62 Arg2:T61	
+R28	DescriptionOf Arg1:T56 Arg2:T59	
+R29	DescriptionOf Arg1:T56 Arg2:T61	
+R30	DescriptionOf Arg1:T63 Arg2:T57	
+R31	DescriptionOf Arg1:T63 Arg2:T59	
+R32	DescriptionOf Arg1:T63 Arg2:T61	
+T41	WorkflowName 3955 3960	PyBDA
+T55	LibraryPackage 4575 4587	scikit-learn
+T64	LibraryPackage 5030 5042	scikit-learn
+T65	LibraryPackage 5069 5072	h20
+T66	Description 5302 5345	computation of basic descriptive statistics
+R33	DescriptionOf Arg1:T66 Arg2:T78	
+R34	DescriptionOf Arg1:T66 Arg2:T79	
+T67	LibraryPackage 5845 5850	MLLib
+T68	LibraryPackage 5890 5897	Spark’s
+T70	Method 6061 6065	kPCA
+*	Synonym T86 T70
+T126	Method 6100 6103	ICA
+*	Synonym T87 T126
+T127	Method 6136 6139	LDA
+*	Synonym T89 T90
+*	Synonym T127 T88
+R35	IncludeIn Arg1:T85 Arg2:T89	
+R36	IncludeIn Arg1:T85 Arg2:T88	
+R37	IncludeIn Arg1:T85 Arg2:T87	
+R38	IncludeIn Arg1:T85 Arg2:T86	
+T128	LibraryPackage 6403 6408	Spark
+T129	Hardware 6593 6603	local host
+T130	WorkflowName 6627 6632	PyBDA
+T131	Hardware 6702 6715	Spark cluster
+*	Synonym T107 T106
+T132	File 7008 7053	feature names provided in feature_columns.tsv
+*	Synonym T110 T111
+T133	Method 7147 7154	k-means
+T134	Parameter 7175 7202	50, or 100, cluster centers
+R39	ParameterOf Arg1:T134 Arg2:T133	
+*	Synonym T112 T113
+*	Synonym T114 T115
+R40	ParameterOf Arg1:T116 Arg2:T114	
+T135	Method 7553 7562	Petri net
+T136	Parameter 7739 7768	50Gb memory for each executor
+T137	Method 231 258	machine learning algorithms
+T139	LibraryPackage 2060 2065	MLLib

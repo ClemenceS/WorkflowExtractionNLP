@@ -1,0 +1,67 @@
+ARMOR: An Automated Reproducible MOdular Workflow for Preprocessing and Differential Analysis of RNA-seq Data
+
+
+	Materials and Methods
+
+
+
+	Overview
+
+The ARMOR workflow is designed to perform an end-to-end analysis of bulk RNA-seq data, starting from FASTQ files with raw sequencing reads (Figure 1). Reads first undergo quality control with FastQC ( https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and (optionally) adapter trimming using TrimGalore! ( https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/), before being mapped to a transcriptome index using Salmon (Patro et al. 2017) and (optionally) aligned to the genome using STAR (Dobin et al. 2013). Estimated transcript abundances from Salmon are imported into R using the tximeta package (Soneson et al. 2015;Love et al. 2019) and analyzed for differential gene expression and (optionally) differential transcript usage with edgeR (Robinson et al. 2010) and DRIMSeq (Nowicka and Robinson 2016). The quantifications, provided metadata, and results from the statistical analyses are exported as SingleCellExperiment objects (Lun and Risso 2019) ensuring interoperability with a large part of the Bioconductor ecosystem (Huber et al. 2015;Amezquita et al. 2019). Quantification and quality control results are summarized in a MultiQC report (Ewels et al. 2016). Other tools can be easily exchanged for those listed above by modifying the Snakefile and/or the template analysis code.
+
+
+	Input file specification
+
+ARMOR can be used to analyze RNA-seq data from any organism for which a reference transcriptome and (optionally) an annotated reference genome are available from either Ensembl (Zerbino et al. 2018) or GENCODE (Frankish et al. 2019). Paths to the reference files, as well as the FASTQ files with the sequencing reads, are specified by the user in a configuration file. In addition, the user prepares a metadata file – a tab-delimited text file listing the name of the samples, the library type (single- or paired-end) and any other covariates that will be used for the statistical analysis. The checkinputs rule in the Snakefile can be executed to make sure all the input files and the parameters in the configuration file have been correctly specified.
+
+
+	Workflow execution
+
+ARMOR is implemented as a modular Snakemake (Köster and Rahmann 2012) workflow, and the execution of the individual steps is controlled by the provided Snakefile. Snakemake will automatically keep track of the dependencies between the different parts of the workflow; rerunning the workflow will thus only regenerate results that are out of date or missing given these dependencies. Via a set of variables specified in the configuration file, the user can easily decide to include or exclude the optional parts of the workflow (shaded ellipses inFigure 1). By adding or modifying targets in the Snakefile, users can include any additional or specialized types of analyses that are not covered by the original workflow.
+By default, all software packages that are needed for the analysis will be installed in an auto-generated conda environment, which will be automatically activated by Snakemake before the execution of each rule. The desired software versions can be specified in the provided environment file. If the user prefers, local installations of (all or a subset of) the required software can also be used (as described in Software management).
+
+
+	Software management
+
+First, the user needs to have a recent version of Snakemake and conda installed. There is a range of possibilities to manage the software for the ARMOR workflow. The recommended option is to allow conda and the workflow itself to manage everything, including the installation of the needed R packages. The workflow is executed this way with the command
+ snakemake‐‐use-conda
+The first time the workflow is run, the conda environments will be generated and all necessary software will be installed. Any subsequent invocations of the workflow from this directory will use these generated environments. An alternative option is to use ARMOR’s envs/environment.yaml file to create a conda environment that can be manually activated, by running the command
+ conda env create‐‐name ARMOR \
+ ‐‐file envs/environment.yaml
+ conda activate ARMOR
+The second command activates the environment. Once the environment is activated, ARMOR can be run by simply typing
+ snakemake
+Additionally, the user can circumvent the use of conda, and make sure that all software is already available and in the user’s PATH. For this, Snakemake and the tools listed in envs/environment.yaml need to be manually installed, in addition to a recent version of R and the R packages listed in scripts/install_pkgs.R.
+For either of the options mentioned above, the useCondaR flag in the configuration file controls whether a local R installation, or a conda-installed R, will be used. If useCondaR is set to False, the path to a local R installation (e.g., Rbin:<path>) must be specified in the configuration file, along with the path to the R package library (e.g., R_LIBS_USER=“<path>”) in the .Renviron file. If the specified R library does not contain the required packages, Snakemake will try to install them (i.e., write permissions would be needed). ARMOR has been tested on macOS and Linux systems.
+
+
+	Statistical analysis
+
+ARMOR uses the quasi-likelihood framework of edgeR (Robinson et al. 2010;Lun et al. 2016) to perform tests for differential gene expression, camera (Wu and Smyth 2012) to perform associated geneset analysis, and DRIMSeq (Nowicka and Robinson 2016) to test for differential transcript usage between conditions. All code to perform the statistical analyses is provided in Rmarkdown templates (Allaire et al. 2018;Xie et al. 2018), which are executed at runtime. This setup gives the user flexibility to use any experimental design supported by these tools, and to test any contrast(s) of interest, by specifying these in the configuration file using standard R syntax, e.g.,
+ design:“ [∼] 0 + group”
+ contrast:groupA-groupB
+Arbitrarily complex designs and multiple contrasts are supported. In addition, by editing the template code, users can easily configure the analysis, add additional plots, or even replace the statistical test if desired. After compilation, all code used for the statistical analysis, together with the results and version information for all packages used, is retained in a standalone html report, ensuring transparency and reproducibility and facilitating communication of the results.
+
+
+	Output files
+
+The output files from all steps in the ARMOR workflow are stored in a user-specified output directory, together with log files for each step, including relevant software version information. A detailed summary of the output files generated by the workflow, including the shell command that was used to generate each of them, the time of creation, and information about whether the associated inputs, code or parameters have since been updated, can be obtained at any time by invoking Snakemake with the flag -D (or‐‐detailed-summary). Using the benchmark directive of Snakemake, ARMOR also automatically generates additional text files summarizing the run time and peak memory usage of each executed rule.
+The results from the statistical analyses are combined with the transcript- and gene-level quantifications and saved as SingleCellExperiment objects (Lun and Risso 2019), ensuring easy integration with a large number of Bioconductor packages for downstream analysis and visualization. For example, the results can be interactively explored using the iSEE package (Rue-Albrecht et al. 2018) and a template is provided for this.
+
+
+	Multiple project management
+
+When managing multiple projects, the user might run ARMOR in multiple physical locations ( i.e., clone the repository in separate places). snakemake‐‐use-conda will create a separate conda environment in each subdirectory, which means that the installed software may be duplicated. If disk space is a concern, building and activating a single conda environment (using the conda env create command as shown in the Software management section), and activating this before invoking each workflow may be beneficial. It is also possible to explicitly specify the path to the desired config.yaml configuration file when snakemake is called:
+ snakemake‐‐configfile config.yaml
+Thus, the same ARMOR installation can be used for multiple projects, by invoking it with a separate config.yaml file for each project.
+By taking advantage of the Snakemake framework, ARMOR makes file and software organization relatively autonomous. Although we recommend using a file structure similar to the one used for the example data provided in the repository (Figure 2), and managing all the software for a project in a conda environment, the user is free to use the same environment for different datasets, even if the files are located in several folders. This alternative is more of a “software-based” structure than the “project-based” structure we present with the pipeline. Either structure has its advantages and depending on the use case and level of expertise, both can be easily implemented using ARMOR.
+
+
+	Code availability
+
+ARMOR is available (under MIT license) from https://github.com/csoneson/ARMOR, together with a detailed walk-through of an example analysis. The repository also contains a wiki ( https://github.com/csoneson/ARMOR/wiki), which is the main source of documentation for ARMOR and contains extensive information about the usage of the workflow.
+
+
+	Data Availability
+
+Supplemental file DataS1.html contains the MultiQC report for the data used in the Real data walk-through section (ArrayExpress accession number E-MTAB-7029). Supplemental material available at FigShare: https://doi.org/10.25387/g3.8053280.

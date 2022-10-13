@@ -1,0 +1,193 @@
+T1	Method 0 11	Testcrosses
+T2	Description 19 79	efficient strategy for identifying cis-regulatory variation:
+T3	WorkflowName 129 137	BayesASE
+T4	WorkflowName 168 176	BayesASE
+T5	WorkflowName 186 194	BayesASE
+T6	Method 226 254	Genotype Specific References
+T8	Method 283 300	Prior Calculation
+T9	Method 306 320	Bayesian Model
+T10	Method 361 377	process checking
+T11	WorkflowName 435 443	BayesASE
+T12	ManagementSystem 527 535	Nextflow
+T13	Database 596 602	Github
+T14	Biblio 605 645	https://github.com/McIntyre-Lab/BayesASE
+T15	WorkflowName 667 675	BayesASE
+T16	Description 731 843	describes the structure of the workflow and all input and output requirements for each of the individual scripts
+T17	LibraryPackage 877 889	PyPI package
+T18	LibraryPackage 893 909	bioconda package
+T20	Data 1058 1074	reference genome
+T21	File 1078 1088	FASTA file
+T22	Data 1094 1124	genotype specific SNP variants
+T23	File 1128 1137	VCF files
+T24	Data 1163 1198	set of genotype specific references
+T25	Biblio 1355 1373	Skelly et al. 2011
+T26	Biblio 1374 1391	Turro et al. 2011
+T27	Biblio 1392 1409	Graze et al. 2012
+T28	Biblio 1410 1427	Satya et al. 2012
+T29	Biblio 1428 1451	León-Novelo et al. 2014
+T30	Biblio 1452 1470	Munger et al. 2014
+T31	Biblio 1471 1487	Fear et al. 2016
+T32	File 1490 1505	Input VCF files
+T33	Tool 1533 1537	GATK
+T34	Biblio 1539 1559	DePristo et al. 2011
+T35	File 1566 1596	index input genotype VCF files
+T36	Tool 1598 1607	BWA index
+T37	Biblio 1609 1627	Li and Durbin 2010
+T38	File 1647 1658	index files
+T39	Tool 1696 1728	Alignment and SAM Compare module
+T40	Description 1755 1802	quantifies alignment counts for each input file
+T41	Data 1819 1873	two genotype specific genomes of the parents of the F1
+T42	File 1888 1917	alignment files in SAM format
+T43	Data 1931 1984	count tables of reads aligned to each parental genome
+T44	Data 2002 2045	input experimental reads for each F1 sample
+T46	Data 2083 2109	parental reference genomes
+T47	Tool 2115 2122	BWA-MEM
+T48	Biblio 2124 2131	Li 2013
+T49	Data 2134 2157	Alignment output counts
+T50	Data 2175 2180	reads
+T51	Data 2303 2323	Technical replicates
+T52	Description 2303 2343	Technical replicates are summed together
+T53	Description 2349 2380	coverage metrics are calculated
+T54	Data 2349 2365	coverage metrics
+T55	Data 2386 2390	data
+T56	Method 2445 2459	Bayesian model
+T57	Method 3068 3092	Prior Calculation module
+T58	Data 3141 3149	DNA data
+T59	Data 3155 3163	RNA data
+T60	Data 3168 3182	simulated data
+T61	Data 3292 3311	uninformative reads
+T62	Biblio 3582 3599	Graze et al. 2012
+T63	Biblio 3600 3616	Fear et al. 2016
+T64	Biblio 3617 3640	León-Novelo et al. 2018
+T65	Method 3647 3668	Bayesian Model module
+T66	File 3715 3726	design file
+T67	Data 3768 3790	alignment count tables
+T68	Data 3795 3801	priors
+T69	Method 3859 3873	Bayesian model
+T70	Tool 3888 3892	STAN
+T71	Biblio 3894 3915	Carpenter et al. 2017
+T72	Biblio 4027 4050	León-Novelo et al. 2018
+T73	File 4140 4158	Model output files
+T74	Data 4214 4244	95% central credible intervals
+T75	Description 4271 4323	Bayesian measure of evidence against allelic balance
+T76	Biblio 4325 4359	De Bragança Pereira and Stern 1999
+T77	Biblio 4360 4371	Thulin 2014
+T78	WorkflowName 4711 4719	BayesASE
+T79	ManagementSystem 4775 4783	Nextflow
+T80	LibraryPackage 4803 4809	Galaxy
+T81	ManagementSystem 4866 4871	SLURM
+T82	Database 4890 4896	GitHub
+T83	Biblio 4899 4939	https://github.com/McIntyre-Lab/BayesASE
+T84	WorkflowName 4990 4998	BayesASE
+T85	Description 5005 5022	modular structure
+T86	Description 5005 5078	modular structure; flowcharts of the individual modules outline the logic
+T87	Description 5113 5165	detailed information about input/output is described
+T88	Database 5204 5210	GitHub
+T90	Tool 5318 5324	sbatch
+T91	ManagementSystem 5329 5337	Nextflow
+T92	File 5431 5445	sbatch scripts
+T93	Data 5487 5514	input and output file names
+T94	Tool 5534 5539	SLURM
+T95	Description 5563 5619	open-source cluster management and job scheduling system
+T96	Biblio 5622 5648	https://slurm.schedmd.com/
+T97	Environment 5686 5701	SLURM scheduler
+T98	ManagementSystem 5784 5792	Nextflow
+T99	Biblio 5794 5816	Di Tommaso et al. 2017
+T100	Description 5823 5874	portable, parallelizable and reproducible framework
+T101	Hardware 5892 5911	cluster environment
+T102	Description 5916 5938	defines data workflows
+T103	Environment 5971 6003	portable batch system schedulers
+T104	Environment 6012 6015	SGE
+T105	Environment 6017 6022	SLURM
+T106	Hardware 6027 6042	Cloud platforms
+T107	ManagementSystem 6044 6052	Nextflow
+T108	File 6076 6094	configuration file
+T109	Tool 6101 6120	series of processes
+T110	ProgrammingLanguage 6277 6281	Bash
+T111	ProgrammingLanguage 6283 6289	Python
+T112	ProgrammingLanguage 6291 6292	R
+T113	ManagementSystem 6412 6420	Nextflow
+T114	Description 6438 6523	automatic caching mechanism for identifying and skipping successfully completed tasks
+T115	Tool 6587 6603	BasyesASE module
+T116	ManagementSystem 6622 6630	Nextflow
+T117	Database 6651 6657	GitHub
+T118	Biblio 6660 6700	https://github.com/McIntyre-Lab/BayesASE
+T119	Tool 6703 6709	Galaxy
+T120	Hardware 6765 6776	web browser
+T121	Hardware 6846 6860	global servers
+T123	Hardware 6893 6918	local individual machines
+T124	Biblio 6920 6938	Goecks et al. 2010
+T125	Tool 7071 7087	BayesASE modules
+T126	Database 7154 7169	Galaxy Toolshed
+T127	Tool 7535 7543	CAST/EiJ
+T130	Biblio 7567 7582	Zou et al. 2014
+T131	Biblio 7583 7602	Crowley et al. 2015
+T136	WorkflowName 8336 8344	BayesASE
+T137	Method 8507 8521	Bayesian model
+T138	Biblio 8523 8546	León-Novelo et al. 2018
+T139	Biblio 8565 8580	Zou et al. 2014
+T140	Method 8608 8625	pairwise analysis
+T141	Method 8658 8672	Bayesian model
+T142	Biblio 8674 8697	León-Novelo et al. 2018
+T143	Data 9278 9288	mouse data
+T146	Method 9437 9452	flexible design
+T150	Data 10159 10191	other two testcross combinations
+T151	Method 10407 10416	testcross
+T152	Method 10422 10440	reciprocal crosses
+T158	WorkflowName 11115 11123	BayesASE
+T159	Biblio 11176 11191	Zou et al. 2014
+T160	Biblio 11192 11211	Crowley et al. 2015
+T161	Data 11221 11239	95 imprinted genes
+T162	Data 11248 11252	data
+T163	WorkflowName 80 127	Bayesian analysis of allele-specific expression
+*	Synonym T163 T3
+R1	DescriptionOf Arg1:T2 Arg2:T163	
+T164	Method 256 281	Alignment and SAM Compare
+T7	Environment 503 525	SLURM workflow manager
+T165	ManagementSystem 540 546	Galaxy
+T166	Description 652 666	Galaxy package
+R2	DescriptionOf Arg1:T166 Arg2:T15	
+T167	File 691 701	User Guide
+R3	DescriptionOf Arg1:T16 Arg2:T167	
+T19	Database 921 936	Galaxy Toolshed
+T168	Tool 974 1009	Genotype Specific References module
+R4	InputOf Arg1:T20 Arg2:T168	
+R5	ExampleOf Arg1:T21 Arg2:T20	
+R6	ExampleOf Arg1:T23 Arg2:T22	
+R7	InputOf Arg1:T22 Arg2:T168	
+R8	OutputOf Arg1:T24 Arg2:T168	
+T169	Description 1208 1260	incorporating SNP variants into the reference genome
+R9	DescriptionOf Arg1:T169 Arg2:T168	
+R10	OutputOf Arg1:T32 Arg2:T33	
+R11	InputOf Arg1:T35 Arg2:T33	
+R12	OutputOf Arg1:T38 Arg2:T36	
+R13	BiblioOf Arg1:T34 Arg2:T33	
+R14	BiblioOf Arg1:T37 Arg2:T36	
+T170	Description 1875 1917	compares the alignment files in SAM format
+R15	OutputOf Arg1:T43 Arg2:T39	
+R16	InputOf Arg1:T41 Arg2:T39	
+R17	InputOf Arg1:T42 Arg2:T39	
+R18	BiblioOf Arg1:T48 Arg2:T47	
+T45	Description 2050 2057	aligned
+R19	DescriptionOf Arg1:T45 Arg2:T47	
+R20	InputOf Arg1:T46 Arg2:T47	
+R21	InputOf Arg1:T44 Arg2:T47	
+T171	Description 2134 2170	Alignment output counts are compared
+T172	Description 2176 2237	eads are designated as mapping to one of the parental genomes
+R22	BiblioOf Arg1:T71 Arg2:T70	
+T173	Environment 4737 4754	SLURM schedulers,
+T174	Description 4758 4767	workflows
+R23	DescriptionOf Arg1:T174 Arg2:T79	
+T175	Tool 4843 4857	sbatch scripts
+T176	File 5173 5190	Galaxy User Guide
+T89	ManagementSystem 7115 7121	Galaxy
+T122	File 7222 7232	User Guide
+T177	ManagementSystem 6960 6966	Galaxy
+T178	Tool 5707 5714	scripts
+R24	BiblioOf Arg1:T99 Arg2:T98	
+T179	WorkflowName 9456 9464	BayesASE
+T132	Data 7446 7491	male and female F1 Mus musculus brain RNA-seq
+T128	Data 8399 8438	male and female offspring of each cross
+R25	InputOf Arg1:T128 Arg2:T136	
+T129	Data 10224 10249	Male and female offspring
+T133	Method 11023 11058	Spearman coefficient of correlation

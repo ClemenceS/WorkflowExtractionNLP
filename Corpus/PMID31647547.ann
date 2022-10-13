@@ -1,0 +1,130 @@
+T1	WorkflowName 0 11	PhyloMagnet
+T2	Description 13 70	fast and accurate screening of short-read meta-omics data
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T3	WorkflowName 125 136	PhyloMagnet
+T4	Biblio 181 199	Huson et al., 2017
+T5	Description 204 357	efficiently screen sequence datasets of short reads for target genes, and to taxonomically classify assembled gene sequences using phylogenetic placement
+R2	DescriptionOf Arg1:T5 Arg2:T72	
+T6	File 509 564	short-read sequence data files in FASTQ or FASTA format
+R3	InputOf Arg1:T6 Arg2:T3	
+T7	Data 722 761	homologous groups of reference proteins
+R4	InputOf Arg1:T7 Arg2:T3	
+T8	Data 998 1017	reference sequences
+T9	Description 1020 1059	multiple sequence alignment is computed
+T10	Tool 1073 1078	MAFFT
+T11	Biblio 1080 1104	Katoh and Standley, 2013
+R5	BiblioOf Arg1:T11 Arg2:T10	
+T12	Tool 1109 1114	PRANK
+T13	Biblio 1116 1144	Löytynoja and Goldman, 2010)
+R6	BiblioOf Arg1:T13 Arg2:T12	
+R7	DescriptionOf Arg1:T9 Arg2:T10	
+R8	DescriptionOf Arg1:T9 Arg2:T12	
+T14	Description 1205 1236	reference tree is reconstructed
+T15	Tool 1250 1257	IQ-TREE
+R9	DescriptionOf Arg1:T14 Arg2:T15	
+T16	Tool 1281 1289	RAxML-NG
+R10	DescriptionOf Arg1:T14 Arg2:T16	
+T17	Biblio 1259 1278	Nguyen et al., 2015
+R11	BiblioOf Arg1:T17 Arg2:T15	
+T18	Biblio 1291 1310	Kozlov et al., 2019
+R12	BiblioOf Arg1:T18 Arg2:T16	
+T19	Tool 1332 1340	FastTree
+T20	Biblio 1342 1360	Price et al., 2010
+R13	DescriptionOf Arg1:T14 Arg2:T19	
+R14	BiblioOf Arg1:T20 Arg2:T19	
+T21	WorkflowName 1671 1682	PhyloMagnet
+T22	Data 1574 1604	Reference alignments and trees
+R15	InputOf Arg1:T22 Arg2:T21	
+T23	Database 1912 1918	EggNOG
+T24	Description 1929 2032	containing orthologous groups of protein sequences from all domains of life with functional annotations
+R16	DescriptionOf Arg1:T24 Arg2:T23	
+T25	Biblio 2034 2060	Huerta-Cepas et al., 2016b
+R17	BiblioOf Arg1:T25 Arg2:T23	
+T26	File 2144 2172;2193 2208	homologous protein sequences in FASTA format
+T27	Tool 2506 2513	DIAMOND
+T29	Parameter 2525 2536	blastX mode
+T30	Biblio 2548 2569	Buchfink et al., 2015
+R18	BiblioOf Arg1:T30 Arg2:T27	
+T31	Tool 2693 2698	MEGAN
+T32	Description 2725 2755	to assemble reads into contigs
+R19	DescriptionOf Arg1:T32 Arg2:T31	
+T33	Biblio 2700 2723	Huson et al., 2016,2017
+R20	BiblioOf Arg1:T33 Arg2:T31	
+T34	WorkflowName 2634 2645	PhyloMagnet
+T35	Description 2655 2677	gene-centric assembler
+R21	DescriptionOf Arg1:T35 Arg2:T31	
+T36	File 3199 3231	FASTA file per orthologous group
+T37	Tool 3799 3805	PaPaRa
+T38	Biblio 3817 3844	Berger and Stamatakis, 2011
+R22	BiblioOf Arg1:T38 Arg2:T37	
+T39	Description 3768 3793	phylogeny-aware alignment
+R23	DescriptionOf Arg1:T39 Arg2:T37	
+T40	Tool 3999 4005	EPA-ng
+T41	Description 3852 3954	alignment of reference sequences and contigs is then used to place the contigs onto the reference tree
+T42	Method 3965 3997	evolutionary placement algorithm
+R24	DescriptionOf Arg1:T41 Arg2:T40	
+T43	Biblio 4018 4037	Berger et al., 2011
+T44	Biblio 4038 4058	Barbera et al., 2019
+R26	BiblioOf Arg1:T43 Arg2:T40	
+R27	BiblioOf Arg1:T44 Arg2:T40	
+T45	Tool 4088 4093	gappa
+T46	Description 4105 4260	annotate the internal branches of the reference tree and assign taxonomic labels to the translated contigs based on the likelihood weights of the placement
+R28	DescriptionOf Arg1:T46 Arg2:T45	
+T47	Biblio 4262 4288	Czech and Stamatakis, 2019
+R29	BiblioOf Arg1:T47 Arg2:T45	
+T48	Description 4298 4341	summary list of taxonomic labels is created
+T49	Biblio 5117 5139	Albertsen et al., 2013
+T50	Biblio 5140 5161	Alneberg et al., 2014
+T51	WorkflowName 5185 5196	PhyloMagnet
+T52	Parameter 4429 4452	specify taxonomic names
+T53	Parameter 5253 5266	GPLv3 licence
+T54	LibraryPackage 5203 5231	open source software package
+T55	ManagementSystem 5287 5295	Nextflow
+T56	Biblio 5297 5320	Di Tommaso et al., 2017
+R32	BiblioOf Arg1:T56 Arg2:T55	
+T57	Biblio 5354 5384	github.com/maxemil/PhyloMagnet
+R33	BiblioOf Arg1:T57 Arg2:T51	
+T58	ProgrammingLanguage 5445 5451	python
+T59	ProgrammingLanguage 5455 5459	bash
+T60	Biblio 5461 5479	Dalke et al., 2009
+T61	Biblio 5480 5506	Huerta-Cepas et al., 2016a
+T62	Biblio 5507 5521	McKinney, 2010
+T63	Container 5567 5578	singularity
+T64	Biblio 5580 5600	Kurtzer et al., 2017
+R34	BiblioOf Arg1:T64 Arg2:T63	
+T65	Biblio 5613 5648	singularity-hub.org/collections/978
+R35	BiblioOf Arg1:T65 Arg2:T63	
+T67	Biblio 5701 5727	phylomagnet.readthedocs.io
+R36	BiblioOf Arg1:T67 Arg2:T51	
+T66	Hardware 1635 1648	local machine
+T68	Hardware 1729 1740	HPC cluster
+T69	Data 44 70	short-read meta-omics data
+T70	Database 826 832	EggNOG
+T71	Method 77 103	gene-centric phylogenetics
+T72	Method 158 179	gene-centric assembly
+R38	BiblioOf Arg1:T4 Arg2:T72	
+T73	Database 852 867	NCBI’s taxonomy
+T74	File 768 894	sequence annotated with its taxonomic affiliation (in the EggNOG format, containing NCBI’s taxonomy ID and a unique identifier
+R39	IncludeIn Arg1:T74 Arg2:T7	
+T75	Parameter 1146 1196	without applying any filtering or trimming methods
+R40	ParameterOf Arg1:T75 Arg2:T10	
+R41	ParameterOf Arg1:T75 Arg2:T12	
+T76	Biblio 1311 1327	Stamatakis, 2014
+R42	BiblioOf Arg1:T76 Arg2:T16	
+T77	File 1688 1716	compressed reference package
+*	Synonym T77 T22
+T78	File 2377 2396	short-read datasets
+T79	Description 2439 2495	aligned to the collection of reference protein sequences
+R43	InputOf Arg1:T78 Arg2:T27	
+R44	DescriptionOf Arg1:T79 Arg2:T27	
+R37	ParameterOf Arg1:T29 Arg2:T27	
+T28	Parameter 3287 3301	minimum length
+R25	IncludeIn Arg1:T42 Arg2:T40	
+T80	Data 4773 4791	candidate datasets
+T81	Description 4498 4541	filter (‘magnetize’) the list of all labels
+T82	Description 4543 4567	specify a taxonomic rank
+T83	Data 4696 4734	metagenomic or transcriptomic datasets
+T84	Method 5025 5042	genome extraction
+T85	Database 5346 5352	github
+T86	Tool 5395 5418	functions and utilities
+T87	Database 5688 5699	ReadTheDocs

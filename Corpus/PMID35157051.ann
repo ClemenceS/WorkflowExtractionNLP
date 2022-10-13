@@ -1,0 +1,267 @@
+T1	Biblio 173 196	Di Tommaso et al., 2017
+T10	Data 5108 5116	datasets
+T12	Description 6076 6090	quantification
+T2	Tool 760 766	HISAT2
+T3	Tool 5621 5627	HISAT2
+T4	ManagementSystem 163 171	Nextflow
+T5	ManagementSystem 6307 6315	Nextflow
+T6	ProgrammingLanguage 831 837	Python
+T7	ProgrammingLanguage 6141 6147	Python
+T8	Data 4853 4861	datasets
+T13	WorkflowName 0 7	riboviz
+T14	Version 8 9	2
+R1	VersionOf Arg1:T14 Arg2:T13	
+T15	Description 13 92	flexible and robust ribosome profiling data analysis and visualization workflow
+R2	DescriptionOf Arg1:T15 Arg2:T13	
+T16	WorkflowName 125 132	riboviz
+T17	Version 133 134	2
+R3	VersionOf Arg1:T17 Arg2:T16	
+T18	Biblio 197 217	Jackson et al., 2021
+R4	BiblioOf Arg1:T1 Arg2:T4	
+T19	Data 230 246	multiple samples
+T20	File 356 393	single YAML-format configuration file
+T21	Biblio 409 435	github.com/riboviz/riboviz
+R5	BiblioOf Arg1:T21 Arg2:T20	
+T22	Method 462 486	graphical user interface
+T23	File 526 544	configuration file
+T24	File 550 568	configuration file
+T25	Hardware 654 679	various computing systems
+T26	WorkflowName 681 688	riboviz
+T27	Version 689 690	2
+T28	Tool 735 743	cutadapt
+T29	Biblio 745 757	Martin, 2011
+R6	BiblioOf Arg1:T29 Arg2:T28	
+T30	Biblio 768 784	Kim et al., 2015
+T31	Tool 787 796	UMI-tools
+T32	Biblio 798 816	Smith et al., 2017
+R7	BiblioOf Arg1:T32 Arg2:T31	
+R8	BiblioOf Arg1:T30 Arg2:T2	
+T33	ProgrammingLanguage 842 843	R
+T34	WorkflowName 892 899	riboviz
+T35	Version 900 901	2
+R9	VersionOf Arg1:T35 Arg2:T34	
+T36	Method 933 946	preprocessing
+T37	File 950 979	Ribo-seq data in FASTQ format
+R10	InputOf Arg1:T37 Arg2:T36	
+T38	Method 991 1007	adapter trimming
+T39	Method 1012 1034	removing reads mapping
+R11	IncludeIn Arg1:T38 Arg2:T36	
+R12	IncludeIn Arg1:T39 Arg2:T36	
+T40	Method 1098 1111	preprocessing
+T41	Data 1117 1132	remaining reads
+T42	Method 1137 1144	aligned
+R13	InputOf Arg1:T41 Arg2:T42	
+T43	File 1152 1219	relevant sequences as defined by user-provided FASTA and GFF3 files
+T44	Biblio 1503 1524	Mohammad et al., 2019
+T45	WorkflowName 1527 1534	riboviz
+T46	Version 1535 1536	2
+R14	VersionOf Arg1:T46 Arg2:T45	
+T47	WorkflowName 1667 1674	riboviz
+T48	Version 1675 1676	2
+R15	VersionOf Arg1:T48 Arg2:T47	
+T49	File 1754 1781	aligned reads in BAM format
+T50	File 1786 1837	number of read counts by read length in text format
+T51	File 1852 1897	ribogrid’ intermediate data file in H5 format
+T52	File 2221 2244	ribogrid H5 file format
+T53	WorkflowName 2302 2309	riboviz
+T54	Version 2310 2311	2
+R16	VersionOf Arg1:T54 Arg2:T53	
+T55	File 2334 2348	visualizations
+R17	OutputOf Arg1:T55 Arg2:T53	
+T56	WorkflowName 2727 2734	riboviz
+T57	Version 2735 2736	2
+R18	VersionOf Arg1:T57 Arg2:T56	
+T58	Biblio 2990 3009	Lareau et al., 2014
+T59	Data 2795 2871	heatmap of the footprint counts arranged by both 5ʹ position and read length
+T60	File 2889 2905	‘ribogrid’ plots
+T61	Data 2956 2969	Ribo-seq data
+T62	Data 3031 3037	sample
+T63	WorkflowName 3067 3074	riboviz
+T64	Version 3075 3076	2
+R19	VersionOf Arg1:T64 Arg2:T63	
+T65	File 3095 3111	static HTML file
+T66	WorkflowName 3142 3149	riboviz
+T67	Version 3150 3151	2
+R20	VersionOf Arg1:T67 Arg2:T66	
+T68	Data 3043 3056	various plots
+R21	IncludeIn Arg1:T68 Arg2:T65	
+R22	OutputOf Arg1:T68 Arg2:T63	
+T69	WorkflowName 3481 3488	riboviz
+T70	Version 3489 3490	2
+R23	VersionOf Arg1:T70 Arg2:T69	
+T71	ProgrammingLanguage 3555 3556	R
+T72	LibraryPackage 3557 3562	Shiny
+T73	LibraryPackage 3599 3604	Shiny
+T74	WorkflowName 3921 3928	riboviz
+T75	Version 3929 3930	2
+R24	VersionOf Arg1:T75 Arg2:T74	
+T76	File 3946 4004	any organism for which a transcriptome FASTA and GFF3 file
+T77	WorkflowName 4132 4139	riboviz
+T78	Version 4140 4141	2
+R25	VersionOf Arg1:T78 Arg2:T77	
+T79	Tool 4160 4163	GUI
+T80	Tool 4167 4191	command-line based tools
+T82	Biblio 4306 4322	Liu et al., 2020
+T83	Biblio 4323 4343	Perkins et al., 2019
+T84	Biblio 4344 4367	Verbruggen et al., 2019
+T85	Biblio 4368 4385	Wang et al., 2018
+T86	File 4428 4438	FASTA file
+T87	File 4716 4735	file in GFF3 format
+T88	WorkflowName 4832 4839	riboviz
+T89	Version 4840 4841	2
+R26	VersionOf Arg1:T89 Arg2:T88	
+T90	File 4936 4979	matched transcriptome and contaminant files
+T91	Biblio 4997 5032	github.com/riboviz/example-datasets
+R27	BiblioOf Arg1:T91 Arg2:T8	
+T92	WorkflowName 5188 5195	riboviz
+T93	Version 5196 5197	2
+R28	VersionOf Arg1:T93 Arg2:T92	
+T94	Biblio 5398 5414	Li et al. (2020)
+T95	WorkflowName 5480 5487	riboviz
+T96	Version 5488 5489	2
+R29	VersionOf Arg1:T96 Arg2:T95	
+T97	Method 5513 5531	data preprocessing
+T98	Method 5560 5574	read alignment
+T99	Tool 5593 5601	cutadapt
+T100	Biblio 5603 5615	Martin, 2011
+R30	BiblioOf Arg1:T100 Arg2:T99	
+T101	Biblio 5629 5645	Kim et al., 2015
+R31	BiblioOf Arg1:T101 Arg2:T3	
+T102	WorkflowName 5648 5655	riboviz
+T103	Version 5656 5657	2
+R32	VersionOf Arg1:T103 Arg2:T102	
+T104	WorkflowName 5743 5750	riboviz
+T105	Version 5751 5752	2
+R33	VersionOf Arg1:T105 Arg2:T104	
+T106	Method 5876 5890	read alignment
+T107	WorkflowName 5892 5899	riboviz
+T108	Version 5900 5901	2
+R34	VersionOf Arg1:T108 Arg2:T107	
+T109	Method 5943 6018	trim non-templated 5ʹ mismatches added by some viral reverse transcriptases
+T110	Biblio 6020 6037	Wulf et al., 2019
+R35	BiblioOf Arg1:T110 Arg2:T109	
+T111	WorkflowName 6106 6113	riboviz
+T112	Version 6114 6115	2
+R36	VersionOf Arg1:T112 Arg2:T111	
+T113	ProgrammingLanguage 6151 6152	R
+T114	WorkflowName 6178 6185	riboviz
+T115	Version 6186 6187	2
+R37	VersionOf Arg1:T115 Arg2:T114	
+T116	Biblio 6228 6251	Backman and Girke, 2016
+T117	Biblio 6252 6271	Lauria et al., 2018
+T118	WorkflowName 6277 6284	riboviz
+T119	Version 6285 6286	2
+R38	VersionOf Arg1:T119 Arg2:T118	
+T120	Data 6336 6344	raw data
+T121	File 6348 6361	visualization
+T122	File 6385 6415	single configuration YAML file
+T123	Data 6625 6638	Ribo-seq data
+T124	WorkflowName 6727 6734	riboviz
+T125	Version 6735 6736	2
+R39	VersionOf Arg1:T125 Arg2:T124	
+T126	File 6858 6874	ribogrid H5 file
+T127	WorkflowName 6876 6883	riboviz
+T128	Version 6884 6885	2
+R40	VersionOf Arg1:T128 Arg2:T127	
+T129	Tool 6981 6987	DESeq2
+T130	Biblio 6989 7006	Love et al., 2014
+R41	BiblioOf Arg1:T130 Arg2:T129	
+T131	WorkflowName 7092 7099	riboviz
+T132	Version 7100 7101	2
+R42	VersionOf Arg1:T132 Arg2:T131	
+T133	Description 7107 7213	flexible, documented and carefully engineered open-source workflow for Ribo-seq analysis and visualization
+R43	DescriptionOf Arg1:T133 Arg2:T131	
+T134	Method 488 491	GUI
+*	Synonym T22 T134
+R44	VersionOf Arg1:T27 Arg2:T26	
+T135	File 1705 1738	Ribo-seq in standard file formats
+R45	OutputOf Arg1:T135 Arg2:T47	
+R46	InputOf Arg1:T19 Arg2:T16	
+T136	Environment 271 295	single command-line call
+T137	Description 496 544	aid in the generation of this configuration file
+R47	DescriptionOf Arg1:T137 Arg2:T134	
+R48	InputOf Arg1:T23 Arg2:T134	
+T138	Description 569 618	facilitates reproducible and transparent analyses
+R49	DescriptionOf Arg1:T138 Arg2:T24	
+T139	Description 624 679	allows the pipeline to run on various computing systems
+R50	IncludeIn Arg1:T26 Arg2:T28	
+R51	IncludeIn Arg1:T26 Arg2:T2	
+R52	IncludeIn Arg1:T26 Arg2:T31	
+T140	Tool 831 837;844 851	Python scripts
+T141	Tool 842 851	R scripts
+T142	Description 856 868	data parsing
+T143	Description 873 886	visualization
+R53	DescriptionOf Arg1:T142 Arg2:T141	
+R54	DescriptionOf Arg1:T142 Arg2:T140	
+R55	DescriptionOf Arg1:T143 Arg2:T140	
+R56	DescriptionOf Arg1:T143 Arg2:T141	
+T144	Description 1556 1665	map relative to either end of the read by specifying the displacement separately for each desired read length
+R57	DescriptionOf Arg1:T144 Arg2:T45	
+R58	IncludeIn Arg1:T49 Arg2:T135	
+R59	IncludeIn Arg1:T50 Arg2:T135	
+T145	Description 1912 2003	one aligned read count matrix per transcript, organized by both 5ʹ position and read length
+R60	DescriptionOf Arg1:T145 Arg2:T51	
+T146	Description 2421 2510	quality control to confirm that the experiment successfully recovered ribosome footprints
+R61	DescriptionOf Arg1:T146 Arg2:T53	
+T147	Description 2539 2547	analysis
+R62	DescriptionOf Arg1:T147 Arg2:T53	
+T148	Description 2746 2786	visualizes the aligned read count matrix
+R63	DescriptionOf Arg1:T148 Arg2:T56	
+R64	OutputOf Arg1:T59 Arg2:T56	
+R65	ExampleOf Arg1:T59 Arg2:T60	
+T149	Description 2924 2952	read out mechanistic details
+R66	DescriptionOf Arg1:T149 Arg2:T60	
+T150	Data 2978 2988	read frame
+R67	ExampleOf Arg1:T150 Arg2:T61	
+R68	OutputOf Arg1:T65 Arg2:T63	
+T151	Description 3081 3140	combined into static HTML file as an overall visual summary
+R69	DescriptionOf Arg1:T151 Arg2:T63	
+T152	Description 3156 3265	compare codon-specific ribosome densities to features or measures expected to correlate with elongation rates
+R70	DescriptionOf Arg1:T152 Arg2:T66	
+T153	Description 3303 3333	compare gene-specific features
+R71	DescriptionOf Arg1:T153 Arg2:T66	
+T11	Data 3436 3457	static visualizations
+T154	Data 3467 3473	sample
+R72	OutputOf Arg1:T11 Arg2:T69	
+R73	InputOf Arg1:T154 Arg2:T69	
+T155	Description 3507 3530	interactively visualize
+R74	DescriptionOf Arg1:T155 Arg2:T69	
+T156	Tool 3555 3584	R/Shiny based web application
+T157	Tool 3599 3608	Shiny app
+R75	IncludeIn Arg1:T69 Arg2:T156	
+T158	Description 3636 3690	comparing results across control and treatment samples
+R76	DescriptionOf Arg1:T158 Arg2:T157	
+T159	Data 3737 3749	static plots
+T160	Data 3783 3804	gene-level statistics
+T161	Data 3813 3852	read distribution along a specific gene
+R77	ExampleOf Arg1:T161 Arg2:T160	
+T162	Data 4242 4261	sequence annotation
+T81	Description 4741 4795	specifies the positions of ORFs within the transcripts
+R78	DescriptionOf Arg1:T81 Arg2:T87	
+T163	File 4805 4824	configuration files
+R79	InputOf Arg1:T8 Arg2:T88	
+T9	Description 5062 5080	reproduce analyses
+T164	Description 5085 5117	adapted to analyze new datasets.
+T165	Data 5257 5266	raw reads
+T166	Data 5283 5310	publication-quality figures
+R80	InputOf Arg1:T165 Arg2:T92	
+R81	OutputOf Arg1:T166 Arg2:T92	
+T167	Description 5209 5242	provides a comprehensive workflow
+R82	DescriptionOf Arg1:T167 Arg2:T92	
+R83	IncludeIn Arg1:T95 Arg2:T97	
+R84	IncludeIn Arg1:T95 Arg2:T98	
+R85	IncludeIn Arg1:T95 Arg2:T99	
+R86	IncludeIn Arg1:T95 Arg2:T3	
+T168	Description 5760 5864	only Ribo-seq pipeline which is prebuilt to handle multiplexed libraries or unique molecular identifiers
+R87	DescriptionOf Arg1:T168 Arg2:T104	
+R88	IncludeIn Arg1:T107 Arg2:T106	
+R89	IncludeIn Arg1:T107 Arg2:T109	
+R90	InputOf Arg1:T120 Arg2:T118	
+R91	OutputOf Arg1:T121 Arg2:T118	
+R92	InputOf Arg1:T122 Arg2:T118	
+T169	Description 6737 6813	consolidates the data into outputs that are suitable for downstream analysis
+R93	DescriptionOf Arg1:T169 Arg2:T124	
+T170	Description 6886 6922	aggregates raw counts per transcript
+R94	DescriptionOf Arg1:T170 Arg2:T127	
+T171	Description 7013 7081	provides per-ORF translation values in transcripts per million (TPM)
+R95	DescriptionOf Arg1:T171 Arg2:T127	

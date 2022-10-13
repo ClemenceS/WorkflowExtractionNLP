@@ -1,0 +1,42 @@
+PhyloMagnet: fast and accurate screening of short-read meta-omics data using gene-centric phylogenetics
+
+
+	2 Implementation
+
+PhyloMagnet exploits the idea of gene-centric assembly (Huson et al., 2017) to efficiently screen sequence datasets of short reads for target genes, and to taxonomically classify assembled gene sequences using phylogenetic placement. Below is a description of the analysis steps employed by the pipeline (see alsoFig. 1), which requires the following inputs:
+ ** One or several query short-read sequence data files in FASTQ or FASTA format (potentially ‘raw’, untrimmed reads, see Section 2.3), corresponding to the metagenomic or transcriptomic dataset(s) to query [Fig. 1(1)].
+** One or several homologous groups of reference proteins, each sequence annotated with its taxonomic affiliation (in the EggNOG format, containing NCBI’s taxonomy ID and a unique identifier, e.g. ‘70448.Q0P3H7’).
+
+
+	2.1 Alignment and tree reconstruction of references
+
+For each input group of reference sequences a multiple sequence alignment is computed using either MAFFT (Katoh and Standley, 2013) or PRANK (Löytynoja and Goldman, 2010), without applying any filtering or trimming methods. Then a reference tree is reconstructed using any of IQ-TREE (Nguyen et al., 2015), RAxML-NG (Kozlov et al., 2019;Stamatakis, 2014) or FastTree (Price et al., 2010), making it possible to choose the appropriate method for a specific analysis. This way the user can make a trade-off between speed and quality of the reference tree and choose the appropriate evolutionary model. Reference alignments and trees can be precomputed (e.g. on a local machine) and then provided to PhyloMagnet as a compressed reference package (e.g. on an HPC cluster). This also increases reproducibility, as such reference packages can be released alongside results.
+
+
+	2.2 Alignment to reference protein sequences
+
+Identifiers from the EggNOG database, containing orthologous groups of protein sequences from all domains of life with functional annotations (Huerta-Cepas et al., 2016b), can be specified to be used as input reference sequences. Alternatively, sets of homologous protein sequences curated by the user in FASTA format can be used. In order to check for the potential presence of homologues encoding these proteins of interest in the query metagenomes or metatranscriptomes, each of the short-read datasets given as input [see Section 2(1)] is then aligned to the collection of reference protein sequences using the DIAMOND aligner in blastX mode [Fig. 1(2);Buchfink et al., 2015]. 
+
+
+	2.3 Gene-centric assembly of reads
+
+In a subsequent step, PhyloMagnet uses the gene-centric assembler implemented in MEGAN (Huson et al., 2016,2017) to assemble reads into contigs [Fig. 1(3)]. The assembly is performed independently for each orthologous group of reference proteins, and the available alignments of reads to the protein reference sequences of a group is used to infer overlaps between reads, thereby concatenating them into contigs. As only the aligned part (core) of each read is used for the assembly, no pre-processing such as adapter clipping or quality trimming is needed. The results are written to a FASTA file per orthologous group if any contig in that group passes the cut-off for the minimum length (200 bp, can be adjusted if needed) that the gene-centric assembler uses. The assembled contigs are already in-frame and are subsequently translated into amino acid sequences using the standard genetic code.
+
+
+	2.4 Phylogenetic placement of reconstructed protein sequences
+
+Next, the assembled and translated contigs are aligned to the alignments of each homologous reference group (maintaining the columns of the previously computed reference alignment), using the phylogeny-aware alignment tool PaPaRa [Fig. 1(4);Berger and Stamatakis, 2011]. This alignment of reference sequences and contigs is then used to place the contigs onto the reference tree using the evolutionary placement algorithm (EPA-ng) [Fig. 1(5);Berger et al., 2011;Barbera et al., 2019]. In a final stage, the tool gappa is used to annotate the internal branches of the reference tree and assign taxonomic labels to the translated contigs based on the likelihood weights of the placement (Czech and Stamatakis, 2019). Then a summary list of taxonomic labels is created.
+
+
+	2.5 ‘Magnetizing’ trees and identifying candidate datasets
+
+The user can choose to specify taxonomic names (e.g. ‘ Escherichia’) that should be used to filter (‘magnetize’) the list of all labels, specify a taxonomic rank (e.g. ‘family’) or a combination of both. The occurrences of the chosen taxonomic labels are summarized per reference group and metagenomic or transcriptomic datasets in order to assist manual decision of candidate datasets [Fig. 1(6)]. The information of how many trees were positive for a taxon of interest can be used as an approximation of coverage (see Section 4). The user could, e.g. select datasets that display differential coverage for subsequent genome extraction, which often relies on such differences to group genome contigs together (Albertsen et al., 2013;Alneberg et al., 2014).
+
+
+	2.6 Availability
+
+PhyloMagnet is an open source software package and released under a GPLv3 licence. It is written as a Nextflow (Di Tommaso et al., 2017) script and available on github (github.com/maxemil/PhyloMagnet). Several functions and utilities are implemented either in python or bash (Dalke et al., 2009;Huerta-Cepas et al., 2016a;McKinney, 2010). All needed dependencies are available as a singularity (Kurtzer et al., 2017) container (singularity-hub.org/collections/978) and the documentation can be found on ReadTheDocs (phylomagnet.readthedocs.io).
+
+
+	Supplementary Material
+

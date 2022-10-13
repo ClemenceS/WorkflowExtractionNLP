@@ -1,0 +1,133 @@
+T1	WorkflowName 0 8	GEMmaker
+T3	WorkflowName 108 116	GEMmaker
+T4	ManagementSystem 122 130	Nextflow
+T5	ProgrammingLanguage 155 161	Groovy
+T6	ManagementSystem 191 199	Nextflow
+T7	ProgrammingLanguage 201 207	Python
+T8	ProgrammingLanguage 253 257	Bash
+T9	ManagementSystem 319 327	Nextflow
+T10	Container 554 560	Docker
+T11	Container 565 576	Singularity
+T12	ManagementSystem 578 586	Nextflow
+T13	WorkflowName 715 723	GEMmaker
+T14	WorkflowName 806 814	GEMmaker
+T15	Container 840 851	Singularity
+T16	Description 876 890	quantification
+T17	Tool 897 903	Salmon
+R2	DescriptionOf Arg1:T16 Arg2:T17	
+T18	File 909 948	a file containing a list of SRA run IDs
+T19	Database 953 991	Arabidopsis thaliana Illumina datasets
+T20	WorkflowName 993 1001	GEMmaker
+T21	WorkflowName 1129 1137	GEMmaker
+T22	WorkflowName 1452 1460	GEMmaker
+T23	Tool 1462 1466	STAR
+T24	Tool 1468 1474	HISAT2
+T25	Tool 1476 1482	Salmon
+T26	Tool 1487 1495	kallisto
+T27	Tool 1501 1505	STAR
+T28	Tool 1510 1516	HISAT2
+T29	Description 1531 1544	read trimming
+T30	Tool 1549 1560	Trimmomatic
+R3	DescriptionOf Arg1:T29 Arg2:T30	
+T31	Tool 1562 1570	SAMtools
+T32	Description 1575 1593	storing alignments
+R4	DescriptionOf Arg1:T32 Arg2:T31	
+T33	Tool 1598 1607	Stringtie
+T34	Description 1612 1626	quantification
+R5	DescriptionOf Arg1:T34 Arg2:T33	
+T35	Tool 1628 1634	Salmon
+T36	Tool 1639 1647	kallisto
+T37	Tool 1696 1703	MultiQC
+T38	File 1696 1710	MultiQC report
+T39	WorkflowName 1804 1812	GEMmaker
+T40	WorkflowName 2444 2452	GEMmaker
+T41	File 2465 2476	FASTQ files
+T42	ManagementSystem 2828 2836	Nextflow
+T43	ManagementSystem 2952 2960	Nextflow
+T44	WorkflowName 3126 3134	GEMmaker
+T45	ManagementSystem 3257 3265	Nextflow
+T46	WorkflowName 3341 3349	GEMmaker
+T47	ManagementSystem 3507 3515	Nextflow
+T48	ManagementSystem 3706 3714	Nextflow
+T49	WorkflowName 3830 3838	GEMmaker
+T50	WorkflowName 4058 4066	GEMmaker
+T51	WorkflowName 4132 4140	GEMmaker
+T52	File 4352 4364	FASTQ files,
+T53	File 4165 4183	intermediate files
+T54	File 4373 4384	FASTQ files
+T55	File 4394 4413	BAM alignment files
+T56	Tool 4419 4427	kallisto
+T57	Tool 4432 4438	Salmon
+T58	File 4432 4461	Salmon pseudoalignment files.
+T59	WorkflowName 4813 4821	GEMmaker
+T60	File 4849 4867	intermediate files
+T61	File 5139 5157	intermediate files
+T62	Tool 5366 5372	HISAT2
+T63	Tool 5449 5457	kallisto
+T64	Tool 5462 5468	Salmon
+T65	WorkflowName 5583 5591	GEMmaker
+T66	WorkflowName 5750 5758	GEMmaker
+T67	WorkflowName 5798 5806	GEMmaker
+T68	Container 5807 5813	docker
+T69	WorkflowName 5861 5869	GEMmaker
+T70	Container 5885 5891	Docker
+T71	Container 5903 5909	Docker
+T72	ManagementSystem 5986 5994	Nextflow
+T73	Container 6028 6039	Singularity
+T74	Container 6043 6049	Docker
+T75	WorkflowName 6060 6068	GEMmaker
+T2	Description 10 88	process massive RNA-seq datasets on heterogeneous computational infrastructure
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T76	Description 348 357	framework
+R6	DescriptionOf Arg1:T76 Arg2:T9	
+T77	Description 521 545	containerization systems
+R7	DescriptionOf Arg1:T77 Arg2:T10	
+R8	DescriptionOf Arg1:T77 Arg2:T11	
+T78	Description 857 873	containerization
+R9	DescriptionOf Arg1:T78 Arg2:T15	
+T79	Hardware 2238 2264	local desktop workstations
+T80	Hardware 2266 2288	institutional clusters
+T81	Hardware 2290 2315	national-funded resources
+T82	Hardware 2336 2365	the Pacific Research Platform
+T83	Hardware 2376 2393	commercial clouds
+T84	Hardware 2324 2329	XSEDE
+T85	File 3861 3879	intermediate files
+T86	File 4286 4304	intermediate files
+T87	Data 5023 5038	RNA-seq samples
+T88	Data 5043 5070	genomic reference sequences
+T89	Data 5199 5210	sample data
+T90	Data 5508 5522	average sample
+T91	Description 6001 6026	containerization software
+R10	DescriptionOf Arg1:T91 Arg2:T73	
+R11	DescriptionOf Arg1:T91 Arg2:T74	
+T92	Environment 2114 2137	computational platforms
+T93	File 230 247	intermediate data
+T94	Description 174 199	interfacing with Nextflow
+R12	DescriptionOf Arg1:T94 Arg2:T5	
+T95	Description 220 247	wrangling intermediate data
+R13	DescriptionOf Arg1:T95 Arg2:T7	
+T96	Description 270 318	execution of each software tool in the workflow.
+R14	DescriptionOf Arg1:T96 Arg2:T8	
+T97	Data 26 42	RNA-seq datasets
+T98	Description 1175 1211	gene expression-level quantification
+T99	Description 1216 1231	quality control
+T100	Description 1414 1444	gene expression quantification
+R15	DescriptionOf Arg1:T100 Arg2:T23	
+R16	DescriptionOf Arg1:T100 Arg2:T24	
+R17	DescriptionOf Arg1:T100 Arg2:T26	
+R18	DescriptionOf Arg1:T100 Arg2:T25	
+T101	Biblio 2331 2333	34
+T102	Biblio 2367 2369	31
+R20	BiblioOf Arg1:T102 Arg2:T82	
+T103	File 2548 2555	samples
+T104	WorkflowName 2593 2601	GEMmaker
+T105	Parameter 2754 2772	–max_cpus argument
+T106	File 2974 2981	samples
+T107	Parameter 3973 3986	–max_cpu size
+T108	File 4344 4347;4358 4363	SRA files
+T109	File 4419 4427;4439 4460	kallisto pseudoalignment files
+T110	File 4386 4389;4398 4413	SAM alignment files
+T111	Parameter 4756 4765	–max_cpus
+T112	Database 5903 5913	Docker Hub
+T113	Hardware 678 691	HPC platforms
+R19	BiblioOf Arg1:T101 Arg2:T84	

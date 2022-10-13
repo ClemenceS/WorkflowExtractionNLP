@@ -1,0 +1,55 @@
+nf-core/mag: a best-practice pipeline for metagenome hybrid assembly and binning
+
+
+	MATERIALS AND METHODS
+
+
+
+	Implementation and reproducibility
+
+nf-core/mag is written in Nextflow, making use of the new DSL2 syntax (see Supplementary Data: Section S2). DSL2 enables a modularized pipeline structure, where each individual process, containing ideally only one tool, is provided as a ‘module’. Additionally, sub-workflows can be integrated. The pipeline strongly benefits from the nf-core framework, which enforces a set of strict best-practice guidelines to ensure high-quality pipeline development and maintenance (11). For example, pipelines must provide comprehensive documentation as well as community support via GitHub Issues and dedicated Slack channels. Pipeline portability and reproducibility are enabled through (i) pipeline versioning (i.e. tagged releases on GitHub), (ii) building and archiving associated containers that contain the required software dependencies (i.e. the exact same compute environment can be used over time and across systems) and (iii) a detailed reporting of the used pipeline/software versions and applied parameters. The use of container technologies such as Docker and Singularity enable reproducibility and portability also across different compute systems, i.e. local computers, HPC clusters and cloud platforms. The nf-core/mag pipeline comes with a small test dataset that is used for continuous integration (CI) testing with GitHub Actions. In addition, ‘full-size’ pipeline tests are run on AWS for each pipeline release to ensure cloud compatibility and an error-free performance on real-world datasets. The full-size test results for each pipeline release are displayed on the nf-core website ( https://nf-co.re/mag/results). Moreover, since the nf-core framework uses DSL2, commonly used processes can be shared across pipelines via nf-core/modules ( https://github.com/nf-core/modules). This allows the efficient integration of new analysis tools into the pipeline in the future.
+Although the nf-core framework facilitates reproducibility at several layers, it is further crucial to ensure that the individual tools that are part of the pipeline can be run in a deterministic and reproducible manner. For this purpose, nf-core/mag offers dedicated reproducibility settings, for example, to set a random seed parameter, to fix and report multi-threading parameters as well as to generate and/or save required databases, whose public versions do not always remain accessible (see Supplementary Data: Section S3).
+
+
+	Simulation of metagenomic data
+
+To show exemplary results generated with the nf-core/mag pipeline, we simulated metagenomic time series data with CAMISIM (12). For this, CAMISIM was applied based on the genome sources from the ‘CAMI II challenge toy mouse gut dataset’ (13), containing 791 genomes, while set to generate Illumina and Nanopore reads. Two groups of samples were simulated, each comprising a time series of four samples (for details see Supplementary Data: Section S4). The simulated datasets as well as a sample sheet file, which can be used as input for the nf-core/mag pipeline, are available at https://doi.org/10.5281/zenodo.5155395.
+
+
+	RESULTS
+
+
+
+	Pipeline overview
+
+An overview of the nf-core/mag pipeline is shown in Figure1A. The input can be either directly provided FASTQ files containing the short reads or a sample sheet in CSV format containing the paths to short and, optionally, long read files as well as additional group information.
+
+
+	Pre-processing
+
+The pipeline starts with preprocessing the raw reads. For short Illumina reads, fastp (14) is used for adapter and quality trimming, Bowtie2 (15) for identifying and removing host or PhiX reads, and FastQC ( https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) for quality control (QC) on the raw and preprocessed reads. For long Nanopore reads, porechop ( https://github.com/rrwick/Porechop) is used for adapter trimming, NanoLyse ( https://github.com/rrwick/Filtlong) to remove phage lambda control contamination, and Filtlong (16) for quality filtering (host read contamination is indirectly removed based on the filtered short reads). QC on the raw and processed long reads is performed using NanoPlot ( https://github.com/rrwick/Filtlong).
+
+
+	Assembly and binning
+
+The preprocessed reads are then de novo assembled using MEGAHIT (17) or SPAdes (18). If both short and long reads are provided, a hybrid assembly can be performed using hybridSPAdes (19). By default, nf-core/mag assembles the reads of each sample individually. However, it provides the option to compute co-assemblies according to user specified group information. MetaBAT2 (20) is then used to bin the contigs into individual MAGs based on nucleotide frequencies and co-abundance patterns across samples (within the same group, by default). The pipeline further estimates MAG abundances for the different samples from contig sequencing depths. QUAST (21) summarizes QC features of the generated assemblies and MAGs. MAG completeness and contamination is estimated by BUSCO (22), which makes use of near-universal single-copy orthologs.
+
+
+	Taxonomic classification
+
+Finally, MAGs are taxonomically annotated using GTDB-TK (23) or CAT/BAT (24). While CAT/BAT is able to taxonomically classify any MAG, GTDB-TK requires a number of marker genes and is therefore only applied to MAGs passing quality thresholds regarding the completeness and contamination priorly estimated with BUSCO. Besides the results from the individual tools, nf-core/mag outputs a summary containing estimated abundances, as well as the main QUAST, BUSCO and GTDB-TK metrics for each MAG (see Figure1C).
+
+
+	Quality assurance
+
+Preprocessed short reads are classified using Kraken2 (25) or Centrifuge (26) and visualized in Krona charts (27) to assess potential contamination and the microbial community before the assembly. MultiQC (28) is used to generate a comprehensive quality report aggregating the QC results across all samples.
+Table1 shows a comparison of nf-core/mag’s functionality to other existing pipelines for metagenome assembly and binning. The respective analysis tools used in nf-core/mag were chosen based on benchmarking results from the CAMI challenge (13,29) and based on specific user requests from the scientific community. A more detailed pipeline comparison listing also the individual tools as well as a brief discussion about tool choices can be found in Supplementary Data: Section S1.
+
+
+	Exemplary results
+
+We ran nf-core/mag v2.1.0 on the metagenomic time series data simulated with CAMISIM. Figure1B shows an example heatmap representing MAG abundances across samples, obtained with nf-core/mag performing hybrid, group-wise co-assembly. To illustrate the possible impact of the assembly setting, we compared the results for four different nf-core/mag settings, i.e. (i) short read only, sample-wise assembly, (ii) hybrid, sample-wise assembly, (iii) short read only, group-wise co-assembly and (iv) hybrid, group-wise co-assembly. Figure2 shows a comparison of the resulting assemblies with respect to commonly used assembly metrics. The results demonstrate that—for this particular time series data—both hybrid assembly as well as group-wise co-assembly increase the assembly's size, its N50 value and the number of reconstructed MAGs, and thus likely the overall assembly completeness. For further details and results see Supplementary Data: Section S5.
+
+
+	Supplementary Material
+
