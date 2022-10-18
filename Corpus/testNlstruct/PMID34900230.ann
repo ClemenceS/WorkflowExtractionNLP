@@ -1,0 +1,189 @@
+T1	WorkflowName 0 5	snpQT
+T2	Description 7 95	flexible, reproducible, and comprehensive quality control and imputation of genomic data
+T3	WorkflowName 127 132	snpQT
+T4	ManagementSystem 210 218	nextflow
+T5	Description 219 245	workflow management system
+T6	Biblio 246 248	13
+T7	Description 297 314	container engines
+T8	Container 316 322	Docker
+T9	Container 326 337	Singularity
+T10	Description 342 362	environment managers
+T11	Environment 364 372	Anaconda
+T12	Environment 445 471	standardised BioContainers
+T13	Biblio 472 474	15
+T14	Description 480 500	environment managers
+T15	Environment 505 513	BioConda
+T16	ManagementSystem 655 663	nextflow
+T17	WorkflowName 686 691	snpQT
+T18	Description 700 787	reproducible and uniquely versatile tool for the analysis of human variant genomic data
+T20	Biblio 962 964	13
+T21	Biblio 965 967	16
+T22	Biblio 1111 1113	17
+T23	ManagementSystem 1129 1137	nextflow
+T24	Data 1755 1788	intermediate quality control data
+T25	WorkflowName 1790 1795	snpQT
+T26	Description 1977 1998	local database set up
+T27	Description 2000 2041	downloading and preparing reference files
+T28	File 2026 2041	reference files
+T29	Biblio 2042 2044	18
+T30	Biblio 2045 2047	19
+T31	Container 2107 2118	Singularity
+T32	Container 2120 2126	Docker
+T34	WorkflowName 2151 2161	Workflow B
+T36	Description 2195 2222	remap their genomic dataset
+T39	WorkflowName 2259 2269	Workflow C
+T41	Description 2279 2288	Sample QC
+T42	WorkflowName 2410 2420	Workflow D
+T44	Description 2430 2455	Population Stratification
+T45	Data 2466 2501	internal QC of the reference genome
+T46	Description 2466 2600	internal QC of the reference genome and user’s dataset, the two datasets are merged and prepared for the automatic removal of outliers
+T47	Data 2506 2520	user’s dataset
+T48	Data 2526 2538	two datasets
+T49	Tool 2607 2616	EIGENSOFT
+T50	Biblio 2617 2619	20
+T51	Method 2622 2650	Principal Component Analyses
+T52	File 2989 3004	covariates file
+T53	Description 3025 3055	pre-imputation quality control
+T54	Description 3025 3093	pre-imputation quality control, preparing the dataset for imputation
+T56	Description 3121 3134	local phasing
+T57	Description 3139 3149	imputation
+T58	Tool 3156 3164	shapeit4
+T59	Biblio 3165 3167	21
+T60	Tool 3173 3180	impute5
+T61	Biblio 3181 3183	22
+T62	WorkflowName 3186 3196	Workflow H
+T63	Description 3206 3224	post-imputation QC
+T64	Data 3231 3254	poorly imputed variants
+T65	WorkflowName 3512 3522	Workflow I
+T67	Description 3532 3536	GWAS
+T69	WorkflowName 3628 3633	snpQT
+T70	Method 3690 3715	Population Stratification
+T72	Data 3743 3761	summary statistics
+T73	Data 3776 3790	Manhattan plot
+T74	Data 3797 3805	Q-Q plot
+T75	WorkflowName 3878 3883	snpQT
+T76	Data 4277 4289	summary logs
+T77	File 4294 4300	graphs
+T78	WorkflowName 4595 4600	snpQT
+T79	ManagementSystem 4619 4627	nextflow
+T80	ProgrammingLanguage 4629 4630	R
+T81	Hardware 4635 4662	Unix command line utilities
+T82	WorkflowName 4705 4710	snpQT
+T83	ProgrammingLanguage 4715 4719	Java
+T84	Version 4720 4721	8
+T85	ManagementSystem 4723 4731	nextflow
+T86	Version 4732 4740	v21.04.3
+T87	Hardware 4748 4781	POSIX-compatible operating system
+T88	Hardware 4793 4801	CentOS 8
+T89	Method 4992 5002	imputation
+T90	Tool 5148 5154	picard
+T91	Biblio 5157 5197	https://broadinstitute.github.io/picard/
+T92	Tool 5200 5205	PLINK
+T93	Biblio 5206 5208	23
+T94	Tool 5211 5219	PLINK2.0
+T95	Biblio 5220 5222	24
+T96	Tool 5225 5233	samtools
+T97	Biblio 5234 5236	25
+T98	Tool 5243 5250	snpflip
+T99	Biblio 5253 5292	https://github.com/biocore-ntnu/snpflip
+T100	Database 5321 5347	1,000 Genomes Project data
+T101	Biblio 5348 5350	18
+T102	File 5389 5392	VCF
+T103	File 5407 5421	PLINK2 formats
+T104	Biblio 5422 5424	19
+T105	Method 5441 5466	population stratification
+T107	Biblio 5539 5541	11
+T108	Environment 5583 5591	Anaconda
+T109	Container 5593 5604	Singularity
+T110	Container 5606 5612	Docker
+T111	Description 5670 5738	install and run the underlying collection of bioinformatics software
+T112	Data 6026 6040	pre-imputation
+T113	Data 6045 6063	post-imputation QC
+T114	WorkflowName 6118 6123	snpQT
+T115	Container 6128 6139	Singularity
+T116	Biblio 6140 6142	26
+T117	Description 6144 6204	automatically provisions containers to run software packages
+T118	Container 6260 6271	Singularity
+T119	Description 6295 6311	full scalability
+T120	Hardware 6329 6345	HPC environments
+T121	Container 6350 6356	Docker
+T122	Tool 6413 6420	impute5
+T123	Description 6440 6450	imputation
+T124	Container 6508 6519	Singularity
+T126	Hardware 6601 6617	HPC environments
+T127	WorkflowName 6794 6799	snpQT
+T128	Description 6900 6933	complete description of workflows
+T129	Biblio 6976 7015	https://snpqt.readthedocs.io/en/latest/
+R1	DescriptionOf Arg1:T2 Arg2:T1	
+T130	Description 152 188	set of nine core workflow components
+R2	DescriptionOf Arg1:T130 Arg2:T3	
+R3	DescriptionOf Arg1:T5 Arg2:T4	
+R4	BiblioOf Arg1:T6 Arg2:T4	
+R5	DescriptionOf Arg1:T7 Arg2:T8	
+R6	DescriptionOf Arg1:T7 Arg2:T9	
+T131	Method 376 383	Modules
+R7	DescriptionOf Arg1:T10 Arg2:T11	
+R8	DescriptionOf Arg1:T10 Arg2:T131	
+R9	BiblioOf Arg1:T13 Arg2:T12	
+R10	DescriptionOf Arg1:T14 Arg2:T15	
+R11	DescriptionOf Arg1:T18 Arg2:T17	
+T19	WorkflowName 1937 1947	Workflow A
+R12	DescriptionOf Arg1:T26 Arg2:T19	
+R13	DescriptionOf Arg1:T27 Arg2:T19	
+T132	Environment 2097 2105	Anaconda
+R14	DescriptionOf Arg1:T36 Arg2:T34	
+R15	DescriptionOf Arg1:T41 Arg2:T39	
+R16	DescriptionOf Arg1:T44 Arg2:T42	
+R17	BiblioOf Arg1:T50 Arg2:T49	
+T33	WorkflowName 2705 2715	Workflow E
+T35	Description 2729 2744	main Variant QC
+R18	DescriptionOf Arg1:T35 Arg2:T33	
+T37	WorkflowName 3007 3017	Workflow F
+R19	DescriptionOf Arg1:T63 Arg2:T62	
+R20	DescriptionOf Arg1:T67 Arg2:T65	
+T38	WorkflowName 3719 3729	Workflow D
+T40	Data 3896 3907	Make Report
+T43	Data 3976 3992	interactive HTML
+T66	WorkflowName 3936 3947	Workflows C
+T68	WorkflowName 3949 3950	D
+T71	WorkflowName 3952 3953	E
+T133	WorkflowName 3959 3960	I
+R21	OutputOf Arg1:T40 Arg2:T66	
+R22	OutputOf Arg1:T40 Arg2:T68	
+R23	OutputOf Arg1:T40 Arg2:T71	
+R24	OutputOf Arg1:T40 Arg2:T133	
+R25	VersionOf Arg1:T84 Arg2:T83	
+R26	VersionOf Arg1:T86 Arg2:T85	
+T134	Parameter 4918 4929	16GB of RAM
+T135	Parameter 4934 4981	4 cores on large datasets of 40,000 individuals
+T136	Parameter 5048 5083	50GB of RAM per chromosome per core
+R27	BiblioOf Arg1:T91 Arg2:T90	
+R28	BiblioOf Arg1:T93 Arg2:T92	
+R29	BiblioOf Arg1:T95 Arg2:T94	
+R30	BiblioOf Arg1:T97 Arg2:T96	
+R31	BiblioOf Arg1:T99 Arg2:T98	
+R32	BiblioOf Arg1:T101 Arg2:T100	
+T137	Environment 5870 5878	Anaconda
+R33	BiblioOf Arg1:T116 Arg2:T115	
+T138	WorkflowName 6231 6236	snpQT
+R34	DescriptionOf Arg1:T119 Arg2:T118	
+R35	DescriptionOf Arg1:T117 Arg2:T115	
+R36	DescriptionOf Arg1:T123 Arg2:T122	
+R37	BiblioOf Arg1:T129 Arg2:T127	
+T125	WorkflowName 7170 7175	snpQT
+R38	OutputOf Arg1:T28 Arg2:T19	
+T139	Database 1977 1991	local database
+R39	OutputOf Arg1:T139 Arg2:T19	
+T140	Method 2142 2149	Modules
+T55	WorkflowName 3101 3111	Workflow G
+R40	DescriptionOf Arg1:T56 Arg2:T55	
+R41	DescriptionOf Arg1:T57 Arg2:T55	
+R42	BiblioOf Arg1:T59 Arg2:T58	
+R43	BiblioOf Arg1:T61 Arg2:T60	
+R44	OutputOf Arg1:T72 Arg2:T65	
+R45	OutputOf Arg1:T73 Arg2:T65	
+R46	OutputOf Arg1:T74 Arg2:T65	
+R47	ParameterOf Arg1:T136 Arg2:T89	
+T141	Method 5629 5636	Modules
+T143	Method 6545 6552	Modules
+T142	Biblio 5525 5531;5532 5537	Marees et al

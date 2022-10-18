@@ -1,0 +1,381 @@
+T1	WorkflowName 0 14	nf-rnaSeqCount
+T2	ManagementSystem 18 26	Nextflow
+T3	Description 40 65	obtaining raw read counts
+T4	Data 50 65	raw read counts
+T5	Data 71 83	RNA-seq data
+T6	Description 159 256	make the task of producing raw read counts for performing differential expression analysis easier
+T7	ManagementSystem 540 548	Nextflow
+T8	Biblio 550 573	Di Tommaso et al., 2017
+T9	Container 579 590	Singularity
+T10	Biblio 592 612	Kurtzer et al., 2017
+T11	Description 627 691	implement the pipeline into a portable and reproducible pipeline
+T12	ManagementSystem 693 701	Nextflow
+T13	Description 707 744	Groovy-based domain-specific language
+T14	Biblio 1090 1113	Di Tommaso et al., 2017
+T15	ManagementSystem 1134 1142	Nextflow
+T16	Description 1148 1174	workflow management system
+T17	File 1411 1421	name files
+T18	ManagementSystem 1505 1513	Nextflow
+T19	Description 1557 1597	pipeline reproducibility and portability
+T20	Container 1611 1617	Docker
+T21	Biblio 1618 1619	1
+T22	Container 1625 1636	Singularity
+T23	Biblio 1637 1638	2
+T25	Database 1754 1764	VCS GitHub
+T26	Biblio 1765 1766	3
+T27	Description 1772 1787	sharing of code
+T28	Description 1793 1811	version management
+T29	Description 1820 1865	allows for scaling of computational pipelines
+T30	Hardware 1869 1872	HPC
+T31	Hardware 1877 1890	cloud systems
+T32	Hardware 1941 1956	Sun Grid Engine
+T33	Hardware 1958 1961	SGE
+T34	Hardware 1964 1974	PBS/Torque
+T35	Hardware 1976 2006	Platform Load Sharing Facility
+T36	Hardware 2008 2011	LSF
+T37	Hardware 2014 2034	Simple Linux Utility
+T39	Description 2039 2058	Resource Management
+T40	Hardware 2060 2065	SLURM
+T41	Hardware 2068 2076	HTCondor
+T42	Hardware 2081 2100	Amazon Web Services
+T43	Hardware 2102 2105	AWS
+T44	Biblio 2108 2131	Di Tommaso et al., 2017
+T45	Description 2137 2195	facilitate reproducibility and portability of the pipeline
+T46	Container 2197 2203	Docker
+T48	Database 2297 2306	DockerHub
+T49	Biblio 2307 2308	4
+T50	Container 2322 2333	Singularity
+T51	Container 2363 2374	Singularity
+T52	Description 2380 2436	lightweight platform for building and running containers
+T53	File 2561 2573	image format
+T54	ProgrammingLanguage 2625 2626	C
+T55	Hardware 2639 2646	kernels
+T56	Hardware 2752 2759	base OS
+T57	File 2779 2790	single file
+T58	Biblio 2840 2860	Kurtzer et al., 2017
+T59	Container 2863 2869	Docker
+T60	Database 2891 2900	DockerHub
+T61	Container 2938 2949	Singularity
+T62	File 2964 2967	SIF
+T63	File 2975 2986	image files
+T64	File 3001 3027	Linux/UNIX file permission
+T65	File 3159 3162	SIF
+T66	WorkflowName 3312 3326	nf-rnaSeqCount
+T67	WorkflowName 3341 3355	nf-rnaSeqCount
+T68	ManagementSystem 3376 3384	Nextflow
+T69	Container 3389 3400	Singularity
+T70	WorkflowName 3507 3521	nf-rnaSeqCount
+T71	File 3535 3546	FASTQ files
+T72	Data 3587 3599	RNA-seq data
+T73	Description 3606 3614	analysed
+T74	File 3618 3651	reference genome (in FASTA format
+T76	File 3660 3690	annotation file (in GTF format
+T77	Data 3700 3716	reference genome
+T78	File 3808 3826	configuration file
+T79	WorkflowName 4036 4050	nf-rnaSeqCount
+T80	Description 4056 4072	modular pipeline
+T81	Description 4097 4112	multiple stages
+T83	Parameter 4317 4331	–mode argument
+T84	Description 4436 4452	Data Preparation
+T85	Method 4453 4468	prep.Containers
+T86	Method 4473 4485	prep.Indexes
+T87	Description 4491 4506	Quality Control
+T88	Method 4522 4538	run.ReadTrimming
+T89	Description 4544 4572	Alignment and Quantification
+T90	Method 4595 4611	run.ReadCounting
+T91	Tool 4621 4628	MultiQC
+T92	WorkflowName 4646 4660	nf-rnaSeqCount
+T94	Method 4811 4827	Data preparation
+T95	Method 4908 4930	run_DownloadContainers
+T96	Database 5038 5047	DockerHub
+T97	Description 5052 5087	converts them to Singularity format
+T98	File 5069 5087	Singularity format
+T99	Container 5069 5080	Singularity
+T100	Container 5218 5229	Singularity
+T101	Method 5267 5288	run_GenerateSTARIndex
+T102	Method 5293 5317	run_GenerateBowtie2Index
+T103	Description 5333 5456	index the reference genome (for aligning the RNA-seq reads and quantifying the abundance of the identified genomic features
+T104	Data 5343 5359	reference genome
+T105	Tool 5464 5468	STAR
+T106	Biblio 5470 5488	Dobin et al., 2013
+T107	Tool 5494 5500	Bowtie
+T108	Biblio 5502 5523	Langmead et al., 2009
+T109	Data 5562 5602	ocation for the reference genome (FASTA)
+T111	File 5604 5625	annotation file (GTF)
+T112	File 5627 5644	input FASTQ files
+T113	File 5649 5665	output directory
+T114	File 5687 5705	configuration file
+T115	ManagementSystem 5741 5749	Nextflow
+T116	Parameter 5768 5770	-c
+T117	File 5792 5797	files
+T118	File 5923 5937	required files
+T119	File 5956 5974	configuration file
+T120	Tool 5982 5991	main.conf
+T121	Description 5996 6022	index the reference genome
+T122	Data 6006 6022	reference genome
+T123	Tool 6029 6033	STAR
+T124	Tool 6038 6044	Bowtie
+T125	WorkflowName 6106 6120	nf-rnaSeqCount
+T126	Tool 6143 6149	FastQC
+T127	Biblio 6151 6164	Andrews, 2010
+T128	Tool 6170 6181	Trimmomatic
+T129	Biblio 6183 6202	Bolger et al., 2014
+T130	Description 6208 6231	pre-processing of reads
+T131	Method 6238 6254	“quality control
+T132	Method 6257 6259	QC
+T133	WorkflowName 6273 6296	nf-rnaSeqCount workflow
+T134	Tool 6516 6522	FastQC
+T135	Description 6526 6544	assess the quality
+T136	Data 6552 6565	RNA-seq reads
+T137	Method 6571 6587	run_ReadTrimming
+T138	Tool 6608 6619	Trimmomatic
+T139	Description 6637 6700	remove technical sequences and poor quality bases from the data
+T140	Data 6731 6744	RNA-seq reads
+T141	Tool 6834 6845	Trimmomatic
+T142	Description 6861 6907	remove low quality bases and adapter sequences
+T143	Data 6890 6907	adapter sequences
+T144	Parameter 6913 6918	–trim
+T145	Tool 6946 6957	Trimmomatic
+T146	Method 7022 7050	alignment and quantification
+T147	WorkflowName 7075 7098	nf-rnaSeqCount workflow
+T148	Data 7118 7131	RNA-seq reads
+T149	Description 7136 7143	aligned
+T150	Data 7151 7167	reference genome
+T151	Tool 7215 7219	STAR
+T152	Biblio 7221 7239	Dobin et al., 2013
+T153	Method 7248 7265	run_ReadAlignment
+T154	File 7289 7298	BAM files
+T155	Description 7316 7362	quantify the abundance of the identified genes
+T156	Tool 7374 7387	featureCounts
+T157	Biblio 7389 7406	Liao et al., 2014
+T158	Tool 7440 7451	htseq-count
+T159	Biblio 7453 7472	Anders et al., 2015
+T160	Description 7503 7593	align the reads to the reference genome and quantify the abundance of the genomic features
+T161	Tool 7645 7652	MultiQC
+T162	Tool 7658 7665	MultiQC
+T163	Tool 7727 7734	MultiQC
+T164	Biblio 7736 7754	Ewels et al., 2016
+T165	Description 7759 7785	collect all the statistics
+T166	File 7855 7896	summary of all statistics in an HTML file
+T168	Data 7912 7930	summary statistics
+T169	WorkflowName 7986 8000	nf-rnaSeqCount
+T170	WorkflowName 8047 8061	nf-rnaSeqCount
+T171	Tool 8257 8261	STAR
+T172	Data 8266 8286	featureCounts folder
+T173	Description 8298 8316	read counts matrix
+T174	Description 8384 8416	differential expression analysis
+T175	Data 8421 8439	htseqCounts folder
+T176	Description 8451 8469	read counts matrix
+T178	Description 8539 8571	differential expression analysis
+T179	File 8604 8637	MultiQC QC reports in HTML format
+T180	Description 8664 8722	assess the quality of read mapping and gene quantification
+T181	Description 8761 8787	pipeline execution reports
+T182	Description 8816 8876	trace the execution of the pipeline and check other metadata
+T183	Data 8950 9003	RNA-seq data of black South African patients with SSc
+T184	Data 9087 9105	transcriptome data
+T185	Biblio 9117 9144	study byFrost et al. (2019)
+T187	Hardware 9435 9440	SLURM
+T188	Hardware 9445 9448	PBS
+T190	Hardware 9519 9562	University of Cape Town (UCT) eResearch HPC
+T191	Biblio 9563 9564	5
+T192	Hardware 9573 9585	Amazon’s AWS
+T193	Biblio 9586 9587	6
+T194	Data 9595 9607	RNA-seq data
+T197	Hardware 9662 9667	SLURM
+T198	Description 9675 9688	job scheduler
+T199	Hardware 9772 9775	AWS
+T200	ManagementSystem 9807 9815	Nextflow
+T201	Description 9854 9866	ami-4b7daa32
+T202	Description 9880 9932	deploy an Amazon Elastic Block Store (EBS) of 1000GB
+T203	Hardware 9943 9964	Elastic Compute Cloud
+T204	Hardware 9966 9969	EC2
+T205	Parameter 9990 10005	40 virtual CPUs
+T206	Parameter 10010 10026	160 GB of memory
+T207	Data 10032 10044	AWS analyses
+T208	ManagementSystem 10103 10111	Nextflow
+T209	Hardware 10245 10248	EC2
+T210	Hardware 10301 10304	AWS
+T211	Version 10306 10319	February 2019
+T212	Parameter 10334 10345	m4.10xlarge
+T213	Biblio 10366 10367	7
+T214	Biblio 10449 10450	8
+T215	WorkflowName 10549 10563	nf-rnaSeqCount
+T216	Data 10580 10588	SSc data
+T217	WorkflowName 10678 10692	nf-rnaSeqCount
+T218	LibraryPackage 10777 10785	Rsubread
+T219	Biblio 10795 10812	Liao et al., 2019
+T220	WorkflowName 10835 10849	nf-rnaSeqCount
+T221	WorkflowName 11239 11253	nf-rnaSeqCount
+T222	Data 11268 11280	RNA-seq data
+T223	Description 11290 11302	benchmarking
+T224	Database 11327 11350	Gene Expression Omnibus
+T225	Database 11352 11355	GEO
+T226	Biblio 11385 11386	9
+T227	Data 11393 11397	data
+T228	Data 11411 11443	21 RNA-seq breast cancer samples
+T229	Data 11492 11505	control group
+T230	Biblio 11520 11547	Hardman et al., 2019a,2019b
+T231	Method 11550 11562	Benchmarking
+T232	Hardware 11603 11625	Wits Computing cluster
+T233	Parameter 11632 11647	48 GB of memory
+T234	Method 11761 11774	read counting
+T235	WorkflowName 11829 11843	nf-rnaSeqCount
+T236	LibraryPackage 11852 11860	Rsubread
+T237	WorkflowName 11985 11999	nf-rnaSeqCount
+T238	Hardware 12067 12089	Wits Computing cluster
+T239	Data 12245 12270	reference genome indexing
+T240	WorkflowName 12281 12295	nf-rnaSeqCount
+T241	Tool 12303 12307	STAR
+T242	Tool 12312 12318	Bowtie
+T243	LibraryPackage 12324 12332	Rsubread
+T244	Tool 12340 12345	index
+T245	WorkflowName 12464 12478	nf-rnaSeqCount
+T246	Data 12642 12655	RNA-seq reads
+T247	Data 12663 12679	reference genome
+T248	WorkflowName 12681 12695	nf-rnaSeqCount
+T249	Tool 12703 12707	STAR
+T250	Tool 12738 12743	align
+T251	WorkflowName 12815 12829	nf-rnaSeqCount
+T252	Parameter 12966 13013	18 GB of memory and 1088% of the allocated CPUs
+T253	Method 13032 13045	read counting
+T254	WorkflowName 13051 13065	nf-rnaSeqCount
+T255	Tool 13073 13084	htseq-count
+T256	Tool 13089 13102	featureCounts
+T258	LibraryPackage 13124 13132	Rsubread
+T259	WorkflowName 13231 13245	nf-rnaSeqCount
+T260	WorkflowName 13481 13495	nf-rnaSeqCount
+T261	Method 13530 13543	read counting
+T262	WorkflowName 13779 13793	nf-rnaSeqCount
+R1	DescriptionOf Arg1:T3 Arg2:T1	
+R2	OutputOf Arg1:T4 Arg2:T1	
+R3	InputOf Arg1:T5 Arg2:T1	
+T263	Description 368 504	portable and reproducible in order to allow scaling to different computational platforms when large or small datasets are being analysed
+R4	BiblioOf Arg1:T8 Arg2:T7	
+R5	BiblioOf Arg1:T10 Arg2:T9	
+T264	ProgrammingLanguage 746 749	DSL
+R6	DescriptionOf Arg1:T13 Arg2:T264	
+R7	DescriptionOf Arg1:T19 Arg2:T18	
+R8	DescriptionOf Arg1:T16 Arg2:T15	
+R9	BiblioOf Arg1:T21 Arg2:T20	
+R10	BiblioOf Arg1:T23 Arg2:T22	
+R11	BiblioOf Arg1:T26 Arg2:T25	
+R12	DescriptionOf Arg1:T27 Arg2:T25	
+R13	DescriptionOf Arg1:T28 Arg2:T25	
+*	Synonym T33 T32
+*	Synonym T36 T35
+*	Synonym T43 T42
+R14	DescriptionOf Arg1:T45 Arg2:T46	
+R15	BiblioOf Arg1:T49 Arg2:T48	
+R16	DescriptionOf Arg1:T52 Arg2:T51	
+T24	File 2938 2962	Singularity image format
+*	Synonym T62 T24
+T38	Hardware 3001 3011	Linux/UNIX
+R17	InputOf Arg1:T71 Arg2:T70	
+R18	InputOf Arg1:T74 Arg2:T70	
+R19	InputOf Arg1:T76 Arg2:T70	
+R20	IncludeIn Arg1:T71 Arg2:T72	
+R21	IncludeIn Arg1:T76 Arg2:T77	
+R22	DescriptionOf Arg1:T80 Arg2:T79	
+R23	DescriptionOf Arg1:T81 Arg2:T79	
+R24	DescriptionOf Arg1:T84 Arg2:T85	
+R25	DescriptionOf Arg1:T84 Arg2:T86	
+T47	Method 4507 4517	run.ReadQC
+R26	DescriptionOf Arg1:T87 Arg2:T47	
+R27	DescriptionOf Arg1:T87 Arg2:T88	
+T75	Method 4573 4590	run.ReadAlignment
+T82	Description 4629 4640	run.MultiQC
+R28	DescriptionOf Arg1:T89 Arg2:T75	
+R29	DescriptionOf Arg1:T89 Arg2:T90	
+T93	Description 4932 5032	downloads all the required workflow containers with the required software for executing the pipeline
+R30	DescriptionOf Arg1:T93 Arg2:T95	
+R31	DescriptionOf Arg1:T97 Arg2:T95	
+R32	BiblioOf Arg1:T106 Arg2:T105	
+R33	BiblioOf Arg1:T108 Arg2:T107	
+R34	DescriptionOf Arg1:T103 Arg2:T105	
+R35	DescriptionOf Arg1:T103 Arg2:T107	
+R36	DescriptionOf Arg1:T121 Arg2:T123	
+R37	DescriptionOf Arg1:T121 Arg2:T124	
+R38	BiblioOf Arg1:T127 Arg2:T126	
+R39	BiblioOf Arg1:T129 Arg2:T128	
+R40	DescriptionOf Arg1:T130 Arg2:T128	
+R41	DescriptionOf Arg1:T130 Arg2:T126	
+R42	IncludeIn Arg1:T125 Arg2:T126	
+R43	IncludeIn Arg1:T125 Arg2:T128	
+*	Synonym T132 T131
+T110	Method 6485 6502	run_QualityChecks
+R44	DescriptionOf Arg1:T135 Arg2:T134	
+R45	InputOf Arg1:T136 Arg2:T134	
+R46	IncludeIn Arg1:T110 Arg2:T134	
+R47	IncludeIn Arg1:T137 Arg2:T138	
+R48	DescriptionOf Arg1:T139 Arg2:T138	
+R49	DescriptionOf Arg1:T142 Arg2:T141	
+R50	DescriptionOf Arg1:T149 Arg2:T151	
+R51	InputOf Arg1:T148 Arg2:T151	
+R52	InputOf Arg1:T150 Arg2:T151	
+R53	BiblioOf Arg1:T152 Arg2:T151	
+R54	IncludeIn Arg1:T153 Arg2:T151	
+R55	DescriptionOf Arg1:T155 Arg2:T156	
+R56	DescriptionOf Arg1:T155 Arg2:T158	
+T265	Method 7409 7426	run_FeatureCounts
+R57	IncludeIn Arg1:T265 Arg2:T156	
+T266	Method 7475 7497	run_HTSeqCount process
+R58	IncludeIn Arg1:T266 Arg2:T158	
+R59	BiblioOf Arg1:T159 Arg2:T158	
+R60	BiblioOf Arg1:T157 Arg2:T156	
+R61	OutputOf Arg1:T154 Arg2:T151	
+R62	InputOf Arg1:T154 Arg2:T156	
+R63	InputOf Arg1:T154 Arg2:T158	
+T267	Method 7702 7713	run_MultiQC
+R64	IncludeIn Arg1:T267 Arg2:T163	
+R65	BiblioOf Arg1:T164 Arg2:T163	
+R66	DescriptionOf Arg1:T165 Arg2:T163	
+R67	OutputOf Arg1:T166 Arg2:T163	
+T167	Data 8105 8124	n number of folders
+T268	File 8318 8339	gene_counts_final.txt
+T269	File 8471 8492	gene_counts_final.txt
+T177	Data 8576 8592	report_QC folder
+R68	OutputOf Arg1:T167 Arg2:T170	
+R69	OutputOf Arg1:T172 Arg2:T170	
+R70	OutputOf Arg1:T175 Arg2:T170	
+R71	OutputOf Arg1:T177 Arg2:T170	
+T270	Data 8727 8749	report_workflow folder
+R72	OutputOf Arg1:T270 Arg2:T170	
+T271	WorkflowName 9057 9071	nf-rnaSeqCount
+R73	BiblioOf Arg1:T185 Arg2:T184	
+T186	WorkflowName 9306 9320	nf-rnaSeqCount
+R74	BiblioOf Arg1:T191 Arg2:T190	
+R75	BiblioOf Arg1:T193 Arg2:T192	
+T189	Hardware 9631 9650	UCT’s eResearch HPC
+R76	DescriptionOf Arg1:T198 Arg2:T197	
+T195	Hardware 9826 9846	Amazon Machine Image
+T196	Hardware 9848 9851	AMI
+*	Synonym T195 T196
+R77	DescriptionOf Arg1:T201 Arg2:T195	
+*	Synonym T203 T204
+R78	ParameterOf Arg1:T205 Arg2:T203	
+R79	ParameterOf Arg1:T206 Arg2:T203	
+T272	Hardware 10112 10115	AMI
+T273	Parameter 9972 9983	m4.10xlarge
+R80	ParameterOf Arg1:T273 Arg2:T203	
+R81	BiblioOf Arg1:T219 Arg2:T218	
+T274	LibraryPackage 10871 10879	Rsubread
+T275	LibraryPackage 11092 11100	Rsubread
+R82	ComeFrom Arg1:T222 Arg2:T224	
+*	Synonym T225 T224
+R83	ParameterOf Arg1:T233 Arg2:T232	
+T276	Parameter 11652 11659	12 CPUs
+R84	ParameterOf Arg1:T276 Arg2:T232	
+T277	LibraryPackage 12163 12171	Rsubread
+T278	LibraryPackage 12573 12581	Rsubread
+T279	LibraryPackage 12722 12730	Rsubread
+T280	LibraryPackage 12921 12929	Rsubread
+T281	Parameter 12866 12912	30 GB of memory and 648% of the allocated CPUs
+T282	Parameter 12583 12615	16 GB and 99% of allocated CPUs)
+T283	Parameter 12517 12559	35 GB of memory and 825% of allocated CPUs
+T257	Tool 13140 13153	featureCounts
+T284	Parameter 13286 13331	3 GB of memory and 810% of the allocated CPUs
+T285	LibraryPackage 13340 13348	Rsubread
+T286	Parameter 13385 13430	3 GB of memory and 870% of the allocated CPUs
+T287	LibraryPackage 13504 13512	Rsubread
+T288	Tool 13569 13580	htseq-count
+T289	Tool 13620 13631	htseq-count

@@ -1,0 +1,440 @@
+T1	Description 0 67	Reproducible, portable, and efficient ancient genome reconstruction
+T2	WorkflowName 73 86	nf-core/eager
+T3	WorkflowName 218 223	EAGER
+T5	WorkflowName 250 258	PALEOMIX
+T6	Data 266 291	Illumina short-read FASTQ
+T7	File 299 308	BAM files
+T8	File 315 335	reference FASTA file
+T9	WorkflowName 363 376	nf-core/eager
+T11	Method 417 431	Pre-processing
+T12	Tool 469 475	FastQC
+T13	Biblio 477 490	Andrews, 2010
+T14	Description 495 551	Sequencing artefact clean-up (merging, adapter clipping)
+T15	Tool 553 568	AdapterRemoval2
+T16	Biblio 570 605	Schubert, Lindgreen & Orlando, 2016
+T17	Tool 608 613	fastp
+T18	Biblio 615 632	Chen et al., 2018
+T19	Description 637 673	Pre-processing statistics generation
+T20	Tool 675 681	FastQC
+T21	Method 686 693	Mapping
+T22	Tool 759 766	BWA aln
+T23	Tool 759 762;771 774	BWA mem
+T24	Biblio 776 793	Li & Durbin, 2009
+T25	Biblio 794 802	Li, 2013
+T26	Tool 805 819	CircularMapper
+T27	Biblio 821 841	Peltzer et al., 2016
+T28	Tool 844 851	Bowtie2
+T29	Biblio 853 878	Langmead & Salzberg, 2012
+T30	Description 883 908	Mapping quality filtering
+T31	Tool 910 918	SAMtools
+T32	Biblio 920 935	Li et al., 2009
+T33	Description 940 961	PCR duplicate removal
+T34	Biblio 987 1026	http://broadinstitute.github.io/picard/
+T35	Tool 1029 1034	DeDup
+T36	Biblio 1036 1056	Peltzer et al., 2016
+T37	Description 1061 1090	Mapping statistics generation
+T38	Tool 1092 1100	SAMtools
+T39	Tool 1102 1108	PreSeq
+T40	Biblio 1110 1129	Daley & Smith, 2013
+T41	Tool 1132 1141	Qualimap2
+T42	Biblio 1143 1186	Okonechnikov, Conesa & García-Alcalde, 2016
+T43	Tool 1189 1197	bedtools
+T44	Biblio 1199 1219	Quinlan & Hall, 2010
+T45	Tool 1222 1236	Sex.DetERRmine
+T46	Biblio 1238 1259	Lamnidis et al., 2018
+T47	Method 1265 1280	aDNA evaluation
+T48	Tool 1325 1339	DamageProfiler
+T49	Biblio 1341 1373	Neukamm, Peltzer & Nieselt, 2020
+T50	Description 1378 1398	aDNA reads selection
+T51	Tool 1400 1408	PMDtools
+T52	Biblio 1410 1431	Skoglund et al., 2014
+T53	Description 1436 1464	Damage removal/Base trimming
+T54	Tool 1466 1476	mapDamage2
+T55	Biblio 1478 1498	Jónsson et al., 2013
+T56	Tool 1501 1509	Bamutils
+T57	Biblio 1511 1527	Jun et al., 2015
+T58	Description 1532 1570	Human nuclear contamination estimation
+T59	Tool 1572 1577	ANGSD
+T60	Biblio 1579 1620	Korneliussen, Albrechtsen & Nielsen, 2014
+T61	Description 1626 1675	Variant calling and consensus sequence generation
+T62	Tool 1677 1681;1703 1718	GATK HaplotypeCaller
+T63	Biblio 1720 1740	McKenna et al., 2010
+T64	Tool 1743 1769	sequenceTools pileupCaller
+T65	Biblio 1772 1813	https://github.com/stschiff/sequenceTools
+T66	Tool 1816 1826	VCF2Genome
+T67	Biblio 1828 1848	Peltzer et al., 2016
+T68	Tool 1851 1867	MultiVCFAnalyzer
+T69	Biblio 1869 1885	Bos et al., 2014
+T70	Description 1890 1907	Report generation
+T71	Tool 1909 1916	MultiQC
+T72	Biblio 1918 1936	Ewels et al., 2016
+T73	WorkflowName 1941 1954	nf-core/eager
+T74	WorkflowName 1985 1990	EAGER
+T75	Environment 2051 2059	Bioconda
+T76	Biblio 2061 2081	Grüning et al., 2018
+T77	Environment 2087 2098	conda-forge
+T79	Biblio 2101 2131	https://github.com/conda-forge
+T80	Tool 2206 2216	mapDamage2
+T81	Description 2222 2247	damage profile generation
+T82	Biblio 2250 2270	Jónsson et al., 2013
+T83	Tool 2276 2284	Schmutzi
+T84	Description 2290 2328	mitochondrial contamination estimation
+T85	Biblio 2331 2350	Renaud et al., 2015
+T86	WorkflowName 2390 2403	nf-core/eager
+T87	Biblio 2482 2514	Neukamm, Peltzer & Nieselt, 2020
+T88	Tool 2680 2688	Schmutzi
+T89	WorkflowName 2762 2775	nf-core/eager
+T90	Description 2796 2837	estimation of human nuclear contamination
+T91	Tool 2861 2866	ANGSD
+T92	File 2952 2961	BAM files
+T93	Tool 3051 3055	aDNA
+T94	Biblio 3057 3080	Poullet & Orlando, 2020
+T95	Tool 3123 3128	fastp
+T96	Description 3137 3177	removal of ’poly-G’ sequencing artefacts
+T97	Description 3305 3320	variant calling
+T98	Tool 3343 3352	FreeBayes
+T99	Biblio 3354 3376	Garrison & Marth, 2012
+T100	Tool 3417 3421	GATK
+T101	Tool 3449 3461	pileupCaller
+T102	Description 3466 3498	generation of genotyping formats
+T104	Tool 3688 3708	GATK HaplotypeCaller
+T106	Tool 3947 3963	MultiVCFAnalyzer
+T107	Biblio 4171 4192	Warinner et al., 2017
+T108	File 4199 4240	output SNP consensus alignment FASTA file
+T109	Description 4262 4281	downstream analyses
+T110	Description 4329 4374	coverage statistics of particular annotations
+T111	Tool 4425 4433	bedtools
+T112	Biblio 4570 4600	Andrades Valtueña et al., 2017
+T113	Description 4607 4632	analysis of human genomes
+T114	WorkflowName 4634 4647	nf-core/eager
+T115	Description 4662 4723	estimates of the relative coverage on the X and Y chromosomes
+T116	Tool 4729 4743	Sex.DetERRmine
+T117	Tool 4861 4870	endorS.py
+T118	Description 4893 4968	provide a percentage estimate of the sequenced reads matching the reference
+T119	Data 5130 5139	aDNA data
+T120	WorkflowName 5307 5312	EAGER
+T121	File 5447 5452;5460 5465	FASTQ files
+T123	File 5456 5465	BAM files
+T124	WorkflowName 5507 5520	nf-core/eager
+T125	Description 5555 5625	automated processing of complex sequencing strategies for many samples
+T126	WorkflowName 5638 5646	PALEOMIX
+T127	File 5693 5720	simple table (in TSV format
+T128	File 5800 5822	PALEOMIX’s YAML format
+T129	Description 5967 6071	allows automated and simultaneous processing and appropriate merging and treatment of heterogeneous data
+T130	Data 6053 6071	heterogeneous data
+T131	WorkflowName 6146 6151	EAGER
+T132	Data 6285 6300	sequencing data
+T133	WorkflowName 6332 6345	nf-core/eager
+T134	File 6414 6423	log files
+T135	File 6455 6480	single interactive report
+T136	Tool 6603 6610	MultiQC
+T137	WorkflowName 6641 6654	nf-core/eager
+T138	WorkflowName 6797 6802	EAGER
+T139	Method 6822 6850	ancient metagenomic analysis
+T140	Data 6973 6989	off-target reads
+T142	Tool 7059 7063	MALT
+T143	Biblio 7065 7084	Herbig et al., 2016
+T144	Biblio 7085 7104	Vågene et al., 2018
+T145	Tool 7110 7117	Kraken2
+T146	Biblio 7119 7144	Wood, Lu & Langmead, 2019
+T147	Data 7179 7201	given reference genome
+T148	Description 7278 7299	Pre-profiling removal
+T149	Tool 7436 7441	BBduk
+T150	Biblio 7443 7497	Brian Bushnell: http://sourceforge.net/projects/bbmap/
+T151	Description 7500 7596	Post-profiling characterisation of properties of authentic aDNA from metagenomic MALT alignments
+T152	Biblio 7651 7670	Hübler et al., 2019
+T153	Data 7814 7833	comparative samples
+T154	Biblio 7859 7878	Velsko et al., 2019
+T155	WorkflowName 7944 7957	nf-core/eager
+T156	File 8010 8025	raw FASTQ files
+T157	Data 8130 8166	metagenomic non-host sequencing data
+T159	WorkflowName 8374 8379	EAGER
+T160	WorkflowName 8381 8389	PALEOMIX
+T161	WorkflowName 8394 8407	nf-core/eager
+T162	WorkflowName 8432 8445	nf-core/eager
+T163	Hardware 8460 8490	POSIX-family operating systems
+T164	Hardware 8498 8503	Linux
+T165	Hardware 8508 8513	macOS
+T166	ProgrammingLanguage 8554 8558	Java
+T167	Version 8560 8563	>=8
+T168	ManagementSystem 8566 8574	Nextflow
+T169	Biblio 8576 8599	Di Tommaso et al., 2017
+T170	Hardware 8630 8648	environment system
+T171	Environment 8656 8661	Conda
+T172	Biblio 8664 8680	https://conda.io
+T173	Container 8683 8689	Docker
+T174	Biblio 8692 8714	https://www.docker.com
+T175	Container 8719 8730	Singularity
+T176	Biblio 8733 8750	https://sylabs.io
+T177	Hardware 8776 8790	local machines
+T178	Hardware 8802 8828	high performance computing
+T179	Hardware 8830 8833	HPC
+T180	ManagementSystem 8861 8869	Nextflow
+T181	Method 8961 8983	command-line interface
+T182	Method 8985 8988	CLI
+T183	Database 9135 9142	nf-core
+T184	Method 9163 9187	graphical user interface
+T185	Method 9189 9192	GUI
+T186	Database 9222 9226	CLIs
+T187	Biblio 9232 9255	https://nf-co.re/launch
+T188	ManagementSystem 9339 9347	Nextflow
+T190	File 9764 9790	raw short-read FASTQ files
+T191	File 9792 9801	BAM files
+T192	File 9808 9834	sample sheet in TSV format
+T193	File 9871 9903	reference genome in FASTA format
+T194	File 9916 9924	TSV file
+T195	Biblio 10184 10204	Rohland et al., 2015
+T196	File 10214 10230	Additional files
+T197	File 10303 10319	annotation files
+T198	WorkflowName 10458 10471	nf-core/eager
+T199	Description 10481 10494	sequencing QC
+T200	Description 10496 10512	adapter clipping
+T201	Hardware 10714 10725	HPC cluster
+T202	Hardware 10738 10755	scheduling system
+T203	ManagementSystem 10757 10765	Nextflow
+T204	File 10885 10921	output files in various file formats
+T205	File 10885 10897	output files
+T206	Data 11012 11037	statistical analysis data
+T208	File 11043 11068;11070 11073	standardised output files BAM
+T209	Description 11084 11132	close inspection and further downstream analysis
+T210	Tool 11147 11154	MultiQC
+T211	File 11147 11161	MultiQC report
+T212	Hardware 11202 11208	server
+T213	Biblio 11480 11506	fromBarquera et al. (2020)
+T214	Data 11957 11971	one individual
+T215	Description 12325 12418	Full step-by-step instructions on the setup of the human and pathogen screening demonstration
+T216	File 12436 12444	TSV file
+T217	Tool 12476 12482	inData
+T218	Version 12483 12485	S1
+T219	Biblio 12525 12547	Barquera et al. (2020)
+T221	WorkflowName 12554 12567	nf-core/eager
+T222	Version 12568 12574	v2.2.0
+T223	ManagementSystem 12596 12604	Nextflow
+T224	Version 12605 12621	version: 20.04.1
+T225	Description 12626 12728	simultaneously aligning publicly available shotgun-sequencing reads against the human reference genome
+T226	Data 12706 12728	human reference genome
+T227	Tool 12744 12751	bwa aln
+T228	Data 12760 12776	off-target reads
+T229	Version 12820 12832	October 2017
+T230	Database 12852 12858	Zenodo
+T231	Biblio 12865 12892	DOI: 10.5281/zenodo.4382153
+T232	Tool 12899 12903	MALT
+T233	Parameter 12905 12925	Alignment parameters
+T234	WorkflowName 13087 13100	nf-core/eager
+T235	Tool 13446 13453	MultiQC
+T237	Version 13463 13485	upcoming version v1.10
+T239	WorkflowName 13509 13522	nf-core/eager
+T240	Version 13526 13533	release
+T241	Tool 13617 13624	MultiQC
+T242	Version 13626 13641	commit: 7584e64
+T243	Tool 13664 13671	MultiQC
+T244	Biblio 13688 13709	https://multiqc.info/
+T245	Tool 13726 13733	MultiQC
+T246	WorkflowName 13931 13944	nf-core/eager
+T247	WorkflowName 13982 13987	EAGER
+T248	WorkflowName 13991 13999	PALEOMIX
+T249	Data 14027 14067	subset of Viking-age genomic data of cod
+T251	Biblio 14088 14106	Star et al. (2017)
+T252	Data 14113 14117	data
+T253	WorkflowName 14218 14226	PALEOMIX
+T254	Version 14228 14235	v1.2.14
+T255	Parameter 14247 14266	equivalent settings
+T256	Tool 14339 14344	EAGER
+T257	Version 14350 14358	v1.92.33
+T258	WorkflowName 14364 14377	nf-core/EAGER
+T260	Version 14383 14389	v2.2.0
+T262	Data 14507 14518	Two samples
+T263	Data 14535 14570	Illumina paired-end sequencing runs
+T264	Description 14591 14607	adapter clipping
+T265	Description 14612 14619	merging
+T266	Tool 14621 14635	AdapterRemoval
+T267	Description 14638 14645	mapping
+T268	Description 14657 14674	duplicate removal
+T269	Tool 14676 14699	Picard’s MarkDuplicates
+T270	Description 14705 14721	damage profiling
+T272	Tool 14733 14743	mapDamage2
+T273	Tool 14745 14750	EAGER
+T274	WorkflowName 14755 14768	nf-core/EAGER
+T275	Hardware 14851 14857	32 CPU
+T276	Hardware 14859 14875	AMD Opteron 23xx
+T277	Hardware 14881 14923	256 GB memory Red Hat QEMU Virtual Machine
+T278	Hardware 14936 14942	Ubuntu
+T279	Version 14943 14965	18.04 operating system
+T280	Hardware 14967 14979	Linux Kernel
+T281	Version 14980 14990	4.15.0-112
+T282	Hardware 15255 15273	cloud service’s IO
+T283	ProgrammingLanguage 15320 15323	GNU
+T284	Version 15335 15339	v1.7
+R1	DescriptionOf Arg1:T1 Arg2:T2	
+R2	InputOf Arg1:T8 Arg2:T9	
+R3	InputOf Arg1:T6 Arg2:T9	
+R4	InputOf Arg1:T7 Arg2:T9	
+T4	Description 441 467	Sequencing quality control
+R5	DescriptionOf Arg1:T4 Arg2:T12	
+R6	BiblioOf Arg1:T13 Arg2:T12	
+R7	DescriptionOf Arg1:T14 Arg2:T15	
+R8	BiblioOf Arg1:T16 Arg2:T15	
+R9	BiblioOf Arg1:T18 Arg2:T17	
+R10	DescriptionOf Arg1:T14 Arg2:T17	
+R11	DescriptionOf Arg1:T19 Arg2:T20	
+T10	Description 723 757	Alignment against reference genome
+R12	DescriptionOf Arg1:T10 Arg2:T23	
+R13	DescriptionOf Arg1:T10 Arg2:T22	
+R14	BiblioOf Arg1:T24 Arg2:T22	
+R15	BiblioOf Arg1:T25 Arg2:T23	
+R16	BiblioOf Arg1:T27 Arg2:T26	
+R17	BiblioOf Arg1:T29 Arg2:T28	
+R18	DescriptionOf Arg1:T10 Arg2:T26	
+R19	DescriptionOf Arg1:T10 Arg2:T28	
+R20	BiblioOf Arg1:T32 Arg2:T31	
+R21	DescriptionOf Arg1:T30 Arg2:T31	
+T285	Tool 963 984	Picard MarkDuplicates
+R22	BiblioOf Arg1:T34 Arg2:T285	
+R23	DescriptionOf Arg1:T33 Arg2:T285	
+R24	BiblioOf Arg1:T36 Arg2:T35	
+R25	DescriptionOf Arg1:T37 Arg2:T38	
+R26	DescriptionOf Arg1:T37 Arg2:T39	
+R27	BiblioOf Arg1:T40 Arg2:T38	
+R28	BiblioOf Arg1:T40 Arg2:T39	
+R29	BiblioOf Arg1:T42 Arg2:T41	
+R30	BiblioOf Arg1:T44 Arg2:T43	
+R31	BiblioOf Arg1:T46 Arg2:T45	
+R32	DescriptionOf Arg1:T37 Arg2:T41	
+R33	DescriptionOf Arg1:T37 Arg2:T43	
+R34	DescriptionOf Arg1:T37 Arg2:T45	
+T286	Method 698 713	post-processing
+T287	Method 1285 1297	modification
+T288	Description 1307 1323	Damage profiling
+R35	DescriptionOf Arg1:T288 Arg2:T48	
+R36	BiblioOf Arg1:T49 Arg2:T48	
+R37	DescriptionOf Arg1:T50 Arg2:T51	
+R38	BiblioOf Arg1:T52 Arg2:T51	
+R39	DescriptionOf Arg1:T53 Arg2:T54	
+R40	BiblioOf Arg1:T55 Arg2:T54	
+R41	BiblioOf Arg1:T57 Arg2:T56	
+R42	DescriptionOf Arg1:T58 Arg2:T59	
+R43	BiblioOf Arg1:T60 Arg2:T59	
+T289	Tool 1677 1698	GATK UnifiedGenotyper
+R44	DescriptionOf Arg1:T61 Arg2:T289	
+R45	DescriptionOf Arg1:T61 Arg2:T62	
+R46	BiblioOf Arg1:T63 Arg2:T62	
+R47	BiblioOf Arg1:T63 Arg2:T289	
+R48	BiblioOf Arg1:T65 Arg2:T64	
+R49	BiblioOf Arg1:T67 Arg2:T66	
+R50	BiblioOf Arg1:T69 Arg2:T68	
+R51	BiblioOf Arg1:T72 Arg2:T71	
+R52	DescriptionOf Arg1:T70 Arg2:T71	
+R53	BiblioOf Arg1:T76 Arg2:T75	
+R54	BiblioOf Arg1:T79 Arg2:T77	
+T78	Description 2137 2200	ensure widespread accessibility and stability of utilised tools
+R55	DescriptionOf Arg1:T78 Arg2:T77	
+R56	DescriptionOf Arg1:T78 Arg2:T75	
+R57	DescriptionOf Arg1:T81 Arg2:T80	
+R58	BiblioOf Arg1:T82 Arg2:T80	
+R59	DescriptionOf Arg1:T84 Arg2:T83	
+R60	BiblioOf Arg1:T85 Arg2:T83	
+T290	Tool 2467 2481	DamageProfiler
+R61	BiblioOf Arg1:T87 Arg2:T290	
+T291	Environment 2596 2604	Bioconda
+T292	Tool 2868 2878	mapDamage2
+R62	InputOf Arg1:T92 Arg2:T292	
+T293	Description 2902 2946	offer probabilistic in silico damage removal
+R63	DescriptionOf Arg1:T293 Arg2:T292	
+T294	Tool 2979 2986	Bowtie2
+R64	BiblioOf Arg1:T94 Arg2:T93	
+R65	DescriptionOf Arg1:T96 Arg2:T95	
+T295	Tool 3269 3276	NextSeq
+T296	Tool 3281 3288	NovaSeq
+T297	Description 3289 3298	platforms
+R66	DescriptionOf Arg1:T297 Arg2:T295	
+R67	DescriptionOf Arg1:T297 Arg2:T296	
+R68	DescriptionOf Arg1:T97 Arg2:T98	
+R69	BiblioOf Arg1:T99 Arg2:T98	
+R70	DescriptionOf Arg1:T102 Arg2:T101	
+T298	Tool 3635 3656	GATK UnifiedGenotyper
+T103	Method 4290 4320	phylogenetic tree construction
+R71	DescriptionOf Arg1:T109 Arg2:T103	
+R72	InputOf Arg1:T108 Arg2:T103	
+R73	DescriptionOf Arg1:T115 Arg2:T116	
+T105	Description 4766 4818	infer the biological sex of a given human individual
+R74	DescriptionOf Arg1:T105 Arg2:T116	
+T299	Method 4832 4859	‘endogenous DNA’ calculator
+R75	DescriptionOf Arg1:T118 Arg2:T299	
+R76	DescriptionOf Arg1:T125 Arg2:T124	
+T122	WorkflowName 5800 5808	PALEOMIX
+T300	WorkflowName 6156 6164	PALEOMIX
+T301	File 6373 6387	MultiQC report
+T302	Tool 6373 6380	MultiQC
+T141	Description 7036 7057	metagenomic profilers
+R77	DescriptionOf Arg1:T141 Arg2:T142	
+R78	DescriptionOf Arg1:T141 Arg2:T145	
+R79	BiblioOf Arg1:T146 Arg2:T145	
+R80	BiblioOf Arg1:T143 Arg2:T142	
+R81	BiblioOf Arg1:T144 Arg2:T142	
+T303	Method 7166 7173	mapping
+R82	BiblioOf Arg1:T150 Arg2:T149	
+R83	DescriptionOf Arg1:T148 Arg2:T149	
+T304	Tool 7617 7628	MaltExtract
+T305	WorkflowName 7636 7640	HOPS
+R84	DescriptionOf Arg1:T151 Arg2:T304	
+R85	IncludeIn Arg1:T305 Arg2:T304	
+R86	BiblioOf Arg1:T152 Arg2:T304	
+R87	VersionOf Arg1:T167 Arg2:T166	
+R88	BiblioOf Arg1:T169 Arg2:T168	
+T158	Container 8608 8626	software container
+R89	BiblioOf Arg1:T172 Arg2:T171	
+R90	BiblioOf Arg1:T174 Arg2:T173	
+R91	BiblioOf Arg1:T176 Arg2:T175	
+*	Synonym T179 T178
+*	Synonym T182 T181
+*	Synonym T185 T184
+R92	BiblioOf Arg1:T187 Arg2:T183	
+T189	Description 10554 10618	aligning of the processed reads to the supplied reference genome
+T306	Description 10620 10641	PCR duplicate removal
+T307	Description 10654 10696	aDNA damage and mapping-quality evaluation
+R93	DescriptionOf Arg1:T199 Arg2:T198	
+R94	DescriptionOf Arg1:T200 Arg2:T198	
+R95	DescriptionOf Arg1:T189 Arg2:T198	
+R96	DescriptionOf Arg1:T306 Arg2:T198	
+R97	DescriptionOf Arg1:T307 Arg2:T198	
+T308	File 11043 11068;11075 11078	standardised output files VCF
+T207	Data 12158 12175	second individual
+R98	DescriptionOf Arg1:T215 Arg2:T217	
+R99	VersionOf Arg1:T218 Arg2:T217	
+R100	VersionOf Arg1:T222 Arg2:T221	
+T220	Version 12576 12591	commit: e7471a7
+R101	VersionOf Arg1:T220 Arg2:T221	
+R102	VersionOf Arg1:T224 Arg2:T223	
+R103	DescriptionOf Arg1:T225 Arg2:T221	
+T309	Database 12789 12804	NCBI Nucleotide
+T310	Database 12806 12808	nt
+R104	VersionOf Arg1:T229 Arg2:T309	
+*	Synonym T310 T309
+R105	BiblioOf Arg1:T231 Arg2:T230	
+R106	VersionOf Arg1:T237 Arg2:T235	
+R107	VersionOf Arg1:T240 Arg2:T239	
+T236	Tool 13560 13564	HOPS
+R108	VersionOf Arg1:T242 Arg2:T241	
+R109	BiblioOf Arg1:T244 Arg2:T243	
+R110	BiblioOf Arg1:T251 Arg2:T249	
+T238	Data 14070 14082	Gadus morhua
+*	Synonym T238 T249
+T250	WorkflowName 14143 14151	PALEOMIX
+R111	VersionOf Arg1:T254 Arg2:T253	
+R112	VersionOf Arg1:T257 Arg2:T256	
+R113	VersionOf Arg1:T260 Arg2:T258	
+T259	Version 14391 14405	commit 830c22d
+R114	VersionOf Arg1:T259 Arg2:T258	
+T261	Tool 14647 14654	BWA aln
+T311	WorkflowName 14723 14731	PALEOMIX
+T312	Tool 14770 14784	DamageProfiler
+R115	DescriptionOf Arg1:T270 Arg2:T272	
+R116	DescriptionOf Arg1:T270 Arg2:T273	
+R117	DescriptionOf Arg1:T270 Arg2:T312	
+R118	DescriptionOf Arg1:T265 Arg2:T266	
+R119	DescriptionOf Arg1:T264 Arg2:T266	
+R120	DescriptionOf Arg1:T267 Arg2:T261	
+R121	DescriptionOf Arg1:T268 Arg2:T269	
+R122	VersionOf Arg1:T279 Arg2:T278	
+R123	VersionOf Arg1:T281 Arg2:T280	
+R124	VersionOf Arg1:T284 Arg2:T283	

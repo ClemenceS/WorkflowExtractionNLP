@@ -1,0 +1,99 @@
+GenomeChronicler: The Personal Genome Project UK Genomic Report Generator Pipeline
+
+
+	Materials and Methods
+
+
+
+	Data Input
+
+The GenomeChronicler pipeline was designed to run downstream of a standardized germline variant calling pipeline. GenomeChronicler requires a pre-processed BAM or CRAM file with deduplication and quality recalibrated alignments against the GRCh38 genome assembly and optionally, the summary HTML report produced by the Ensembl Variant Effect Predictor (McLaren et al., 2016).
+GenomeChronicler can be run with any variant caller provided that the reference dataset is matched to the reference genome used (the included GenomeChronicler databases currently use GRCh38). It is also imperative, to obtain good quality results, that the BAM or CRAM files used have had their duplicates removed and quality recalibrated prior to being used for GenomeChronicler.
+To simplify this entire process and to make the tool more accessible to users who may not know how to run a germline variant calling pipeline, GenomeChronicler can also be run in a fully automated mode from the raw sequencing data, where the germline variant calling pipeline is also run and the whole process is managed by the Nextflow workflow management system (Di Tommaso et al., 2017). In this scenario, GenomeChronicler uses the Sarek pipeline[2] (Garcia et al., 2020) to process raw FASTQ files in a manner that follows the GATK variant calling best practices guidelines (Van der Auwera et al., 2013). Manual inspection of the initial quality control steps of Sarek is recommended prior to perusing the final results.
+The combined version of Sarek + GenomeChronicler written using the Nextflow workflow manager (Di Tommaso et al., 2017) is available both on Github[3] and on Lifebit CloudOS.
+
+
+	Ancestry Inference
+
+We infer the ancestry of each individual through a Principal Components Analysis (PCA) which is a widely used approach for identifying ancestry similarities among individuals (Novembre et al., 2008).
+For each sample of interest, we intersect the genotypes with a reference dataset consisting of genotypes from the 1000 Genomes Project samples (The 1000 Genomes Project Consortium, 2015), containing individuals from 26 different worldwide populations and applying PCA on the resulting genotype matrix.
+The reference samples from the 1000 Genome Project are filtered to keep only unrelated individuals. In order to avoid strand issues when merging the datasets, all ambiguous (A/T and C/G) SNPs were removed, as well as non-biallelic SNPs, SNPs with > 5% of missing data, rare variants (MAF < 0.05) and SNPs out of Hardy-Weinberg equilibrium (pval < 0.0001). From the remaining SNPs, a subset of unlinked SNPs are selected by pruning those with r2 > 0.1 using 100-SNP windows shifted at 5-SNP intervals.
+These genotypes are used to run PCA based on the variance-standardized relationship matrix, selecting twenty as the number of PCs to be extracted. We then project the data over the first three principal components to identify clusters of populations and highlight the sample of unknown ancestry on the resulting plot.
+Here, we used PLINK (Purcell et al., 2007) to process the genotype data and the R Statistical Computing platform for plotting the final PCA figures to illustrate the ancestry of each sample. An example of the distribution of the reference samples on the PCA is shown inFigure 2.
+
+
+	Variant Annotation Databases
+
+
+
+	SNPedia
+
+SNPedia (Cariaso and Lennon, 2012) is a large public repository of manually added as well as automatically mined genotype to phenotype links sourced from existing literature. SNPedia is the core resource behind the phenotype tables in GenomeChronicler; it provides annotations for both single-gene phenotypes as well as for a few phenotypes involving multiple loci referred to as genosets in the produced reports.
+
+
+	ClinVar
+
+ClinVar (Landrum and Kattman, 2018) is a database hosted by the NCBI that focuses exclusively on variants related to health and has been running since 2013. In comparison to SNPedia, ClinVar is a much smaller database but it is closely linked to the clinical relevance of each variant. ClinVar is curated more strictly with a clinical review – something unique among the data sources used by GenomeChronicler.
+
+
+	GETevidence
+
+GETevidence was developed as part of the Personal Genome Project Harvard (Mao et al., 2016) to showcase the variants present within its participants and to allow manual annotation and interpretations of the results. For some of the genotypes present, it also contains manual annotations that have been added by the users or curation team. GETevidence allows individuals to compare their genotypes with those from other personal genomes available within the PGP-Harvard project.
+
+
+	gnomAD
+
+Spanning several human populations, the Genome Aggregation Database (gnomAD) (Karczewski et al., 2019) aggregates data from multiple sources to produce an atlas of variation across the human genome. Extensively annotated and now covering most of the latest assembly of the human genome, these links enable easy access to information such as allele frequencies for the genotype across different populations around the world, as well as some annotation context for each variant, regarding potential effect on genes if relevant and how selection forces are constraining the genomic locus.
+
+
+	Database Availability, Building and Update
+
+The underlying databases required to run GenomeChronicler are provided within the package. A set of scripts to regenerate these SQLite databases is also provided within the source code. The datasets are limited to positions of interest is compiled so that when genotyping is performed only relevant positions are computed to save computational time.
+SNPedia provides an API to query its records in a systematic way. The other linked databases provide regular dumps of the whole dataset, enabling easy assessment for which dbSNP rs identifiers are represented within the full database. The use of rs identifiers and genotypes to link between the different databases enables an unambiguous way to compare information between different resources.
+
+
+	Genotype Assessment and Reporting
+
+Typical germline variant calling pipelines result in a VCF file where positions that match the reference sequence are not reported. Homozygous reference genotypes thus become indistinguishable from positions in the genome where there is no read coverage.
+To ensure comparable results between runs, genotype VCFs (gVCFs) instead of VCFs are computed during each run of GenomeChronicler, but only for a subset of genomic positions that informative for ancestry inference or phenotype annotation, saving computational time and storage space.
+
+
+	The Genome Report Template
+
+GenomeChronicler is designed in a modular way where the final report is only compiled at the end, integrating all the results. To customize the report layout, the content and the amount of extra information, GenomeChronicler uses a template file written in LaTeX. For example, one can modify the branding and introductory text of the report, integrate custom or third-party analyses provided the results are in a format that can be typeset using LaTeX, omit certain sections, or even modify the structure of the report produced.
+
+
+	Output Files
+
+The main output of GenomeChronicler is a report in PDF format, containing information from all sections of the pipeline that have run as set by the LaTeX template provided when running the script. Additionally, an Excel file containing the genotype phenotype link information, and all corresponding hyperlinks is also produced, allowing the user to explore the results in a familiar environment. While most intermediate files are automatically removed at the end of the GenomeChronicler run, the original PDF version of the ancestry PCA plot, as well as a file containing the sample name, genotyping results and pipeline log files are retained within the results directory to ease automation.
+
+
+	Pipeline Validation
+
+To further validate the pipeline, 1000 Genome Project generated illumina data for sample NA12878 was used. Genomic data for sample NA12878 mapped to the human reference genome (GRCh38) was retrieved from the 1000 Genome Project[4] and converted to BAM file using the SAMtools toolkit. High confidence genotype calls were retrieved from Genome-in-a-Bottle[5]. The GenomeChronicler pipeline was run on the data, and the resulting genotype calls in high confidence regions were compared to the reference calls using BCFtools to assess genotype concordance.
+
+
+	Running GenomeChronicler
+
+In line with the PGP-UK data, all the code for GenomeChronicler is freely available. To make it easier to implement, several options are available to eliminate the need for installing dependencies and underlying packages, or even the need to have access to computer hardware capable of handling the processing of a human genome. The range of options available is detailed below and illustrated inFigure 1.
+
+
+	Running GenomeChronicler Locally
+
+
+
+	From the available source code
+
+The source code for GenomeChronicler is available on GitHub at https://github.com/PGP-UK/GenomeChronicler. A setup script is included to automatically download the pre-compiled accessory databases and other required data. Software dependencies including LaTeX, R and Perl need to be installed independently if not using the Singularity container. The provided Singularity recipe file provides a useful list of required packages, in particular for those installing it on a Debian/Ubuntu based system.
+
+
+	Using a pre-compiled container
+
+GenomeChronicler is also available as a Singularity container (Kurtzer et al., 2017) with all dependencies pre-installed and ready. This can be obtained from SingularityHub (Sochat et al., 2017) by running the command: singularity pull “shub://PGP-UK/GenomeChronicler” on any machine that has Singularity installed.
+Once downloaded, the main script (GenomeChronicler_ mainDruid.pl) can be run with the desired data and options to produce genome reports.
+
+
+	Running GenomeChronicler on Cloud
+
+To enable reproducible, massively parallel, cloud native analyses, GenomeChronicler has also been implemented as a Nextflow pipeline. The implementation abstracts the installation overhead from the end user, as all the dependencies are already available via pre-built containers, integrated seamlessly in the Nextflow pipeline. The source code for this implementation is available on GitHub at https://github.com/PGP-UK/GenomeChronicler-nf, as a standalone Nextflow process.
+To provide an end-to-end FASTQ to PGP-UK reports pipeline, we also implemented an integration of GenomeChronicler, with a curated and widely used by the bioinformatics community pipeline, namely Sarek (Ewels et al., 2019;Garcia et al., 2020). This PGP-UK implementation of Sarek is available on GitHub at https://github.com/PGP-UK/GenomeChronicler-Sarek-nf. The aforementioned pipeline is available in the collection of curated pipelines on the Lifebit CloudOS platform[6]. Lifebit CloudOS enables users without any prior cloud computing knowledge to deploy analysis in the cloud. In order to run the pipeline, the user only needs to specify input files, desired parameters and select resources from an intuitive graphical user interface. After the completion of the analysis on Lifebit CloudOS, the user has a permanent shareable live link that includes performance and file metadata, the associated GitHub repository revision and also links to the generated results. The relevant analysis page can be used to repeat the exact same analysis. The analysis page for the PGP-UK user with id uk35C650 can be accessed in the following permalink https://cloudos.lifebit.ai/public/jobs/5e74d60babdee600f94df39b. Each analysis can have different privacy settings allowing the user to choose if the results are publicly visible, making it easier for sharing or private use, thus maintaining data confidentiality.

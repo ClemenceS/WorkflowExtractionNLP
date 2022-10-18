@@ -1,0 +1,432 @@
+T1	Description 0 114	Metagenomics workflow for hybrid assembly, differential coverage binning, metatranscriptomics and pathway analysis
+T2	WorkflowName 116 122	MUFFIN
+T3	Method 141 153	Metagenomics
+T4	Description 172 245	analyze the composition, structure, and dynamics of microbial communities
+T5	Method 421 455	short-read sequencing technologies
+T6	Data 572 591	metagenomic samples
+T7	Data 612 623	short reads
+T8	Method 684 690	PacBio
+T9	Biblio 822 823	6
+T10	Biblio 952 953	6
+T11	Method 1062 1087	nanopore-based sequencing
+T12	Biblio 1089 1090	7
+T13	Biblio 1141 1142	8
+T14	Data 1208 1218	long reads
+T15	Biblio 1269 1270	9
+T16	Biblio 1271 1273	12
+T17	Tool 1300 1306	MinION
+T18	Method 1308 1311	ONT
+T19	Data 1367 1377	long reads
+T20	Data 1491 1501	long reads
+T21	Data 1506 1532	high-precision short reads
+T22	Biblio 1632 1633	6
+T23	Biblio 1984 1986	13
+T24	Method 2123 2153	large-scale metagenomics study
+T25	Hardware 2592 2597	SLURM
+T26	Hardware 2601 2604	LSF
+T27	ManagementSystem 2639 2647	Nextflow
+T28	Biblio 2649 2651	14
+T29	WorkflowName 2913 2921	MetaWRAP
+T30	Version 2922 2928	v1.2.1
+T31	Biblio 2931 2933	15
+T32	WorkflowName 2936 2942	Anvi’o
+T33	Biblio 2944 2946	16
+T34	WorkflowName 2949 2955	SAMSA2
+T35	Biblio 2957 2959	17
+T36	WorkflowName 2962 2968	Humann
+T37	Biblio 2970 2972	18
+T38	WorkflowName 2975 2982	MG-Rast
+T39	Biblio 2984 2986	19
+T40	WorkflowName 2989 2994	ATLAS
+T41	Biblio 2996 2998	20
+T42	WorkflowName 3004 3011	Sunbeam
+T43	Biblio 3013 3015	21
+T44	WorkflowName 3032 3038	MUFFIN
+T45	Data 3107 3127	short and long reads
+T46	Description 3132 3155	ensures reproducibility
+T48	Environment 3234 3239	Conda
+T49	Biblio 3241 3243	22
+T51	Container 3261 3267	Docker
+T52	Biblio 3269 3271	23
+T53	WorkflowName 3318 3324	MUFFIN
+T54	Tool 3336 3372	state-of-the-art bioinformatic tools
+T55	Environment 3377 3382	Conda
+T56	Container 3394 3400	Docker
+T57	Container 3401 3412	Singularity
+T58	Description 3432 3467	processing of metagenomic sequences
+T59	ManagementSystem 3473 3481	Nextflow
+T60	Tool 3512 3518	MUFFIN
+T61	Data 3600 3604	MAGs
+T62	Description 3784 3811	Hybrid assembly and binning
+T63	Data 3942 3967	paired-end Illumina reads
+T64	Data 3969 3980	short reads
+T65	Data 3986 4006	nanopore-based reads
+T66	Data 4008 4018	long reads
+T67	Biblio 4257 4259	24
+T68	File 4396 4437	directory containing MAGs in FASTA format
+T69	Data 4450 4473	paired-end RNA-Seq data
+T70	WorkflowName 4555 4561	MUFFIN
+T71	Data 4599 4603	MAGs
+T72	Data 4605 4618	KEGG pathways
+T73	Data 4624 4647	bin quality/annotations
+T74	Database 4667 4686	mandatory databases
+T75	Data 4897 4934	metagenomic nanopore-based long reads
+T76	Data 4939 4970	Illumina paired-end short reads
+T77	Description 5024 5050	short-read quality control
+T78	Tool 5069 5074	fastp
+T79	Version 5076 5083	v0.20.0
+T80	Biblio 5086 5088	25
+T81	Tool 5103 5111	Filtlong
+T82	Version 5113 5119	v0.2.0
+T83	Biblio 5122 5124	26
+T84	Description 5191 5206	hybrid assembly
+T87	Tool 5417 5427	metaSPAdes
+T88	Version 5429 5436	v3.13.2
+T89	Biblio 5439 5441	27
+T90	Biblio 5442 5444	29
+T91	WorkflowName 5462 5468	MUFFIN
+T92	Data 5501 5524	long-read-only assembly
+T93	Tool 5531 5539	metaFlye
+T94	Version 5541 5545	v2.8
+T95	Biblio 5548 5550	30
+T96	Biblio 5551 5553	31
+T97	Description 5567 5589	polishing the assembly
+T98	Data 5599 5609	long reads
+T99	Tool 5616 5621	Racon
+T100	Version 5623 5630	v1.4.13
+T101	Biblio 5633 5635	32
+T102	Tool 5641 5647	medaka
+T103	Version 5649 5655	v1.0.3
+T104	Biblio 5658 5660	33
+T105	Description 5666 5697	finalizing the error correction
+T106	Data 5719 5730	short reads
+T107	Tool 5756 5761	Pilon
+T108	Version 5763 5768	v1.23
+T110	Biblio 5771 5773	34
+T111	Data 5890 5905	short read data
+T112	Tool 5920 5931	meta-spades
+T113	Data 5994 6008	long-read data
+T114	Biblio 6096 6098	35
+T115	Tool 6100 6104	flye
+T116	Description 6127 6144	assembly approach
+T117	Method 6146 6153	Binning
+T118	WorkflowName 6244 6250	MUFFIN
+T119	Tool 6313 6320	CONCOCT
+T120	Version 6322 6328	v1.1.0
+T121	Biblio 6331 6333	36
+T122	Tool 6336 6343	MaxBin2
+T123	Version 6345 6351	v2.2.7
+T124	Biblio 6354 6356	37
+T125	Tool 6363 6371	MetaBAT2
+T126	Version 6373 6378	v2.13
+T128	Biblio 6381 6383	38
+T129	Description 6389 6413	refine the obtained bins
+T130	Tool 6418 6426	MetaWRAP
+T131	Version 6428 6432	v1.3
+T132	Biblio 6435 6437	15
+T133	Biblio 6756 6758	15
+T134	Description 6865 6875	reassembly
+T135	Description 6947 6955	assembly
+T136	Tool 6961 6970	Unicycler
+T137	Version 6972 6978	v0.4.7
+T138	Biblio 6981 6983	39
+T139	Biblio 7219 7234	Uritskiy et al.
+T140	Biblio 7236 7238	15
+T141	Data 7310 7315	reads
+T142	Data 7455 7469	"unused" reads
+T143	Tool 7519 7526	Kraken2
+T144	Biblio 7528 7530	40
+T145	Tool 7533 7538	Kaiju
+T146	Biblio 7540 7542	41
+T147	Tool 7548 7558	centrifuge
+T148	Biblio 7560 7562	42
+T149	Description 7568 7587	read classification
+T150	Biblio 7607 7609	43
+T151	Description 7614 7631	search for phages
+T152	Tool 7633 7641	mi-faser
+T153	Biblio 7643 7645	44
+T154	Description 7651 7685	functional annotation of the reads
+T156	WorkflowName 7732 7738	MUFFIN
+T157	Description 7878 7910	quality of the bins is evaluated
+T158	Tool 7916 7922	CheckM
+T159	Version 7924 7930	v1.1.3
+T160	Biblio 7933 7935	45
+T161	Description 7949 7997	assigning a taxonomic classification to the bins
+T162	Tool 8004 8012	sourmash
+T163	Version 8014 8020	v2.0.1
+T164	Biblio 8023 8025	46
+T165	Database 8035 8059	Genome Taxonomy Database
+T166	Biblio 8080 8082	47
+T167	Database 8089 8093	GTDB
+T168	Biblio 8246 8248	35
+T169	Biblio 8249 8251	48
+T170	Database 8385 8389	GTDB
+T171	Biblio 8451 8453	48
+T172	File 8576 8587	FASTA files
+T173	WorkflowName 8674 8680	MUFFIN
+T174	Method 8683 8697	Bin annotation
+T175	Description 8732 8754	annotation of the bins
+T176	Data 8750 8754	bins
+T177	Tool 8761 8774	eggNOG-mapper
+T178	Version 8776 8782	v2.0.1
+T179	Biblio 8785 8787	49
+T180	Version 8814 8816	v5
+T181	Biblio 8819 8821	50
+T182	Data 8827 8864	RNA-Seq data of the metagenome sample
+T183	Description 8901 8916	quality control
+T184	Tool 8923 8928	fastp
+T185	Version 8930 8937	v0.20.0
+T186	Biblio 8940 8942	25
+T187	Description 8948 8981	a de novo metatranscript assembly
+T188	Tool 8988 8995	Trinity
+T189	Version 8997 9003	v2.9.1
+T190	Biblio 9006 9008	51
+T191	Description 9022 9059	quantification of the metatranscripts
+T192	Description 9063 9091	mapping of the RNA-seq reads
+T193	Data 9078 9091	RNA-seq reads
+T194	Tool 9098 9104	Salmon
+T195	Version 9106 9110	v1.0
+T196	Biblio 9113 9115	52
+T197	Data 9144 9159	metatranscripts
+T198	Description 9164 9173	annotated
+T199	Tool 9180 9193	eggNOG-mapper
+T200	Version 9195 9201	v2.0.1
+T201	Biblio 9204 9206	49
+T202	Description 9220 9230	annotation
+T203	Tool 9234 9247	eggnog-mapper
+T204	Description 9259 9295	wide array of annotation information
+T205	Data 9308 9316	GO terms
+T206	Data 9322 9331	NOG terms
+T207	Data 9337 9350	BiGG reaction
+T208	Data 9352 9356	CAZy
+T209	Data 9358 9372	KEGG orthology
+T210	Data 9378 9386	pathways
+T211	Data 9394 9410	gene annotations
+T212	Description 9415 9436	parsed and visualized
+T213	Data 9440 9453	KEGG pathways
+T214	Data 9563 9571	bin sets
+T215	Data 9597 9609	RNA-Seq data
+T216	File 9747 9757	HTML files
+T217	Data 9839 9846	bin set
+T218	WorkflowName 9867 9875	workflow
+T219	WorkflowName 9888 9894	MUFFIN
+T220	WorkflowName 9916 9922	MUFFIN
+T221	Version 9924 9930	V1.0.3
+T222	Biblio 9932 9954	10.5281/zenodo.4296623
+T223	Description 10066 10092	workflow management system
+T224	ManagementSystem 10093 10101	Nextflow
+T225	Biblio 10103 10105	14
+T226	Version 10108 10122	version 20.07+
+T227	Biblio 10160 10162	20
+T228	Biblio 10164 10166	22
+T229	Description 10173 10188	package manager
+T230	Container 10192 10198	Docker
+T231	Biblio 10200 10202	23
+T232	Container 10206 10217	Singularity
+T233	Biblio 10294 10329	https://github.com/RVanDamme/MUFFIN
+T234	ManagementSystem 10365 10373	Nextflow
+T235	WorkflowName 10419 10425	MUFFIN
+T236	Version 10426 10433	V1.0.2+
+T237	ManagementSystem 10449 10457	nextflow
+T238	Version 10458 10472	version 20.07+
+T239	ManagementSystem 10476 10484	Nextflow
+T240	File 10542 10557	executable file
+T241	Biblio 10563 10611	https://github.com/nextflow-io/nextflow/releases
+T242	WorkflowName 10656 10662	MUFFIN
+T243	Parameter 10679 10686	-r flag
+R1	DescriptionOf Arg1:T1 Arg2:T2	
+R2	DescriptionOf Arg1:T4 Arg2:T3	
+T245	Method 483 491	Illumina
+T246	Method 634 667	long-read sequencing technologies
+T247	Method 694 722	Oxford Nanopore Technologies
+T248	Method 724 727	ONT
+*	Synonym T248 T247
+T249	Description 730 820	retrieve genomes from metagenomic datasets with higher completeness and less contamination
+R3	DescriptionOf Arg1:T249 Arg2:T247	
+R4	DescriptionOf Arg1:T249 Arg2:T8	
+T250	Data 1010 1031	environmental samples
+T251	Data 956 978	Complete viral genomes
+R5	BiblioOf Arg1:T12 Arg2:T11	
+T244	Biblio 344 345	1
+T252	Biblio 346 347	5
+R6	OutputOf Arg1:T251 Arg2:T11	
+R7	InputOf Arg1:T250 Arg2:T11	
+T253	Description 1319 1446	mobile and cost-effective sequencing device for long reads that paves the way for the real-time analysis of metagenomic samples
+R8	DescriptionOf Arg1:T253 Arg2:T18	
+T254	Data 1595 1623	metagenome-assembled genomes
+T255	Data 1625 1629	MAGs
+*	Synonym T254 T255
+R9	BiblioOf Arg1:T22 Arg2:T254	
+T256	Tool 1867 1907	24,490 bioinformatics software resources
+T257	Description 2183 2215	analyze the data comprehensively
+R10	DescriptionOf Arg1:T257 Arg2:T24	
+R11	BiblioOf Arg1:T28 Arg2:T27	
+T258	Hardware 2505 2538	high-performance compute clusters
+T259	Hardware 2540 2544	HPCs
+*	Synonym T259 T258
+R12	VersionOf Arg1:T30 Arg2:T29	
+R13	BiblioOf Arg1:T31 Arg2:T29	
+R14	BiblioOf Arg1:T33 Arg2:T32	
+R15	BiblioOf Arg1:T35 Arg2:T34	
+R16	BiblioOf Arg1:T37 Arg2:T36	
+R17	BiblioOf Arg1:T39 Arg2:T38	
+R18	BiblioOf Arg1:T41 Arg2:T40	
+R19	BiblioOf Arg1:T43 Arg2:T42	
+R20	BiblioOf Arg1:T49 Arg2:T48	
+R21	BiblioOf Arg1:T52 Arg2:T51	
+T47	Container 3274 3285	Singularity
+R22	IncludeIn Arg1:T53 Arg2:T54	
+R23	DescriptionOf Arg1:T58 Arg2:T53	
+T50	Description 3528 3566	three steps subsequently or separately
+R24	DescriptionOf Arg1:T50 Arg2:T60	
+T260	Description 3825 3869	Bin quality control and taxonomic assessment
+T261	Description 3883 3922	Bin annotation and KEGG pathway summary
+T262	Method 3774 3782	Assemble
+T263	Method 3815 3823	Classify
+T264	Method 3873 3881	Annotate
+R25	DescriptionOf Arg1:T62 Arg2:T262	
+R26	DescriptionOf Arg1:T260 Arg2:T263	
+R27	DescriptionOf Arg1:T261 Arg2:T264	
+T265	WorkflowName 4387 4393	MUFFIN
+R28	InputOf Arg1:T68 Arg2:T265	
+R29	OutputOf Arg1:T71 Arg2:T70	
+R30	OutputOf Arg1:T72 Arg2:T70	
+R31	OutputOf Arg1:T73 Arg2:T70	
+T266	Method 4870 4878	Assembly
+R32	InputOf Arg1:T75 Arg2:T266	
+R33	InputOf Arg1:T76 Arg2:T266	
+R34	DescriptionOf Arg1:T77 Arg2:T78	
+R35	VersionOf Arg1:T79 Arg2:T78	
+R36	BiblioOf Arg1:T80 Arg2:T78	
+R37	VersionOf Arg1:T82 Arg2:T81	
+R38	BiblioOf Arg1:T83 Arg2:T81	
+T267	Description 5141 5185	discard long reads below a length of 1000 bp
+R39	DescriptionOf Arg1:T267 Arg2:T81	
+R40	VersionOf Arg1:T88 Arg2:T87	
+R41	BiblioOf Arg1:T89 Arg2:T87	
+R42	BiblioOf Arg1:T90 Arg2:T87	
+T268	Data 5346 5365	short-read assembly
+R43	InputOf Arg1:T268 Arg2:T87	
+T85	Description 5346 5410	short-read assembly where contigs are bridged via the long reads
+T86	Data 5400 5410	long reads
+R44	InputOf Arg1:T86 Arg2:T87	
+R46	InputOf Arg1:T92 Arg2:T93	
+R47	VersionOf Arg1:T94 Arg2:T93	
+R48	BiblioOf Arg1:T95 Arg2:T93	
+R49	BiblioOf Arg1:T96 Arg2:T93	
+R50	InputOf Arg1:T98 Arg2:T99	
+R51	DescriptionOf Arg1:T97 Arg2:T99	
+R52	VersionOf Arg1:T100 Arg2:T99	
+R53	BiblioOf Arg1:T101 Arg2:T99	
+R45	VersionOf Arg1:T103 Arg2:T102	
+R54	BiblioOf Arg1:T104 Arg2:T102	
+R55	DescriptionOf Arg1:T105 Arg2:T107	
+R56	VersionOf Arg1:T108 Arg2:T107	
+R57	BiblioOf Arg1:T110 Arg2:T107	
+R58	InputOf Arg1:T106 Arg2:T107	
+T109	Tool 6066 6072	MinION
+T269	Method 6076 6083	GridION
+R59	DescriptionOf Arg1:T116 Arg2:T115	
+R60	VersionOf Arg1:T120 Arg2:T119	
+R61	BiblioOf Arg1:T121 Arg2:T119	
+R62	VersionOf Arg1:T123 Arg2:T122	
+R63	BiblioOf Arg1:T124 Arg2:T122	
+R64	BiblioOf Arg1:T128 Arg2:T125	
+R65	VersionOf Arg1:T126 Arg2:T125	
+T127	Description 6276 6298	binning software tools
+R66	DescriptionOf Arg1:T127 Arg2:T119	
+R67	DescriptionOf Arg1:T127 Arg2:T122	
+R68	DescriptionOf Arg1:T127 Arg2:T125	
+R69	DescriptionOf Arg1:T129 Arg2:T130	
+R70	VersionOf Arg1:T131 Arg2:T130	
+R71	BiblioOf Arg1:T132 Arg2:T130	
+T270	WorkflowName 6772 6778	MUFFIN
+T271	Data 6846 6850	MAGs
+R72	VersionOf Arg1:T137 Arg2:T136	
+R73	BiblioOf Arg1:T138 Arg2:T136	
+R74	DescriptionOf Arg1:T134 Arg2:T136	
+R75	DescriptionOf Arg1:T135 Arg2:T136	
+R76	BiblioOf Arg1:T144 Arg2:T143	
+R77	BiblioOf Arg1:T146 Arg2:T145	
+R78	BiblioOf Arg1:T148 Arg2:T147	
+R79	InputOf Arg1:T142 Arg2:T143	
+R80	InputOf Arg1:T142 Arg2:T145	
+R81	InputOf Arg1:T142 Arg2:T147	
+R82	DescriptionOf Arg1:T149 Arg2:T143	
+R83	DescriptionOf Arg1:T149 Arg2:T145	
+R84	DescriptionOf Arg1:T149 Arg2:T147	
+T272	WorkflowName 7589 7605	"What the Phage"
+R85	BiblioOf Arg1:T150 Arg2:T272	
+R86	DescriptionOf Arg1:T151 Arg2:T272	
+R87	BiblioOf Arg1:T153 Arg2:T152	
+R88	DescriptionOf Arg1:T154 Arg2:T152	
+R89	InputOf Arg1:T142 Arg2:T272	
+R90	InputOf Arg1:T142 Arg2:T152	
+R91	InputOf Arg1:T142 Arg2:T156	
+T155	Method 7827 7846	Bin quality control
+T273	Method 7851 7871	taxonomic assessment
+T274	Method 4883 4890	binning
+R92	InputOf Arg1:T75 Arg2:T274	
+R93	InputOf Arg1:T76 Arg2:T274	
+R94	DescriptionOf Arg1:T157 Arg2:T158	
+R95	VersionOf Arg1:T159 Arg2:T158	
+R96	BiblioOf Arg1:T160 Arg2:T158	
+R97	DescriptionOf Arg1:T161 Arg2:T162	
+R98	VersionOf Arg1:T163 Arg2:T162	
+R99	BiblioOf Arg1:T164 Arg2:T162	
+T275	Database 8061 8065	GTDB
+*	Synonym T275 T165
+R100	BiblioOf Arg1:T166 Arg2:T165	
+T276	Version 8074 8077	r89
+R101	VersionOf Arg1:T276 Arg2:T165	
+T277	Description 8111 8158	contains many unculturable bacteria and archaea
+R102	DescriptionOf Arg1:T277 Arg2:T167	
+T278	Method 8702 8716	output summary
+R103	DescriptionOf Arg1:T175 Arg2:T177	
+R104	VersionOf Arg1:T178 Arg2:T177	
+R105	BiblioOf Arg1:T179 Arg2:T177	
+T279	Database 8797 8803	eggNOG
+R107	BiblioOf Arg1:T181 Arg2:T279	
+R106	VersionOf Arg1:T180 Arg2:T279	
+R108	DescriptionOf Arg1:T175 Arg2:T279	
+R109	DescriptionOf Arg1:T183 Arg2:T184	
+R110	VersionOf Arg1:T185 Arg2:T184	
+R111	BiblioOf Arg1:T186 Arg2:T184	
+R112	DescriptionOf Arg1:T187 Arg2:T188	
+R113	VersionOf Arg1:T189 Arg2:T188	
+R114	BiblioOf Arg1:T190 Arg2:T188	
+R116	DescriptionOf Arg1:T192 Arg2:T194	
+R117	InputOf Arg1:T193 Arg2:T194	
+R118	VersionOf Arg1:T195 Arg2:T194	
+R119	BiblioOf Arg1:T196 Arg2:T194	
+R115	DescriptionOf Arg1:T198 Arg2:T199	
+R120	VersionOf Arg1:T200 Arg2:T199	
+R121	BiblioOf Arg1:T201 Arg2:T199	
+T280	Database 9180 9186	eggNOG
+R122	DescriptionOf Arg1:T202 Arg2:T203	
+T281	Database 9234 9240	eggnog
+R123	DescriptionOf Arg1:T204 Arg2:T203	
+R124	OutputOf Arg1:T205 Arg2:T203	
+R125	OutputOf Arg1:T206 Arg2:T203	
+R126	OutputOf Arg1:T207 Arg2:T203	
+R127	OutputOf Arg1:T208 Arg2:T203	
+R128	OutputOf Arg1:T209 Arg2:T203	
+R129	OutputOf Arg1:T210 Arg2:T203	
+T282	Tool 9440 9444	KEGG
+T283	Data 9686 9698	KEGG pathway
+T284	Tool 9686 9690	KEGG
+R130	VersionOf Arg1:T221 Arg2:T220	
+R131	BiblioOf Arg1:T222 Arg2:T220	
+R132	DescriptionOf Arg1:T223 Arg2:T224	
+R133	BiblioOf Arg1:T225 Arg2:T224	
+R134	VersionOf Arg1:T226 Arg2:T224	
+T285	Environment 10153 10158	Conda
+R135	BiblioOf Arg1:T227 Arg2:T285	
+R136	BiblioOf Arg1:T228 Arg2:T285	
+R137	DescriptionOf Arg1:T229 Arg2:T285	
+R138	BiblioOf Arg1:T231 Arg2:T230	
+R139	BiblioOf Arg1:T233 Arg2:T220	
+T286	WorkflowName 10336 10342	MUFFIN
+R140	VersionOf Arg1:T236 Arg2:T235	
+R141	VersionOf Arg1:T238 Arg2:T237	
+R142	BiblioOf Arg1:T241 Arg2:T240	

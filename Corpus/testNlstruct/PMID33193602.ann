@@ -1,0 +1,253 @@
+T1	WorkflowName 0 16	GenomeChronicler
+T2	WorkflowName 128 144	GenomeChronicler
+T3	File 266 283;292 296	pre-processed BAM file
+T4	File 287 296	CRAM file
+T5	Data 302 351	deduplication and quality recalibrated alignments
+T6	Description 302 386	deduplication and quality recalibrated alignments against the GRCh38 genome assembly
+T7	Data 364 386	GRCh38 genome assembly
+T8	File 407 426	summary HTML report
+T9	Tool 443 475	Ensembl Variant Effect Predictor
+T10	Biblio 477 497	McLaren et al., 2016
+T11	WorkflowName 500 516	GenomeChronicler
+T12	File 756 759;768 773	BAM files
+T13	File 763 773	CRAM files
+T14	WorkflowName 1023 1039	GenomeChronicler
+T15	Data 1091 1110	raw sequencing data
+T16	ManagementSystem 1208 1216	Nextflow
+T17	Biblio 1245 1268	Di Tommaso et al., 2017
+T18	WorkflowName 1289 1305	GenomeChronicler
+T19	WorkflowName 1315 1320	Sarek
+T20	Biblio 1330 1331	2
+T21	Biblio 1334 1353	Garcia et al., 2020
+T22	File 1366 1381	raw FASTQ files
+T23	Tool 1411 1415	GATK
+T24	Biblio 1459 1486	Van der Auwera et al., 2013
+T25	WorkflowName 1547 1552	Sarek
+T26	WorkflowName 1629 1634	Sarek
+T27	WorkflowName 1637 1653	GenomeChronicler
+T28	ManagementSystem 1672 1680	Nextflow
+T29	Biblio 1699 1722	Di Tommaso et al., 2017
+T31	Database 1745 1751	Github
+T32	Biblio 1752 1753	3
+T33	Hardware 1762 1777	Lifebit CloudOS
+T34	Method 1853 1882	Principal Components Analysis
+T35	Method 1884 1887	PCA
+T36	Description 1925 1976	identifying ancestry similarities among individuals
+T37	Biblio 1978 1999	Novembre et al., 2008
+T38	Data 2011 2017	sample
+T39	Data 2048 2057	genotypes
+T40	Data 2065 2082	reference dataset
+T41	Data 2097 2106	genotypes
+T42	Data 2116 2144	1000 Genomes Project samples
+T43	Data 2201 2252	individuals from 26 different worldwide populations
+T44	Data 2308 2325	reference samples
+T45	Data 2604 2608	SNPs
+T46	Parameter 2761 2803	100-SNP windows shifted at 5-SNP intervals
+T47	Data 2811 2820	genotypes
+T48	Method 2837 2840	PCA
+T49	Data 2854 2895	variance-standardized relationship matrix
+T50	Tool 3137 3142	PLINK
+T51	Biblio 3144 3164	Purcell et al., 2007
+T52	Description 3169 3194	process the genotype data
+T53	Data 3181 3194	genotype data
+T54	Tool 3203 3235	R Statistical Computing platform
+T55	ProgrammingLanguage 3203 3204	R
+T56	Description 3240 3312	plotting the final PCA figures to illustrate the ancestry of each sample
+T57	Data 3259 3270	PCA figures
+T58	Data 3352 3369	reference samples
+T59	Database 3438 3445	SNPedia
+T60	Database 3447 3454	SNPedia
+T61	Biblio 3456 3480	Cariaso and Lennon, 2012
+T62	Data 3560 3587	genotype to phenotype links
+T63	Database 3864 3871	ClinVar
+T64	Database 3873 3880	ClinVar
+T65	Biblio 3882 3907	Landrum and Kattman, 2018
+T67	Database 4047 4054	SNPedia
+T68	Database 4056 4063	ClinVar
+T69	Database 4159 4166	ClinVar
+T70	WorkflowName 4265 4281	GenomeChronicler
+T71	Database 4286 4297	GETevidence
+T72	Database 4299 4310	GETevidence
+T73	Database 4340 4371	Personal Genome Project Harvard
+T74	Biblio 4373 4389	Mao et al., 2016
+T75	Description 4394 4415	showcase the variants
+T76	Description 4461 4513	manual annotation and interpretations of the results
+T77	Data 4531 4540	genotypes
+T78	Data 4567 4585	manual annotations
+T79	Database 4638 4649	GETevidence
+T80	Database 4756 4767	PGP-Harvard
+T81	Database 4780 4786	gnomAD
+T82	Database 4828 4855	Genome Aggregation Database
+T83	Database 4857 4863	gnomAD
+T84	Biblio 4866 4889	Karczewski et al., 2019
+T85	Description 4891 4985	aggregates data from multiple sources to produce an atlas of variation across the human genome
+T86	WorkflowName 5462 5478	GenomeChronicler
+T87	Database 5549 5565	SQLite databases
+T89	Database 5771 5778	SNPedia
+T90	Description 5872 5906	regular dumps of the whole dataset
+T92	Data 5943 5963	dbSNP rs identifiers
+T93	Data 6017 6031	rs identifiers
+T94	Data 6036 6045	genotypes
+T95	File 6258 6266	VCF file
+T96	Data 6501 6514	genotype VCFs
+T97	WorkflowName 6571 6587	GenomeChronicler
+T98	WorkflowName 6981 6997	GenomeChronicler
+T99	File 7005 7018	template file
+T100	Data 7107 7113	report
+T101	WorkflowName 7338 7354	GenomeChronicler
+T102	File 7360 7380	report in PDF format
+T103	File 7533 7543	Excel file
+T104	Data 7559 7594	genotype phenotype link information
+T106	File 7726 7744	intermediate files
+T107	WorkflowName 7789 7805	GenomeChronicler
+T108	File 7815 7860	original PDF version of the ancestry PCA plot
+T111	Data 7895 7906	sample name
+T112	Data 7908 7926	genotyping results
+T113	File 7931 7949	pipeline log files
+T114	Data 8100 8132	illumina data for sample NA12878
+T116	Data 8143 8174	Genomic data for sample NA12878
+T118	Data 8189 8211	human reference genome
+T119	Database 8244 8263	1000 Genome Project
+T120	Biblio 8264 8265	4
+T121	Description 8271 8292	converted to BAM file
+T122	File 8284 8292	BAM file
+T123	Tool 8303 8311	SAMtools
+T124	Tool 8372 8390	Genome-in-a-Bottle
+T125	Biblio 8391 8392	5
+T127	Tool 8549 8557	BCFtools
+T128	WorkflowName 8601 8617	GenomeChronicler
+T129	Data 8636 8647	PGP-UK data
+T130	WorkflowName 8666 8682	GenomeChronicler
+T131	WorkflowName 9036 9052	GenomeChronicler
+T132	WorkflowName 9117 9133	GenomeChronicler
+T133	Database 9150 9156	GitHub
+T134	Biblio 9160 9202	https://github.com/PGP-UK/GenomeChronicler
+T135	Description 9234 9317	automatically download the pre-compiled accessory databases and other required data
+T136	ProgrammingLanguage 9351 9356	LaTeX
+T137	ProgrammingLanguage 9358 9359	R
+T138	ProgrammingLanguage 9364 9368	Perl
+T140	Container 9421 9432	Singularity
+T141	File 9457 9480	Singularity recipe file
+T142	Hardware 9569 9595	Debian/Ubuntu based system
+T143	WorkflowName 9632 9648	GenomeChronicler
+T144	Container 9672 9683	Singularity
+T145	Biblio 9695 9715	Kurtzer et al., 2017
+T146	Database 9790 9804	SingularityHub
+T147	Biblio 9806 9825	Sochat et al., 2017
+T151	Hardware 9904 9915	any machine
+T152	Container 9925 9936	Singularity
+T153	Method 9982 10012	GenomeChronicler_ mainDruid.pl
+T154	WorkflowName 10097 10113	GenomeChronicler
+T155	Hardware 10117 10122	Cloud
+T156	Description 10127 10189	enable reproducible, massively parallel, cloud native analyses
+T157	WorkflowName 10191 10207	GenomeChronicler
+T158	ManagementSystem 10239 10247	Nextflow
+T159	ManagementSystem 10433 10441	Nextflow
+T160	Database 10508 10514	GitHub
+T161	Biblio 10518 10563	https://github.com/PGP-UK/GenomeChronicler-nf
+T162	ManagementSystem 10581 10589	Nextflow
+T164	WorkflowName 10696 10712	GenomeChronicler
+T165	WorkflowName 10794 10799	Sarek
+T166	Biblio 10801 10819	Ewels et al., 2019
+T167	Biblio 10820 10839	Garcia et al., 2020
+T170	WorkflowName 10872 10877	Sarek
+T171	Database 10894 10900	GitHub
+T172	Biblio 10904 10955	https://github.com/PGP-UK/GenomeChronicler-Sarek-nf
+T173	Hardware 11044 11059	Lifebit CloudOS
+T174	Biblio 11069 11070	6
+T175	Hardware 11073 11088	Lifebit CloudOS
+T176	Hardware 11173 11178	cloud
+T177	File 11241 11252	input files
+T180	File 11410 11483	permanent shareable live link that includes performance and file metadata
+T182	Biblio 11730 11803	permalink https://cloudos.lifebit.ai/public/jobs/5e74d60babdee600f94df39b
+T183	Description 22 82	Personal Genome Project UK Genomic Report Generator Pipeline
+R1	DescriptionOf Arg1:T183 Arg2:T1	
+T184	WorkflowName 238 254	GenomeChronicler
+R2	InputOf Arg1:T3 Arg2:T184	
+R3	InputOf Arg1:T4 Arg2:T184	
+R4	InputOf Arg1:T8 Arg2:T184	
+R5	OutputOf Arg1:T8 Arg2:T9	
+R6	BiblioOf Arg1:T10 Arg2:T9	
+T185	WorkflowName 642 658	GenomeChronicler
+T186	Data 683 689	GRCh38
+T187	WorkflowName 862 878	GenomeChronicler
+R7	InputOf Arg1:T15 Arg2:T14	
+R8	BiblioOf Arg1:T17 Arg2:T16	
+R9	BiblioOf Arg1:T20 Arg2:T19	
+R10	BiblioOf Arg1:T21 Arg2:T19	
+R11	InputOf Arg1:T22 Arg2:T19	
+R12	BiblioOf Arg1:T29 Arg2:T28	
+R13	BiblioOf Arg1:T32 Arg2:T31	
+*	Synonym T35 T34
+R14	DescriptionOf Arg1:T36 Arg2:T34	
+R15	ComeFrom Arg1:T41 Arg2:T42	
+T30	Biblio 2146 2187	The 1000 Genomes Project Consortium, 2015
+R16	BiblioOf Arg1:T30 Arg2:T42	
+R17	ComeFrom Arg1:T43 Arg2:T42	
+T188	Method 2266 2269	PCA
+T189	Data 2277 2302	resulting genotype matrix
+R18	InputOf Arg1:T189 Arg2:T188	
+T190	Database 2335 2354	1000 Genome Project
+R19	ComeFrom Arg1:T44 Arg2:T190	
+T191	Data 2669 2683	remaining SNPs
+T192	Parameter 2746 2754	r2 > 0.1
+R20	InputOf Arg1:T47 Arg2:T48	
+R21	InputOf Arg1:T49 Arg2:T48	
+R22	BiblioOf Arg1:T51 Arg2:T50	
+R23	DescriptionOf Arg1:T56 Arg2:T54	
+R24	DescriptionOf Arg1:T52 Arg2:T50	
+T193	Method 3377 3380	PCA
+R25	BiblioOf Arg1:T61 Arg2:T60	
+T194	Description 3487 3620	large public repository of manually added as well as automatically mined genotype to phenotype links sourced from existing literature
+R26	DescriptionOf Arg1:T194 Arg2:T60	
+T195	Database 3622 3629	SNPedia
+T196	WorkflowName 3682 3698	GenomeChronicler
+R27	BiblioOf Arg1:T65 Arg2:T64	
+T66	Database 3937 3941	NCBI
+T197	Description 3970 4028	variants related to health and has been running since 2013
+R28	DescriptionOf Arg1:T197 Arg2:T64	
+R29	BiblioOf Arg1:T74 Arg2:T73	
+R30	DescriptionOf Arg1:T75 Arg2:T72	
+R31	DescriptionOf Arg1:T76 Arg2:T72	
+*	Synonym T83 T82
+R32	BiblioOf Arg1:T84 Arg2:T82	
+R33	DescriptionOf Arg1:T85 Arg2:T82	
+T88	Data 6516 6521	gVCFs
+*	Synonym T88 T96
+T91	ProgrammingLanguage 7030 7035	LaTeX
+T198	ProgrammingLanguage 7219 7224	LaTeX
+R34	OutputOf Arg1:T102 Arg2:T101	
+T199	ProgrammingLanguage 7467 7472	LaTeX
+R35	OutputOf Arg1:T103 Arg2:T101	
+R36	IncludeIn Arg1:T103 Arg2:T104	
+T105	Database 8070 8089	1000 Genome Project
+T109	Data 8213 8219	GRCh38
+R37	BiblioOf Arg1:T120 Arg2:T119	
+R38	DescriptionOf Arg1:T121 Arg2:T123	
+R39	BiblioOf Arg1:T125 Arg2:T124	
+T110	WorkflowName 8399 8415	GenomeChronicler
+T115	Data 8454 8505	resulting genotype calls in high confidence regions
+T117	Data 8527 8542	reference calls
+R40	InputOf Arg1:T117 Arg2:T127	
+R41	InputOf Arg1:T115 Arg2:T127	
+T126	Description 8511 8519	compared
+R42	DescriptionOf Arg1:T126 Arg2:T127	
+R43	BiblioOf Arg1:T134 Arg2:T132	
+R44	BiblioOf Arg1:T145 Arg2:T144	
+R45	BiblioOf Arg1:T147 Arg2:T146	
+T139	Parameter 9851 9900	singularity pull “shub://PGP-UK/GenomeChronicler”
+R46	BiblioOf Arg1:T161 Arg2:T157	
+T148	File 10613 10629	end-to-end FASTQ
+T149	File 10633 10647	PGP-UK reports
+R47	BiblioOf Arg1:T167 Arg2:T165	
+R48	BiblioOf Arg1:T172 Arg2:T170	
+R49	BiblioOf Arg1:T174 Arg2:T173	
+T150	Hardware 11378 11393	Lifebit CloudOS
+T163	Database 11500 11506	GitHub
+T168	File 11646 11674	analysis page for the PGP-UK
+R50	BiblioOf Arg1:T182 Arg2:T168	
+T169	Description 170 236	run downstream of a standardized germline variant calling pipeline
+R51	DescriptionOf Arg1:T169 Arg2:T2	
+T178	Description 4199 4214	clinical review
+R52	DescriptionOf Arg1:T178 Arg2:T69	
+R53	InputOf Arg1:T99 Arg2:T98	
