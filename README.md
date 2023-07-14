@@ -1,15 +1,15 @@
 # WorkflowExtractionNLP
 
-On retrouve dans ce repértoire : 
+This directory includes: 
 
-* **ArticleSearch** : recherche et extraction des articles de PMC et PubMedCentral et préparation des fichiers texte pour les analyses 
+* **ArticleSearch** : Search and retrieval of articles from PMC and PubMedCentral $+$ Preparation of text files for analysis
 
-* **Corpus** : corpus décrivant des workflows bioinformatiques 
+* **Corpus** : Set of files forming the corpus 
 
-* **Guide d'annotation** : guide d'annotation contenant une définition des entités et relations ainsi que des exemples d'occurrences en corpus
+* **Guide d'annotation** : Annotation guide containing a definition of entities and relations as well as examples of corpus occurences (in French)
 
 ## Requirements 
-Les différents scripts pythons sont codées sous Jupyter-Notebook et nécessitent les packages suivants : 
+The various scripts are written in Python under Jupyter-Notebook and require the following packages :
 
 * lxml=4.9.1 (xml.etree.ElementTree)
 * entrezpy=2.1.3
